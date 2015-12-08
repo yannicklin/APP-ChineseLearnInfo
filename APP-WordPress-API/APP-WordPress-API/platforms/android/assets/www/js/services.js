@@ -48,3 +48,6 @@ angular.module('starter.services', [])
     }
   };
 });
+
+angular.module('starter.services', [])
+.constant('DOMAIN_POST_URI', 'http://chineselearn.info/wp-json/wp/v2/posts');

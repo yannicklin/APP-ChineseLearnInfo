@@ -13,6 +13,22 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+.controller('PostsCtrl', function ($scope, $http) {
+
+    $http.get(DOMAIN_POST_URI)
+        .success(function (response) {
+            $scope.posts = response;
+        });
+})
+
+.controller('PostDetailCtrl', function ($scope, $stateParams, Posts) {
+
+    $http.get(DOMAIN_POST_URI + "/" + $stateParams.postId)
+            .success(function (response) {
+                $scope.post = response;
+            });
+})
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
