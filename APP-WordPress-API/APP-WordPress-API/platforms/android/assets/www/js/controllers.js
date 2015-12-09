@@ -13,18 +13,14 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('PostsCtrl', function ($scope, $http, DataLoader, $timeout, $log, $ionicLoading) {
-
-    var dataURI = 'http://chineselearn.info/wp-json/wp/v2/';
-
-    var postsAPI = dataURI + 'posts';
+.controller('PostsCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
 
     $scope.moreItems = false;
 
     $scope.loadPosts = function() {
 
         // Get all of our posts
-        DataLoader.get( postsAPI ).then(function(response) {
+        DataLoader.get('', 'posts' ).then(function(response) {
 
             $scope.posts = response.data;
 
@@ -57,7 +53,7 @@ angular.module('starter.controllers', [])
 
         $timeout(function() {
 
-            DataLoader.get( postsAPI + '?page=' + pg ).then(function(response) {
+            DataLoader.get( '' + '?page=' + pg ).then(function(response) {
 
                 angular.forEach( response.data, function( value, key ) {
                     $scope.posts.push(value);
@@ -93,16 +89,12 @@ angular.module('starter.controllers', [])
     
 })
 
-    .controller('Posts-CHTCtrl', function ($scope, $http, DataLoader, $timeout, $log, $ionicLoading) {
-
-        var dataURI = 'http://chineselearn.info/zh-hant/wp-json/wp/v2/';
-
-        var postsAPI = dataURI + 'posts';
+    .controller('Posts-CHTCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
 
         $scope.loadPosts = function () {
 
             // Get all of our posts
-            DataLoader.get(postsAPI).then(function (response) {
+            DataLoader.get('zh-hant/', 'posts').then(function (response) {
 
                 $scope.posts = response.data;
 
@@ -134,17 +126,11 @@ angular.module('starter.controllers', [])
 
     })
 
-.controller('PostDetailCtrl', function ($scope, $stateParams, $http, DataLoader, $sce, $timeout, $log, $ionicLoading) {
-
-    $scope.itemID = $stateParams.postId;
-
-    var dataURI = 'http://chineselearn.info/wp-json/wp/v2/';
-
-    var singlePostApi = dataURI + 'posts/' + $scope.itemID;
+.controller('PostDetailCtrl', function ($scope, $stateParams, DataLoader, $sce, $timeout, $log, $ionicLoading) {
 
     $scope.loadPost = function() {
 
-        DataLoader.get( singlePostApi ).then(function(response) {
+        DataLoader.get('', 'posts/' + $stateParams.postId).then(function (response) {
 
             $scope.post = response.data;
 
