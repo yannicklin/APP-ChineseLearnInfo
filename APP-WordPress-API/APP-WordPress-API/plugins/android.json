@@ -4,8 +4,47 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {}
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"android-package\" value=\"org.apache.cordova.globalization.Globalization\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
     },
-    "installed_plugins": {},
+    "installed_plugins": {
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "io.cordova.myappe2785d518e9f4f6ea03055878dd7a400"
+        },
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "io.cordova.myappe2785d518e9f4f6ea03055878dd7a400"
+        },
+        "org.apache.cordova.globalization": {
+            "PACKAGE_NAME": "io.cordova.myappe2785d518e9f4f6ea03055878dd7a400"
+        }
+    },
     "dependent_plugins": {}
 }
