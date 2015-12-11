@@ -1,12 +1,6 @@
 <ion-view view-title="Tags">
   <ion-content>
     <ion-refresher on-refresh="doRefresh()"></ion-refresher>
-    <ion-list>
-      <ion-item class="item-avatar item-icon-right" ng-repeat="tag in tags" type="item-text-wrap" href="#/tab/tags/{{post.id}}" track>
-           <h2 ng-bind-html="tag.name.rendered"></h2>
-          <p ng-if="tag.name.rendered" ng-bind-html="tag.name.rendered"></p> : <div ng-bind-html="tag.count"></div>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+    <a class="button button-outline button-positive" ng-repeat="tag in tags" href="#/tab/tags/{{tag.id}}">{{tag.name}}</a>
+</ion-content>
 </ion-view>

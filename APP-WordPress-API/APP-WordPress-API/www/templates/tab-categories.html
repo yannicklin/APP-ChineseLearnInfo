@@ -1,0 +1,6 @@
+<ion-view view-title="{{'TAB_TITLE_CATEGORIES' | translate }}">
+  <ion-content>
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+    <a class="button button-outline button-positive" ng-repeat="category in categories" href="#/tab/categories/{{category.id}}">{{category.name}}</a>
+</ion-content>
+</ion-view>
