@@ -1,0 +1,27 @@
+{
+  "name": "APP-WordPress-API",
+  "homepage": "https://github.com/yannicklin/APP-ChineseLearnInfo",
+  "authors": [
+    "Yannick Lin <yannicklin@twoudia.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-translate": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.8.1",
+    "ionic": "~1.2.0",
+    "angular-translate-storage-cookie": "~2.8.1",
+    "angular-translate-storage-local": "~2.8.1"
+  }
+}

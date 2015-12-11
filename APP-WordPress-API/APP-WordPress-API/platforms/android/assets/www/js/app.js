@@ -1,11 +1,10 @@
-// Ionic Starter App
-
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters', 'starter.services'])
+angular.module('chineselearn', [
+    'ionic',  // ionic framework
+    'ngCookies',
+    'pascalprecht.translate',  // inject the angular-translate module
+    'chineselearn.controllers', 'chineselearn.filters', 'chineselearn.services' //customs
+    ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -19,14 +18,58 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters', 's
       StatusBar.styleLightContent();
     }
   });
+
+  // Double Click on Back Button for Exit App
+  var countTimerForCloseApp = false;
+  $ionicPlatform.registerBackButtonAction(function (e, $ionicHistory) {
+      e.preventDefault();
+      function showConfirm() {
+          if (countTimerForCloseApp) {
+              ionic.Platform.exitApp();
+          } else {
+              countTimerForCloseApp = true;
+              showToastMsg($cordovaToast, $filter('translate')('CONFIRM_BEFORE_APP_EXIT'));
+              $timeout(function () {
+                  countTimerForCloseApp = false;
+              }, 2000);
+          }
+      };
+
+      // Is there a page to go back to?
+      if ($ionicHistory.backView()) {
+          // Go back in history
+          $ionicHistory.backView().go();
+      } else {
+          // This is the last page: Show confirmation popup
+          showConfirm();
+      }
+      return false;
+  }, 101);
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider, $translateProvider) {
+    //global configure
+    $ionicConfigProvider.tabs.position('bottom');
+
+    // i18n
+    $translateProvider
+      .useStaticFilesLoader({
+        prefix: 'js/locale/',
+        suffix: '.json'
+      })
+
+      .registerAvailableLanguageKeys(['en', 'de', 'zh'], {
+          'en' : 'en', 'en_*': 'en',
+          'de': 'de', 'de_*': 'de',
+          'zh_*': 'zh'
+      })
+      .preferredLanguage('de')
+      .fallbackLanguage(['en', 'de'])
+//      .determinePreferredLanguage()
+      .useSanitizeValueStrategy('escapeParameters')
+      .useLocalStorage();
 
   // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
   $stateProvider
 
   // setup an abstract state for the tabs directive
@@ -37,7 +80,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters', 's
   })
 
   // Each tab has its own nav history stack:
-
   .state('tab.dash', {
     url: '/dash',
     views: {
@@ -76,7 +118,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters', 's
             }
         }
     })
-
+    .state('tab.tags', {
+        url: '/tags',
+        views: {
+            'tab-tags': {
+                templateUrl: 'templates/tab-tags.html',
+                controller: 'TagsCtrl'
+            }
+        }
+    })
+    .state('tab.categories', {
+        url: '/categories',
+        views: {
+            'tab-categories': {
+                templateUrl: 'templates/tab-categories.html',
+                controller: 'CategoriesCtrl'
+            }
+        }
+    })
   .state('tab.account', {
     url: '/account',
     views: {

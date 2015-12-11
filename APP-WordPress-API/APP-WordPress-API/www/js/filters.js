@@ -1,4 +1,4 @@
-﻿angular.module('starter.filters', [])
+﻿angular.module('chineselearn.filters', [])
 
 .filter('html_filters', function ($sce) {
 

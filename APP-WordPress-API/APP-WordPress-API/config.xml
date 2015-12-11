@@ -94,5 +94,5 @@
   <vs:plugin name="org.apache.cordova.device" version="0.3.0" />
   <vs:plugin name="org.apache.cordova.network-information" version="0.2.15" />
   <access origin="*" />
-  <vs:plugin name="org.apache.cordova.globalization" version="0.3.4" />
+  <vs:plugin name="cordova-plugin-x-toast" version="2.3.1" src="https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git" />
 </widget>

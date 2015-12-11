@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('chineselearn.controllers', [])
 
 .controller('DashCtrl', function ($scope) {})
 
@@ -26,10 +26,10 @@ angular.module('starter.controllers', [])
 
             $scope.moreItems = true;
 
-            $log.log(postsAPI, response.data);
+            $log.log(response.data);
             $ionicLoading.hide();
         }, function(response) {
-            $log.log(postsAPI, response.data);
+            $log.log(response.data);
             $ionicLoading.hide();
         });
 
@@ -100,10 +100,10 @@ angular.module('starter.controllers', [])
 
                 $scope.moreItems = true;
 
-                $log.log(postsAPI, response.data);
+                $log.log(response.data);
                 $ionicLoading.hide();
             }, function (response) {
-                $log.log(postsAPI, response.data);
+                $log.log(response.data);
                 $ionicLoading.hide();
             });
 
@@ -129,11 +129,8 @@ angular.module('starter.controllers', [])
 .controller('PostDetailCtrl', function ($scope, $stateParams, DataLoader, $sce, $timeout, $log, $ionicLoading) {
 
     $scope.loadPost = function() {
-
         DataLoader.get('', 'posts/' + $stateParams.postId).then(function (response) {
-
             $scope.post = response.data;
-
             $log.debug($scope.post);
 
             // Don't strip post html
@@ -144,23 +141,63 @@ angular.module('starter.controllers', [])
             $log.error('error', response);
             $ionicLoading.hide();
         });
-
     }
 
     $scope.loadPost();
 
     // Pull to refresh
     $scope.doRefresh = function() {
-  
         $timeout( function() {
-
             $scope.loadPost();
-    
         }, 1000);
-      
     };
-
 })
+
+
+.controller('TagsCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
+    $scope.loadTags = function () {
+        DataLoader.get('', 'terms/tag').then(function (response) {
+            $scope.tags = response.data;
+            $log.debug(response.data);
+            $ionicLoading.hide();
+        }, function (response) {
+            $log.error('error', response);
+            $ionicLoading.hide();
+        });
+    }
+
+    $scope.loadTags();
+
+    // Pull to refresh
+    $scope.doRefresh = function () {
+        $timeout(function () {
+            $scope.loadTags();
+        }, 1000);
+    };
+})
+
+.controller('CategoriesCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
+    $scope.loadCategories = function () {
+        DataLoader.get('', 'terms/category').then(function (response) {
+            $scope.categories = response.data;
+            $log.debug(response.data);
+            $ionicLoading.hide();
+        }, function (response) {
+            $log.error('error', response);
+            $ionicLoading.hide();
+        });
+    }
+
+    $scope.loadCategories();
+
+    // Pull to refresh
+    $scope.doRefresh = function () {
+        $timeout(function () {
+            $scope.loadCategories();
+        }, 1000);
+    };
+})
+
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {

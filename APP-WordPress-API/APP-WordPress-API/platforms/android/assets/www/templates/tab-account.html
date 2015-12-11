@@ -5,5 +5,23 @@
         Enable Friends
     </ion-toggle>
     </ion-list>
+      <div class="button-bar">
+          <ion-radio ng-model="choice" ng-value="'A'" class="icon-left ion-star button-positive">Choose A</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'B'" class="icon-left ion-star button-positive">Choose B</ion-radio>
+      </div>
+      <div class="list">
+          <label class="item item-input item-floating-label">
+              <span class="input-label">First Name</span>
+              <input type="text" placeholder="First Name">
+          </label>
+          <label class="item item-input item-floating-label">
+              <span class="input-label">Last Name</span>
+              <input type="text" placeholder="Last Name">
+          </label>
+          <label class="item item-input item-floating-label">
+              <span class="input-label">Email</span>
+              <input type="text" placeholder="Email">
+          </label>
+      </div>
   </ion-content>
 </ion-view>
