@@ -1,0 +1,20 @@
+{
+  "CONFIRM_BEFORE_APP_EXIT": "再次按下退出。",
+
+  "TAB_TITLE_STATUS": "狀態",
+  "TAB_TITLE_POSTS": "文章",
+  "TAB_TITLE_TAGS": "標籤",
+  "TAB_TITLE_CATEGORIES": "分類",
+  "TAB_TITLE_ACCOUNT": "帳號",
+
+  "SIDE_MENU_TEMPLATE_CONTENT":  "Content",
+  "SIDE_MENU_TEMPLATE_NEW_POST": "New Post",
+  "SIDE_MENU_TEMPLATE_SETTINGS": "Settings",
+
+  "ALL_POSTS":                   "ALL POSTS",
+  "NO_POSTS":                    "No posts :(",
+  "EDIT":                        "EDIT",
+  "MARKDOWN":                    "MARKDOWN",
+  "PREVIEW":                     "PREVIEW",
+  "UPDATE_POST":                 "UPDATE POST"
+}

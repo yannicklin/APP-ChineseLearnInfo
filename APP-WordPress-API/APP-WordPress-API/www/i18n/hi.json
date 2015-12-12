@@ -1,0 +1,20 @@
+{
+  "CONFIRM_BEFORE_APP_EXIT": "Drücken Sie erneut, um zu beenden.",
+
+  "TAB_TITLE_STATUS": "Status",
+  "TAB_TITLE_POSTS": "Beiträge",
+  "TAB_TITLE_TAGS": "Schlagwörter",
+  "TAB_TITLE_CATEGORIES": "Kategorien",
+  "TAB_TITLE_ACCOUNT": "Konto",
+
+  "SIDE_MENU_TEMPLATE_CONTENT":  "Content",
+  "SIDE_MENU_TEMPLATE_NEW_POST": "New Post",
+  "SIDE_MENU_TEMPLATE_SETTINGS": "Settings",
+
+  "ALL_POSTS":                   "ALL POSTS",
+  "NO_POSTS":                    "No posts :(",
+  "EDIT":                        "EDIT",
+  "MARKDOWN":                    "MARKDOWN",
+  "PREVIEW":                     "PREVIEW",
+  "UPDATE_POST":                 "UPDATE POST"
+}
