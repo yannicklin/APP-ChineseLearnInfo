@@ -198,9 +198,9 @@ angular.module('chineselearn.controllers', [])
     };
 })
 
-
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
-    enableFriends: true
+      enableFriends: true,
+      language: 'en'
   };
 });

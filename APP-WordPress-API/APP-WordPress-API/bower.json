@@ -22,6 +22,7 @@
     "angular-translate-loader-static-files": "~2.8.1",
     "ionic": "~1.2.0",
     "angular-translate-storage-cookie": "~2.8.1",
-    "angular-translate-storage-local": "~2.8.1"
+    "angular-translate-storage-local": "~2.8.1",
+    "angular-dynamic-locale": "~0.1.29"
   }
 }
