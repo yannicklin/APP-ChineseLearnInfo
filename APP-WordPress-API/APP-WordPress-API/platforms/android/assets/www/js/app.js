@@ -2,37 +2,13 @@
 angular.module('chineselearn', [
     'ionic',  // ionic framework
     'ngCookies',
+    'ngMessages',
     'pascalprecht.translate',  // inject the angular-translate module
     'tmh.dynamicLocale', // inject the angular-dynamic-locale module
     'chineselearn.controllers', 'chineselearn.directives', 'chineselearn.filters', 'chineselearn.services' //customs
     ])
 
 .run(function ($ionicPlatform) {
-    // set Language & Locale
-    /*
-    function setLanguage() {
-
-        $translateProvider.determinePreferredLanguage();
-
-        
-        if (typeof navigator.globalization !== "undefined") {
-            $cordovaGlobalization.getPreferredLanguage().then(function (result) {
-                var language = getSuitableLanguage(result.value);
-                applyLanguage(language);
-                $translate.use(language);
-            });
-        } else {
-            applyLanguage(defaultLanguage);
-        }
-    }
-    */
-
-
-
-
-
-
-
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -44,9 +20,6 @@ angular.module('chineselearn', [
         StatusBar.styleLightContent();
     };
     
-      // Locale and Lanaguage
-    setLanguage();
-
   });
 
   // Double Click on Back Button for Exit App
@@ -119,25 +92,25 @@ angular.module('chineselearn', [
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
-  })
-  .state('tab.dash', {
+    })
+    .state('tab.dash', {
     url: '/dash',
     views: {
-      'tab-dash': {
+        'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
         controller: 'DashCtrl'
-      }
+        }
     }
-  })
-  .state('tab.posts', {
-      url: '/posts',
-      views: {
-          'tab-posts': {
-              templateUrl: 'templates/tab-posts.html',
-              controller: 'PostsCtrl'
-          }
-      }
-  })
+    })
+    .state('tab.posts', {
+        url: '/posts',
+        views: {
+            'tab-posts': {
+                templateUrl: 'templates/tab-posts.html',
+                controller: 'PostsCtrl'
+            }
+        }
+    })
     .state('tab.posts-cht', {
         url: '/posts-cht',
         views: {
@@ -174,15 +147,15 @@ angular.module('chineselearn', [
             }
         }
     })
-  .state('tab.account', {
+    .state('tab.account', {
     url: '/account',
     views: {
-      'tab-account': {
+        'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
-      }
+        }
     }
-  });
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
