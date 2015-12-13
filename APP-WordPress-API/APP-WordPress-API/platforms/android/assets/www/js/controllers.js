@@ -2,17 +2,6 @@ angular.module('chineselearn.controllers', [])
 
 .controller('DashCtrl', function ($scope) {})
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
 .controller('PostsCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
 
     $scope.moreItems = false;
@@ -20,7 +9,7 @@ angular.module('chineselearn.controllers', [])
     $scope.loadPosts = function() {
 
         // Get all of our posts
-        DataLoader.get('', 'posts' ).then(function(response) {
+        DataLoader.get('posts').then(function(response) {
 
             $scope.posts = response.data;
 
@@ -53,7 +42,7 @@ angular.module('chineselearn.controllers', [])
 
         $timeout(function() {
 
-            DataLoader.get( '' + '?page=' + pg ).then(function(response) {
+            DataLoader.get( '?page=' + pg ).then(function(response) {
 
                 angular.forEach( response.data, function( value, key ) {
                     $scope.posts.push(value);
@@ -94,7 +83,7 @@ angular.module('chineselearn.controllers', [])
         $scope.loadPosts = function () {
 
             // Get all of our posts
-            DataLoader.get('zh-hant/', 'posts').then(function (response) {
+            DataLoader.get('posts').then(function (response) {
 
                 $scope.posts = response.data;
 
@@ -129,7 +118,7 @@ angular.module('chineselearn.controllers', [])
 .controller('PostDetailCtrl', function ($scope, $stateParams, DataLoader, $sce, $timeout, $log, $ionicLoading) {
 
     $scope.loadPost = function() {
-        DataLoader.get('', 'posts/' + $stateParams.postId).then(function (response) {
+        DataLoader.get('posts/' + $stateParams.postId).then(function (response) {
             $scope.post = response.data;
             $log.debug($scope.post);
 
@@ -156,7 +145,7 @@ angular.module('chineselearn.controllers', [])
 
 .controller('TagsCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
     $scope.loadTags = function () {
-        DataLoader.get('', 'terms/tag').then(function (response) {
+        DataLoader.get('terms/tag').then(function (response) {
             $scope.tags = response.data;
             $log.debug(response.data);
             $ionicLoading.hide();
@@ -178,7 +167,7 @@ angular.module('chineselearn.controllers', [])
 
 .controller('CategoriesCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
     $scope.loadCategories = function () {
-        DataLoader.get('', 'terms/category').then(function (response) {
+        DataLoader.get('terms/category').then(function (response) {
             $scope.categories = response.data;
             $log.debug(response.data);
             $ionicLoading.hide();
@@ -198,9 +187,67 @@ angular.module('chineselearn.controllers', [])
     };
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function ($scope, $translate, tmhDynamicLocale, AppSettings) {
   $scope.settings = {
       enableFriends: true,
       language: 'en'
-  };
+  }
+
+  $scope.$watch('settings.language', function () {
+      AppSettings.change('language', $scope.settings.language);
+  });
+
+    //attach sendMail f() to the controller scope
+    $scope.formSubmit = _sendEmail(contactForm);
+    
+    function _sendEmail(contactForm) {
+        //define the mail params as JSON, hard coded for sample code
+        // update JSON to reflect message you want to send
+        var mailJSON = {
+            "key": "...YOUR_KEY_HERE...",
+            "message": {
+                "html": "<p>Example HTML content</p>",
+                "text": "Example text content",
+                "subject": "example subject",
+                "from_email": "sender@sending.domain.com",
+                "from_name": "Support",
+                "to": [
+                    {
+                        "email": "user@receiving.domain.com",
+                        "name": "John Doe",
+                        "type": "to"
+                    }
+                ],
+                "important": false,
+                "track_opens": null,
+                "track_clicks": null,
+                "auto_text": null,
+                "auto_html": null,
+                "inline_css": null,
+                "url_strip_qs": null,
+                "preserve_recipients": null,
+                "view_content_link": null,
+                "tracking_domain": null,
+                "signing_domain": null,
+                "return_path_domain": null
+            },
+            "async": false,
+            "ip_pool": "Main Pool"
+        };
+        //reference to the Mandrill REST api
+        var apiURL = "https://mandrillapp.com/api/1.0/messages/send.json";
+        //used to send the email via POST of JSON to Manrdill REST API end-point
+
+        /*
+        $http.post(apiURL, mailJSON).
+            success(function(data, status, headers, config) {
+                console.log('successful email send.');
+                console.log('status: ' + status);
+            }).error(function(data, status, headers, config) {
+                console.log('error sending email.');
+                console.log('status: ' + status);
+            });
+         */
+    }
+
 });

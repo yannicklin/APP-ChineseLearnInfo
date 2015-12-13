@@ -23,5 +23,12 @@
             "url": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
             "subdir": "."
         }
+    },
+    "ionic-plugin-keyboard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/driftyco/ionic-plugin-keyboard.git",
+            "subdir": "."
+        }
     }
 }
