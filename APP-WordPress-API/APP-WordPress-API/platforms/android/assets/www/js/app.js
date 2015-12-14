@@ -111,15 +111,6 @@ angular.module('chineselearn', [
             }
         }
     })
-    .state('tab.posts-cht', {
-        url: '/posts-cht',
-        views: {
-            'tab-posts-cht': {
-                templateUrl: 'templates/tab-posts-cht.html',
-                controller: 'Posts-CHTCtrl'
-            }
-        }
-    })
     .state('tab.post-detail', {
         url: '/posts/:postId',
         views: {

@@ -4,24 +4,44 @@ angular.module('chineselearn.services', [])
     return {
         get: function ($term) {
             var url = AppSettings.getURI() + $term;
-            $log.debug(url);
             return $http.get(url);
         }
     }
 })
 
+.factory('EmailSender', function ($http, $log, AppSettings) {
+    return {
+        send: function ($mail) {
+            $http.post(AppSettings.get('emailAPI'), $mail).
+            success(function () {
+                $log.debug('successful email send.');
+            }).error(function () {
+                $log.debug('error sending email.');
+            });
+
+            return null;
+        }
+    }
+})
+
 .factory('AppSettings', function ($translate, tmhDynamicLocale, $log) {
+
+    // TODO: get default language in stored or predetermined
     var savedData = {
         domainURI: 'http://chineselearn.info/',
         wpjsonURI: 'wp-json/wp/v2/',
         enableFriends: true,
         language: 'en',
-        languageURI: ''
+        languageURI: '',
+        emailserviceKey: 'e8yCnUcg1OaKz0dWIhIH7w',
+        emailAPI: 'https://mandrillapp.com/api/1.0/messages/send.json',
+        contactForm2Email: 'support@chineselearn.info',
+        contactForm2User: 'Support'
     }
 
     return {
         change: function ($item, value) {
-            savedData.$item = value;
+            savedData[$item] = value;
             if ($item == 'language') {
                 // Set Language URI
                 switch(value) {
@@ -41,7 +61,7 @@ angular.module('chineselearn.services', [])
             $log.debug($item + ' : ' + value);
         },
         get: function ($item) {
-            return savedData.$item;
+            return savedData[$item];
         },
         getURI: function () {
             return savedData.domainURI + savedData.languageURI + savedData.wpjsonURI;

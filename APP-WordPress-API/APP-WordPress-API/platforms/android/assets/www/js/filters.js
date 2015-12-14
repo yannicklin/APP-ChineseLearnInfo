@@ -6,7 +6,6 @@
         htmlObject.innerHTML = text;
 
         var links = htmlObject.getElementsByTagName('a');
-
         for (var i = links.length; i > 0 ; i--) {
             links[i-1].parentNode.removeChild(links[i-1]);
         }
