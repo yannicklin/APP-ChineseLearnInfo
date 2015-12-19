@@ -1,6 +1,6 @@
 <ion-view view-title="Tags">
   <ion-content>
     <ion-refresher on-refresh="doRefresh()"></ion-refresher>
-    <a class="button button-outline button-positive" ng-repeat="tag in tags" href="#/tab/tags/{{tag.id}}">{{tag.name}}</a>
+    <a class="button button-outline button-positive" ng-repeat="tag in tags" ng-if="tag.count" href="#/tab/tagposts/{{tag.slug}}/{{tag.name}}">{{tag.name}}</a>
 </ion-content>
 </ion-view>

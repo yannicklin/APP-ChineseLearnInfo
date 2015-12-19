@@ -2,13 +2,13 @@
     <ion-nav-title>
         {{::post.title.rendered}}
     </ion-nav-title>
-    <ion-content class="padding">
+    <ion-content class="padding" lazy-scroll>
         <ion-refresher on-refresh="doRefresh()"></ion-refresher>
         <div class="card post">
             <div class="item post-title">
                 <h2 ng-bind-html="post.title.rendered"></h2>
             </div>
-            <div class="item item-body" ng-if="content" ng-bind-html="content | linkremove"></div>
+            <div class="item item-body" ng-if="content" ng-bind-html="content | linkremove_imagelazyload"></div>
 
         </div>
     </ion-content>
