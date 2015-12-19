@@ -2,16 +2,9 @@ angular.module('chineselearn.controllers', [])
 
 .controller('DashCtrl', function ($scope) {})
 
-.controller('PostsCtrl', function ($scope, DataLoader, $stateParams, $timeout, $log, $ionicLoading, $ionicHistory) {
-    //TODO: Loading not shown
-    $scope.show = function () {
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
-    };
-
-    $scope.$on('$viewContentLoaded', function () {
-        $ionicLoading.hide();
+.controller('PostsCtrl', function ($scope, DataLoader, $stateParams, $timeout, $log, $filter, $ionicLoading, $ionicHistory) {
+    $ionicLoading.show({
+        template: $filter('translate')('LOADING_TEXT')
     });
 
     // Get all of our posts [under Params constraint]
@@ -30,8 +23,10 @@ angular.module('chineselearn.controllers', [])
     $scope.loadPosts = function () {
         DataLoader.get('posts' + termQueryString).then(function (response) {
             $scope.posts = response.data;
+            $ionicLoading.hide();
         }, function(response) {
             $log.error('error', response);
+            $ionicLoading.hide();
         });
     }
 
@@ -43,6 +38,9 @@ angular.module('chineselearn.controllers', [])
   
         $timeout( function() {
 
+            $ionicLoading.show({
+                template: $filter('translate')('LOADING_TEXT')
+            });
             $scope.loadPosts();
 
         }, 1000);
@@ -51,18 +49,14 @@ angular.module('chineselearn.controllers', [])
     
 })
 
-.controller('PostDetailCtrl', function ($scope, $stateParams, DataLoader, $sce, $timeout, $log, $ionicLoading) {
-    $scope.show = function () {
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
-    };
+.controller('PostDetailCtrl', function ($scope, $stateParams, DataLoader, $sce, $timeout, $log, $filter, $ionicLoading) {
+    $ionicLoading.show({
+        template: $filter('translate')('LOADING_TEXT')
+    });
 
     $scope.loadPost = function() {
         DataLoader.get('posts/' + $stateParams.postId).then(function (response) {
             $scope.post = response.data;
-            $log.debug($scope.post);
-
             // Don't strip post html
             $scope.content = $sce.trustAsHtml(response.data.content.rendered);
 
@@ -84,17 +78,14 @@ angular.module('chineselearn.controllers', [])
 })
 
 
-.controller('TagsCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
-    $scope.show = function () {
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
-    };
+.controller('TagsCtrl', function ($scope, DataLoader, $timeout, $log, $filter, $ionicLoading) {
+    $ionicLoading.show({
+        template: $filter('translate')('LOADING_TEXT')
+    });
 
     $scope.loadTags = function () {
         DataLoader.get('tags').then(function (response) {
             $scope.tags = response.data;
-            $log.debug(response.data);
             $ionicLoading.hide();
         }, function (response) {
             $log.error('error', response);
@@ -113,17 +104,14 @@ angular.module('chineselearn.controllers', [])
 })
 
 
-.controller('CategoriesCtrl', function ($scope, DataLoader, $timeout, $log, $ionicLoading) {
-    $scope.show = function () {
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
-    };
+.controller('CategoriesCtrl', function ($scope, DataLoader, $timeout, $log, $filter, $ionicLoading) {
+    $ionicLoading.show({
+        template: $filter('translate')('LOADING_TEXT')
+    });
 
     $scope.loadCategories = function () {
         DataLoader.get('categories').then(function (response) {
             $scope.categories = response.data;
-            $log.debug(response.data);
             $ionicLoading.hide();
         }, function (response) {
             $log.error('error', response);
@@ -190,7 +178,7 @@ angular.module('chineselearn.controllers', [])
           "ip_pool": "Main Pool"
       };
       EmailSender.send(mailJSON);
-      alert("Thanks " + $scope.ctForm.ctName + ", your message has been sent.");
+      alert($filter('translate')('ALERT_MAIL_SENT', { name: $scope.ctForm.ctName }));
 
       //reset Form
       $scope.ctForm = {};

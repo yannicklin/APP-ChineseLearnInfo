@@ -1,5 +1,7 @@
 {
   "CONFIRM_BEFORE_APP_EXIT": "Press again to exit.",
+  "LOADING_TEXT": "Loading ... ",
+  "ALERT_MAIL_SENT": "Thanks {{name}}, your message has been sent.",
 
   "TAB_TITLE_STATUS": "Status",
   "TAB_TITLE_POSTS": "Posts",
