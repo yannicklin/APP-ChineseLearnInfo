@@ -1,11 +1,14 @@
 {
-  "CONFIRM_BEFORE_APP_EXIT": "Drücken Sie erneut, um zu beenden.",
+  "CONFIRM_BEFORE_APP_EXIT": "もう一度押すと終了します。",
+  "LOADING_TEXT": "読み込んでいます...",
+  "ALERT_MAIL_SENT": "おかげで{{name}}、あなたのメッセージが送信されました。",
+  "ALERT_RECORD_NULL": "レコードが検索されません。",
 
-  "TAB_TITLE_STATUS": "Status",
-  "TAB_TITLE_POSTS": "Beiträge",
-  "TAB_TITLE_TAGS": "Schlagwörter",
-  "TAB_TITLE_CATEGORIES": "Kategorien",
-  "TAB_TITLE_ACCOUNT": "Konto",
+  "TAB_TITLE_STATUS": "状態",
+  "TAB_TITLE_POSTS": "投稿",
+  "TAB_TITLE_TAGS": "タグ",
+  "TAB_TITLE_CATEGORIES": "カテゴリー",
+  "TAB_TITLE_ACCOUNT": "アカウント",
 
   "SIDE_MENU_TEMPLATE_CONTENT":  "Content",
   "SIDE_MENU_TEMPLATE_NEW_POST": "New Post",

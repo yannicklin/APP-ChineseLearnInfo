@@ -1,5 +1,8 @@
 {
   "CONFIRM_BEFORE_APP_EXIT": "Drücken Sie erneut, um zu beenden.",
+  "LOADING_TEXT": "Laden ... ",
+  "ALERT_MAIL_SENT": "Dank {{name}}, Ihre Nachricht wurde gesendet.",
+  "ALERT_RECORD_NULL": "No records abgerufen.",
 
   "TAB_TITLE_STATUS": "Status",
   "TAB_TITLE_POSTS": "Beiträge",
