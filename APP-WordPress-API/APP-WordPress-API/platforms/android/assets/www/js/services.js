@@ -4,6 +4,7 @@ angular.module('chineselearn.services', [])
     return {
         get: function ($term) {
             var url = AppSettings.getURI() + $term;
+            $log.debug('URL: ' + url);
             return $http.get(url);
         }
     }
@@ -25,36 +26,43 @@ angular.module('chineselearn.services', [])
 })
 
 .factory('AppSettings', function ($translate, tmhDynamicLocale, $log) {
-
-    // TODO: get default language in stored or predetermined
     var savedData = {
         domainURI: 'http://chineselearn.info/',
         wpjsonURI: 'wp-json/wp/v2/',
         enableFriends: true,
-        language: 'en',
+        language: '',
         languageURI: '',
         emailserviceKey: 'e8yCnUcg1OaKz0dWIhIH7w',
         emailAPI: 'https://mandrillapp.com/api/1.0/messages/send.json',
         contactForm2Email: 'support@chineselearn.info',
-        contactForm2User: 'Support'
+        contactForm2User: 'Support',
+        datdReload: false
+    };
+
+    function setLanguageURI(value) {
+        switch (value) {
+            case 'en':
+                savedData.languageURI = '';
+                break;
+            case 'zh':
+                savedData.languageURI = 'zh-hant/';
+                break;
+            default:
+                savedData.languageURI = value + '/';
+        }
     }
+
+    // Set Language and LanguageURI
+    savedData.language = $translate.use();
+    setLanguageURI(savedData.language);
 
     return {
         change: function ($item, value) {
             savedData[$item] = value;
             if ($item == 'language') {
                 // Set Language URI
-                switch(value) {
-                    case 'en':
-                        savedData.languageURI = '';
-                        break;
-                    case 'zh':
-                        savedData.languageURI = 'zh-hant/';
-                        break;
-                    default:
-                        savedData.languageURI = value + '/';
-                } 
-
+                setLanguageURI(value);
+                // Apply Translate
                 $translate.use(value);
                 tmhDynamicLocale.set(value);
             }

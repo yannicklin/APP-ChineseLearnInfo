@@ -1,7 +1,4 @@
 <ion-view view-title="Account">
-    <div class="bar bar-header bar-stable">
-        <h1 class="title">bar-stable</h1>
-    </div>
   <ion-content>
     <ion-list>
         <ion-item>
@@ -34,22 +31,22 @@
         </ion-item>
         <ion-item>
             <h2 class="padding">{{'Contact US' | translate }}</h2>
-            <form name="contactForm" novalidate="" ng-submit="formSubmit()">
+            <form name="forms.contactForm" novalidate="" ng-submit="formSubmit(contactForm)">
                 <div class="list">
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Name</span>
-                        <input type="text" name="ctName" placeholder="Your Name" ng-model="idform.ctName" ng-minlength="3" ng-maxlength="50" required>
+                        <input type="text" name="ctName" placeholder="Your Name" ng-model="ctForm.ctName" ng-minlength="3" ng-maxlength="50" required>
                     </label>
-                    <div class="error-container" ng-show="idform.ctName.$dirty || contactForm.$submitted" ng-messages="contactForm.ctName.$error" role="alert">
+                    <div class="error-container" ng-show="forms.contactForm.ctName.$dirty" ng-messages="forms.contactForm.ctName.$error" role="alert">
                         <div ng-message="required">You did not input your name.</div>
                         <div ng-message="minlength, maxlength">Your name should be between 3 to 50 letters.</div>
                     </div>
 
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Email</span>
-                        <input type="email" name="ctEmail" placeholder="Your Email" ng-model="idform.ctEmail" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
+                        <input type="email" name="ctEmail" placeholder="Your Email" ng-model="ctForm.ctEmail" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
                     </label>
-                    <div class="error-container" ng-show="idform.ctEmail.$dirty || contactForm.$submitted" ng-messages="contactForm.ctEmail.$error" role="alert">
+                    <div class="error-container" ng-show="forms.contactForm.ctEmail.$dirty" ng-messages="forms.contactForm.ctEmail.$error" role="alert">
                         <div ng-message="required">You did not input your email.</div>
                         <div ng-message="email">Your email is invalid.</div>
                         <div ng-message="pattern">Your email is invalid.</div>
@@ -57,15 +54,14 @@
 
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Message</span>
-                        <textarea type="text" name="ctMessage" placeholder="Your Message" ng-model="idform.ctMessage" ng-minlength="10" ng-maxlength="1000" required></textarea>
+                        <textarea type="text" name="ctMessage" placeholder="Your Message" ng-model="ctForm.ctMessage" ng-minlength="10" ng-maxlength="1000" required></textarea>
                     </label>
-                    <div class="error-container" ng-show="idform.ctMessage.$dirty || contactForm.$submitted" ng-messages="contactForm.ctMessage.$error" role="alert">
+                    <div class="error-container" ng-show="forms.contactForm.ctMessage.$dirty" ng-messages="forms.contactForm.ctMessage.$error" role="alert">
                         <div ng-message="required">You did not keyin any message.</div>
                         <div ng-message="minlength, maxlength">Your message should be between 10 to 1000 letters.</div>
                     </div>
                 </div>
-                <!-- TODO: Disable while not fully success in validation -->
-                <button class="button button-full button-positive" type="submit">
+                <button class="button button-full button-positive" ng-disabled="forms.contactForm.$pristine || forms.contactForm.$invalid" type="submit">
                     Send
                 </button>
             </form>

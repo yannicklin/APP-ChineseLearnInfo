@@ -5,6 +5,7 @@ angular.module('chineselearn', [
     'ngMessages',
     'pascalprecht.translate',  // inject the angular-translate module
     'tmh.dynamicLocale', // inject the angular-dynamic-locale module
+    'ionicLazyLoad', // inject the ionic-image-lazy-load module
     'chineselearn.controllers', 'chineselearn.directives', 'chineselearn.filters', 'chineselearn.services' //customs
     ])
 
@@ -54,7 +55,7 @@ angular.module('chineselearn', [
     //global configure
     $ionicConfigProvider.tabs.position('bottom');
 
-    //locale
+    //locale location
     tmhDynamicLocaleProvider.localeLocationPattern('locales/angular-locale_{{locale}}.js');
 
     // i18n
@@ -80,8 +81,8 @@ angular.module('chineselearn', [
           'zh': 'zh', 'zh_*': 'zh'
       })
       .preferredLanguage('de')
-      .fallbackLanguage(['en','zh', 'es', 'fr'])
-//      .determinePreferredLanguage()
+      .fallbackLanguage(['en', 'zh', 'es', 'fr'])
+      .determinePreferredLanguage()
       .useSanitizeValueStrategy('escapeParameters')
       .useLocalStorage();
 
@@ -129,12 +130,30 @@ angular.module('chineselearn', [
             }
         }
     })
+    .state('tab.tag-posts', {
+        url: '/tagposts/:tagSlug/:tagName',
+        views: {
+            'tab-posts': {
+                templateUrl: 'templates/tab-posts.html',
+                controller: 'PostsCtrl'
+            }
+        }
+    })
     .state('tab.categories', {
         url: '/categories',
         views: {
             'tab-categories': {
                 templateUrl: 'templates/tab-categories.html',
                 controller: 'CategoriesCtrl'
+            }
+        }
+    })
+    .state('tab.category-posts', {
+        url: '/categoryposts/:categorySlug/:categoryName',
+        views: {
+            'tab-posts': {
+                templateUrl: 'templates/tab-posts.html',
+                controller: 'PostsCtrl'
             }
         }
     })
