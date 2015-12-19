@@ -2,7 +2,7 @@
   <ion-content>
     <ion-list>
         <ion-item>
-            <!-- TODO:  Dymanic Change layout to 2 columns or 3 columns -->
+            <!-- TODO: Dymanic Change layout to 2 columns or 3 columns -->
             <h2 class="padding">{{'Language' | translate }}</h2>
             <div class="button-bar">
                 <a gp-radio="'ar'" ng-model="settings.language"><img src="img/flags/ar.png" />{{'\u0627\u0644\u0639\u0631\u0628\u064a\u0629' | unicode }}</a>
@@ -31,6 +31,7 @@
         </ion-item>
         <ion-item>
             <h2 class="padding">{{'Contact US' | translate }}</h2>
+            <!-- TODO: Keyboard not showing -->
             <form name="forms.contactForm" novalidate="" ng-submit="formSubmit(contactForm)">
                 <div class="list">
                     <label class="item item-input item-floating-label">

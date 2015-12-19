@@ -23,7 +23,7 @@ angular.module('chineselearn', [
     
   });
 
-  // Double Click on Back Button for Exit App
+  //TODO: Double Click on Back Button for Exit App
   var countTimerForCloseApp = false;
   $ionicPlatform.registerBackButtonAction(function (e, $ionicHistory) {
       e.preventDefault();
@@ -169,5 +169,4 @@ angular.module('chineselearn', [
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
-
 });

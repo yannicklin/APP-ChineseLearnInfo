@@ -1,5 +1,7 @@
 {
   "CONFIRM_BEFORE_APP_EXIT": "再次按下退出。",
+  "LOADING_TEXT": "讀取中 ... ",
+  "ALERT_MAIL_SENT": "{{name}}，多謝！您的訊息已經送出。",
 
   "TAB_TITLE_STATUS": "狀態",
   "TAB_TITLE_POSTS": "文章",
