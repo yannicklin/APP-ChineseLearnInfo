@@ -1,14 +1,11 @@
 {
-  "CONFIRM_BEFORE_APP_EXIT": "Pulse de nuevo para salir.",
-  "LOADING_TEXT": "Cargando ... ",
-  "ALERT_MAIL_SENT": "Gracias {{name}}, su mensaje ha sido enviado.",
-  "ALERT_RECORD_NULL": "No hay registros recuperados.",
+  "CONFIRM_BEFORE_APP_EXIT": "Drücken Sie erneut, um zu beenden.",
 
-  "TAB_TITLE_STATUS": "Estado",
-  "TAB_TITLE_POSTS": "Mensajes",
-  "TAB_TITLE_TAGS": "Etiquetas",
-  "TAB_TITLE_CATEGORIES": "Categorías",
-  "TAB_TITLE_ACCOUNT": "Cuenta",
+  "TAB_TITLE_STATUS": "Status",
+  "TAB_TITLE_POSTS": "Beiträge",
+  "TAB_TITLE_TAGS": "Schlagwörter",
+  "TAB_TITLE_CATEGORIES": "Kategorien",
+  "TAB_TITLE_ACCOUNT": "Konto",
 
   "SIDE_MENU_TEMPLATE_CONTENT":  "Content",
   "SIDE_MENU_TEMPLATE_NEW_POST": "New Post",
