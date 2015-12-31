@@ -1,7 +1,7 @@
-<ion-view view-title="Tags">
+<ion-view cache-view="false" view-title="Tags">
   <ion-content>
     <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <a ng-show="tags" class="button button-outline button-positive" ng-repeat="tag in tags" ng-if="tag.count" href="#/tab/tagposts/{{tag.slug}}/{{tag.name}}">{{tag.name}}</a>
-    <h3 ng-hide="tags">{{'ALERT_RECORD_NULL' | translate}}</h3>
+    <h3 ng-hide="tags" ng-class="{null: !RSempty}">{{'ALERT_RECORD_NULL' | translate}}</h3>
 </ion-content>
 </ion-view>

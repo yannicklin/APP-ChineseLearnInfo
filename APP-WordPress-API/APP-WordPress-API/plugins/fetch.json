@@ -27,7 +27,7 @@
     "ionic-plugin-keyboard": {
         "source": {
             "type": "git",
-            "url": "https://github.com/driftyco/ionic-plugin-keyboard.git",
+            "url": "https://github.com/driftyco/ionic-plugins-keyboard",
             "subdir": "."
         }
     }

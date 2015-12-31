@@ -19,7 +19,6 @@ angular.module('chineselearn.services', [])
             }).error(function () {
                 $log.debug('error sending email.');
             });
-
             return null;
         }
     }

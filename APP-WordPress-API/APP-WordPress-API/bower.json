@@ -25,6 +25,7 @@
     "angular-translate-storage-local": "~2.8.1",
     "angular-dynamic-locale": "~0.1.29",
     "angular-messages": "~1.4.8",
-    "ionic-image-lazy-load": "ion-image-lazy-load#*"
+    "ionic-image-lazy-load": "ion-image-lazy-load#*",
+    "ionic-toast": "~0.2.0"
   }
 }
