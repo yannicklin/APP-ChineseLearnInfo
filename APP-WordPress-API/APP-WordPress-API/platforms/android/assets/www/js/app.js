@@ -6,49 +6,44 @@ angular.module('chineselearn', [
     'pascalprecht.translate',  // inject the angular-translate module
     'tmh.dynamicLocale', // inject the angular-dynamic-locale module
     'ionicLazyLoad', // inject the ionic-image-lazy-load module
+    'ionic-toast', // toast
     'chineselearn.controllers', 'chineselearn.directives', 'chineselearn.filters', 'chineselearn.services' //customs
     ])
 
-.run(function ($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+.run(function ($ionicPlatform, $ionicHistory, ionicToast, $filter, $timeout) {
+
+    $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     };
     if (window.StatusBar) {
-        // org.apache.cordova.statusbar required
         StatusBar.styleLightContent();
     };
-    
   });
 
-  //TODO: Double Click on Back Button for Exit App
   var countTimerForCloseApp = false;
-  $ionicPlatform.registerBackButtonAction(function (e, $ionicHistory) {
+  $ionicPlatform.registerBackButtonAction(function (e) {
       e.preventDefault();
-      function showConfirm() {
+      // Is there a page to go back to?
+      var previousView = $ionicHistory.backView();
+      if (!previousView) {
           if (countTimerForCloseApp) {
               ionic.Platform.exitApp();
           } else {
               countTimerForCloseApp = true;
-              showToastMsg($cordovaToast, $filter('translate')('CONFIRM_BEFORE_APP_EXIT'));
+              ionicToast.show($filter('translate')('CONFIRM_BEFORE_APP_EXIT'), 'middle', false, 1000);
               $timeout(function () {
                   countTimerForCloseApp = false;
               }, 2000);
           }
-      };
-
-      // Is there a page to go back to?
-      if ($ionicHistory.backView()) {
-          // Go back in history
-          $ionicHistory.backView().go();
       } else {
-          // This is the last page: Show confirmation popup
-          showConfirm();
+          previousView.go();
       }
       return false;
   }, 101);
+  
 })
 
 .config(function($ionicConfigProvider, tmhDynamicLocaleProvider, $translateProvider, $stateProvider, $urlRouterProvider) {

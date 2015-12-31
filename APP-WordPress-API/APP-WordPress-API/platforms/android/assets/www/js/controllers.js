@@ -6,6 +6,7 @@ angular.module('chineselearn.controllers', [])
     $ionicLoading.show({
         template: $filter('translate')('LOADING_TEXT')
     });
+    $scope.RSempty = false;
 
     // Get all of our posts [under Params constraint]
     var termQueryString;
@@ -27,6 +28,7 @@ angular.module('chineselearn.controllers', [])
         }, function(response) {
             $log.error('error', response);
             $ionicLoading.hide();
+            $scope.RSempty = true;
         });
     }
 
@@ -53,13 +55,13 @@ angular.module('chineselearn.controllers', [])
     $ionicLoading.show({
         template: $filter('translate')('LOADING_TEXT')
     });
+    $scope.RSempty = false;
 
     $scope.loadPost = function() {
         DataLoader.get('posts/' + $stateParams.postId).then(function (response) {
             $scope.post = response.data;
             // Don't strip post html
             $scope.content = $sce.trustAsHtml(response.data.content.rendered);
-
             $ionicLoading.hide();
         }, function(response) {
             $log.error('error', response);
@@ -82,6 +84,7 @@ angular.module('chineselearn.controllers', [])
     $ionicLoading.show({
         template: $filter('translate')('LOADING_TEXT')
     });
+    $scope.RSempty = false;
 
     $scope.loadTags = function () {
         DataLoader.get('tags').then(function (response) {
@@ -90,6 +93,7 @@ angular.module('chineselearn.controllers', [])
         }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
+            $scope.RSempty = true;
         });
     }
 
@@ -108,6 +112,7 @@ angular.module('chineselearn.controllers', [])
     $ionicLoading.show({
         template: $filter('translate')('LOADING_TEXT')
     });
+    $scope.RSempty = false;
 
     $scope.loadCategories = function () {
         DataLoader.get('categories').then(function (response) {
@@ -116,6 +121,7 @@ angular.module('chineselearn.controllers', [])
         }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
+            $scope.RSempty = true;
         });
     }
 
