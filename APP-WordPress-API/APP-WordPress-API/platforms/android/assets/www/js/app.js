@@ -5,7 +5,6 @@ angular.module('chineselearn', [
     'ngMessages',
     'pascalprecht.translate',  // inject the angular-translate module
     'tmh.dynamicLocale', // inject the angular-dynamic-locale module
-    'ionicLazyLoad', // inject the ionic-image-lazy-load module
     'ionic-toast', // toast
     'chineselearn.controllers', 'chineselearn.directives', 'chineselearn.filters', 'chineselearn.services' //customs
     ])
@@ -100,6 +99,7 @@ angular.module('chineselearn', [
     })
     .state('tab.posts', {
         url: '/posts',
+        cache: false,
         views: {
             'tab-posts': {
                 templateUrl: 'templates/tab-posts.html',
@@ -118,6 +118,7 @@ angular.module('chineselearn', [
     })
     .state('tab.tags', {
         url: '/tags',
+        cache: false,
         views: {
             'tab-tags': {
                 templateUrl: 'templates/tab-tags.html',
@@ -136,6 +137,7 @@ angular.module('chineselearn', [
     })
     .state('tab.categories', {
         url: '/categories',
+        cache: false,
         views: {
             'tab-categories': {
                 templateUrl: 'templates/tab-categories.html',
