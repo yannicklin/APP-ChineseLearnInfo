@@ -1,7 +1,7 @@
 {
   "name": "ionic",
-  "version": "1.2.0",
-  "codename": "zirconium-zeren",
+  "version": "1.2.3",
+  "codename": "copenhagen",
   "homepage": "https://github.com/driftyco/ionic",
   "authors": [
     "Max Lynch <max@drifty.com>",
@@ -12,7 +12,8 @@
   "main": [
     "release/css/ionic.css",
     "release/fonts/*",
-    "release/js/ionic.bundle.js"
+    "release/js/ionic.js",
+    "release/js/ionic-angular.js"
   ],
   "keywords": [
     "mobile",
@@ -52,13 +53,13 @@
     "angular-sanitize": "1.4.3",
     "angular-ui-router": "0.2.13"
   },
-  "_release": "1.2.0",
+  "_release": "1.2.3",
   "_resolution": {
     "type": "version",
-    "tag": "v1.2.0",
-    "commit": "a50f8d2984a3ac6fb8140aed48d9ae37e5111f53"
+    "tag": "v1.2.3",
+    "commit": "b02973e8ed93c4ab353f30856d01255f4f7b4761"
   },
   "_source": "git://github.com/driftyco/ionic.git",
-  "_target": "~1.2.0",
+  "_target": ">=0.9.27",
   "_originalSource": "ionic"
 }
