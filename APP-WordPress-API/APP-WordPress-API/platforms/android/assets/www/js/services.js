@@ -26,7 +26,7 @@ angular.module('chineselearn.services', [])
 
 .factory('AppSettings', function ($translate, tmhDynamicLocale, $log) {
     var savedData = {
-        domainURI: 'http://chineselearn.info/',
+        domainURI: 'https://chineselearn.info/',
         wpjsonURI: 'wp-json/wp/v2/',
         enableFriends: true,
         language: '',

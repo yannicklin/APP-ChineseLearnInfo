@@ -36,7 +36,8 @@ IonicModule
 .directive('ionSlides', [
   '$animate',
   '$timeout',
-function($animate, $timeout) {
+  '$compile',
+function($animate, $timeout, $compile) {
   return {
     restrict: 'E',
     transclude: true,
@@ -54,8 +55,14 @@ function($animate, $timeout) {
 
       this.update = function() {
         $timeout(function() {
+          if (!_this.__slider) {
+            return;
+          }
+
           _this.__slider.update();
-          _this.__slider.createLoop();
+          if (_this._options.loop) {
+            _this.__slider.createLoop();
+          }
 
           // Don't allow pager to show with > 10 slides
           if (_this.__slider.slides.length > 10) {
@@ -81,8 +88,10 @@ function($animate, $timeout) {
         preloadImages: false
       }, options);
 
+      this._options = newOptions;
+
       $timeout(function() {
-        var slider = new ionic.views.Swiper($element.children()[0], newOptions);
+        var slider = new ionic.views.Swiper($element.children()[0], newOptions, $scope, $compile);
 
         _this.__slider = slider;
         $scope.slider = _this.__slider;
@@ -95,10 +104,10 @@ function($animate, $timeout) {
     }],
 
 
-    link: function($scope, $element) {
+    link: function($scope) {
       $scope.showPager = true;
       // Disable ngAnimate for slidebox and its children
-      $animate.enabled(false, $element);
+      //$animate.enabled(false, $element);
     }
   };
 }])

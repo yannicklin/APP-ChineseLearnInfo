@@ -18,15 +18,15 @@
     "tests"
   ],
   "dependencies": {
-    "ionic": "~1.2.0",
-    "ionic-toast": "~0.2.0",
-    "angular-dynamic-locale": "~0.1.29",
-    "angular-translate": "~2.8.1",
-    "angular-translate-loader-static-files": "~2.8.1",
-    "angular-translate-storage-cookie": "~2.8.1",
-    "angular-translate-storage-local": "~2.8.1",
-    "angular-messages": "~1.4.8",
-    "normalize-css": "~3.0.3"
+    "ionic": "^1.2.3",
+    "ionic-toast": "^0.2.0",
+    "angular-dynamic-locale": "^0.1.29",
+    "angular-translate": "^2.8.1",
+    "angular-translate-loader-static-files": "^2.8.1",
+    "angular-translate-storage-cookie": "^2.8.1",
+    "angular-translate-storage-local": "^2.8.1",
+    "angular-messages": "^1.4.8",
+    "normalize-css": "^3.0.3"
   },
   "overrides": {
     "ionic": {
@@ -53,5 +53,8 @@
     "angular-messages": {
       "main": "**/*.min.*"
     }
+  },
+  "resolutions": {
+    "angular": "^1.4.3"
   }
 }
