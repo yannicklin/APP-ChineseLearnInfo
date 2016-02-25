@@ -1,0 +1,30 @@
+﻿"self signed certificate in certificate chain" => reset the certificate on remotebuild on the mac by calling: remotebuild certificates reset
+
+"Keyboard undefined", "variable: device" *** => using ionic-cli to recompile the ios version: ionic build ios
+
+"cannot connect HTTP via iOS9" => modify the PROJECT-info.plist located in Resources with follow
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>amazonaws.com</key>
+        <dict>
+              <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+              <string>TLSv1.0</string>
+              <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+              <false/>
+              <key>NSIncludesSubdomains</key>
+              <true/>
+        </dict>
+        <key>amazonaws.com.cn</key>
+        <dict>
+              <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+              <string>TLSv1.0</string>
+              <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+              <false/>
+              <key>NSIncludesSubdomains</key>
+              <true/>
+        </dict>
+    </dict>
+</dict>
+

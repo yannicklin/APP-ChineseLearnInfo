@@ -1,47 +1,55 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' beta.fimex.com.tw api.mailgun.net gap: https: data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-eval'">
+    <meta name="format-detection" content="telephone=no">
     <title></title>
 
-    <link href="lib/ionic/release/css/ionic.min.css" rel="stylesheet">
-    <link href="lib/ionic-toast/src/style.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <!-- build:css css/vendor.min.css -->
+    <link href="css/lib/toaster.css" rel="stylesheet" />
+    <!-- endbuild -->
+    <link href="css/chineselearn.min.css" rel="stylesheet" />
 
-    <!-- bower:js -->
-    <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular-animate/angular-animate.min.js"></script>
-    <script src="lib/angular-cookies/angular-cookies.min.js"></script>
-    <script src="lib/angular-messages/angular-messages.min.js"></script>
-    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
-    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="lib/ionic/release/js/ionic.min.js"></script>
-    <script src="lib/ionic/release/js/ionic-angular.min.js"></script>
-    <script src="lib/angular-translate/angular-translate.min.js"></script>
-    <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js" charset="utf8"></script>
-    <script src="lib/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
-    <script src="lib/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
-    <script src="lib/angular-dynamic-locale/tmhDynamicLocale.min.js"></script>
-    <script src="lib/ionic-toast/dist/ionic-toast.bundle.min.js"></script>
-    <!-- endbower -->
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
 
-    <!-- your app's js -->
+    <!-- build:js js/vendor.min.js -->
+    <script src="js/lib/angular.js"></script>
+    <script src="js/lib/angular-animate.js"></script>
+    <script src="js/lib/angular-cookies.js"></script>
+    <script src="js/lib/angular-sanitize.js"></script>
+    <script src="js/lib/angular-ui-router.js"></script>
+    <script src="js/lib/angular-filter.js"></script>
+    <script src="js/lib/ionic.js"></script>
+    <script src="js/lib/ionic-angular.js"></script>
+    <script src="js/lib/angular-translate.js"></script>
+    <script src="js/lib/angular-translate-loader-static-files.js" charset="utf8"></script>
+    <script src="js/lib/angular-translate-storage-cookie.js"></script>
+    <script src="js/lib/angular-translate-storage-local.js"></script>
+    <script src="js/lib/tmhDynamicLocale.js"></script>
+    <script src="js/lib/toaster.js"></script>
+    <script src="js/lib/angular-messages.js"></script>
+    <script src="js/lib/localforage.js"></script>
+    <script src="js/lib/angular-localForage.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/chineselearn.min.js -->
     <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/services.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/filters.js"></script>
-
+    <!-- endbuild -->
 </head>
 <body ng-app="chineselearn">
-    <ion-nav-bar class="bar-positive">
+    <ion-nav-bar class="bar-dark">
         <ion-nav-back-button>
         </ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-view></ion-nav-view>
+    <toaster-container toaster-options="{'toaster-id': 1, 'close-button': false, 'position-class': 'toast-bottom-center', 'time-out': 2000, 'mouseover-timer-stop': false}"></toaster-container>
+    <toaster-container toaster-options="{'toaster-id': 2, 'close-button': false, 'position-class': 'toast-center', 'time-out': 2000, 'mouseover-timer-stop': false}"></toaster-container>
 </body>
 </html>
