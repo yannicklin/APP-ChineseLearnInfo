@@ -1,0 +1,4 @@
+/* Empty. Add your own CSS if you like */
+.button-bar a img {display: block; margin: 10px auto 0 auto;}
+form input.ng-invalid.ng-dirty {background-color: #FA787E;}
+h3.null {color: white;}
