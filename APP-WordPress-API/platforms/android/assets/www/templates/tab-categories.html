@@ -1,6 +1,0 @@
-<ion-view view-title="{{'TAB_TITLE_CATEGORIES' | translate }}">
-    <ion-content>
-        <a ng-show="categories" class="button button-outline button-positive margin-5px" ng-repeat="category in categories" ng-if="category.count" href="#/tab/categoryposts/{{category.slug}}/{{category.name}}">{{category.name}}</a>
-        <h3 ng-hide="categories" ng-class="{null: !RSempty}">{{'ALERT_RECORD_NULL' | translate}}</h3>
-    </ion-content>
-</ion-view>

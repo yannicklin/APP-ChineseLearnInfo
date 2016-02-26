@@ -1,6 +1,0 @@
-<ion-view view-title="{{'TAB_TITLE_TAGS' | translate }}">
-    <ion-content>
-        <a ng-show="tags" class="button button-outline button-positive margin-5px" ng-repeat="tag in tags" ng-if="tag.count" href="#/tab/tagposts/{{tag.slug}}/{{tag.name}}">{{tag.name}}</a>
-        <h3 ng-hide="tags" ng-class="{null: !RSempty}">{{'ALERT_RECORD_NULL' | translate}}</h3>
-    </ion-content>
-</ion-view>
