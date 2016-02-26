@@ -3,7 +3,6 @@ angular.module('chineselearn.services', [])
 .factory('DataLoader', ["$http", "AppSettings", function ($http, AppSettings) {
     return {
         get: function ($term, $limit) {
-            console.log('url is ' + AppSettings.getURI($term, $limit));
             var result = $http({
                 method: 'GET',
                 url: AppSettings.getURI($term, $limit),
@@ -19,13 +18,7 @@ angular.module('chineselearn.services', [])
         send: function ($mail, $sendername) {
             $http({
                 method: 'POST',
-                url: AppSettings.get('mdAPIURI'),
-                /*
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-                    'Authorization': 'Basic ' + AppSettings.getAuthPhrase(AppSettings.get('mgAPIName'), AppSettings.get('mgServiceKey')),
-                },
-                */
+                url: AppSettings.get('sdAPIURI'),
                 transformRequest: function (obj) {
                     var str = [];
                     for (var p in obj) {
@@ -34,7 +27,7 @@ angular.module('chineselearn.services', [])
                     return str.join('&');
                 },
                 data: $mail,
-                timeout: AppSettings.get('mdConnectTimeout')
+                timeout: AppSettings.get('sdConnectTimeout')
             }).then(
             function success() {
                 $timeout(function () {

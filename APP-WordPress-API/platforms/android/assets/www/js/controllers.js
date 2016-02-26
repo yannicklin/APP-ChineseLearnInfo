@@ -20,7 +20,7 @@ angular.module('chineselearn.controllers', [])
 
     $scope.loadPosts = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
         DataLoader.get(termQueryString, 0).then(function (response) {
@@ -45,7 +45,7 @@ angular.module('chineselearn.controllers', [])
 
     $scope.loadNextPage = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
         $scope.NextPageIndicator = 0;
 
@@ -71,7 +71,7 @@ angular.module('chineselearn.controllers', [])
 .controller('PostDetailCtrl', ["$scope", "$stateParams", "DataLoader", "$log", "$filter", "$ionicLoading", "$ionicHistory", function ($scope, $stateParams, DataLoader, $log, $filter, $ionicLoading, $ionicHistory) {
     $scope.loadPost = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
         DataLoader.get('posts/' + $stateParams.postId, 0).then(function (response) {
@@ -96,7 +96,7 @@ angular.module('chineselearn.controllers', [])
 
     $scope.loadTags = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
         DataLoader.get('tags', 1000).then(function (response) {
@@ -123,7 +123,7 @@ angular.module('chineselearn.controllers', [])
 
     $scope.loadCategories = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
         DataLoader.get('categories', 100).then(function (response) {
@@ -163,40 +163,21 @@ angular.module('chineselearn.controllers', [])
     // contact form submitting
     $scope.formSubmit = function () {
         var mailJSON = {
-            "key": AppSettings.get('mdServiceKey'),
-            "message": {
-                "html": '<table style="border: 1px dashed black; border-collapse: collapse;">' + '<caption>' + AppSettings.get('appName') + '</caption>' +
+            'api_user': AppSettings.get('sdAPIName'),
+            'api_key': AppSettings.get('sdServiceKey'),
+            'from': $scope.ctForm.ctEmail,
+            'fromname': $scope.ctForm.ctName,
+            'to': AppSettings.get('contactForm2Email'),
+            'toname': AppSettings.get('contactForm2User'),
+            'subject': 'Message via Mobile APP - ' + AppSettings.get('appName') + ', ' + $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z'),
+            'date' : $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z'),
+            'html': '<table style="border: 1px dashed black; border-collapse: collapse;">' + '<caption>' + AppSettings.get('appName') + '</caption>' +
                   '<tfoot style="color: red;"><tr><td style="border: 1px dashed black; padding: 5px;">Time</td><td style="border: 1px dashed black; padding: 5px;">' + $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z') + '</td></tr>' +
                   '<tr><td style="border: 1px dashed black; padding: 5px;">SPEC</td><td style="border: 1px dashed black; padding: 5px;">Platform: ' + device.platform + ', Version: ' + device.version + ', Manufacturer: ' + device.manufacturer + ', Model: ' + device.model + ', UUID: ' + device.uuid + '</td></tr></tfoot>' +
                   '<tbody><tr><td style="border: 1px dashed black; padding: 5px;">Name</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctName + '</td></tr>' +
                   '<tr><td style="border: 1px dashed black; padding: 5px;">Email</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctEmail + '</td></tr>' +
                   '<tr><td style="border: 1px dashed black; padding: 5px;">Message</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctMessage + '</td></tr></tbody></table>',
-                "text": 'TEXT VERSION: ' + $scope.ctForm.ctMessage,
-                "subject": 'Message sent via Mobile APP - ' + AppSettings.get('appName') + ', ' + $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z'),
-                "from_email": $scope.ctForm.ctEmail,
-                "from_name": $scope.ctForm.ctName,
-                "to": [
-                    {
-                        "email": AppSettings.get('contactForm2Email'),
-                        "name": AppSettings.get('contactForm2User'),
-                        "type": "to"
-                    }
-                ],
-                "important": false,
-                "track_opens": null,
-                "track_clicks": null,
-                "auto_text": null,
-                "auto_html": null,
-                "inline_css": null,
-                "url_strip_qs": null,
-                "preserve_recipients": null,
-                "view_content_link": null,
-                "tracking_domain": null,
-                "signing_domain": null,
-                "return_path_domain": null
-            },
-            "async": false,
-            "ip_pool": "Main Pool"
+            'text': 'TEXT VERSION: ' + $scope.ctForm.ctMessage
         };
         EmailSender.send(mailJSON, $scope.ctForm.ctName);
 
