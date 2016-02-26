@@ -163,21 +163,19 @@ angular.module('chineselearn.controllers', [])
     // contact form submitting
     $scope.formSubmit = function () {
         var mailJSON = {
-            'api_user': AppSettings.get('sdAPIName'),
-            'api_key': AppSettings.get('sdServiceKey'),
+            'username' : AppSettings.get('eeAPIName'),
+            'api_key': AppSettings.get('eeServiceKey'),
             'from': $scope.ctForm.ctEmail,
-            'fromname': $scope.ctForm.ctName,
+            'from_name': $scope.ctForm.ctName,
             'to': AppSettings.get('contactForm2Email'),
-            'toname': AppSettings.get('contactForm2User'),
             'subject': 'Message via Mobile APP - ' + AppSettings.get('appName') + ', ' + $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z'),
-            'date' : $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z'),
-            'html': '<table style="border: 1px dashed black; border-collapse: collapse;">' + '<caption>' + AppSettings.get('appName') + '</caption>' +
+            'body_html': '<table style="border: 1px dashed black; border-collapse: collapse;">' + '<caption>' + AppSettings.get('appName') + '</caption>' +
                   '<tfoot style="color: red;"><tr><td style="border: 1px dashed black; padding: 5px;">Time</td><td style="border: 1px dashed black; padding: 5px;">' + $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z') + '</td></tr>' +
                   '<tr><td style="border: 1px dashed black; padding: 5px;">SPEC</td><td style="border: 1px dashed black; padding: 5px;">Platform: ' + device.platform + ', Version: ' + device.version + ', Manufacturer: ' + device.manufacturer + ', Model: ' + device.model + ', UUID: ' + device.uuid + '</td></tr></tfoot>' +
                   '<tbody><tr><td style="border: 1px dashed black; padding: 5px;">Name</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctName + '</td></tr>' +
                   '<tr><td style="border: 1px dashed black; padding: 5px;">Email</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctEmail + '</td></tr>' +
                   '<tr><td style="border: 1px dashed black; padding: 5px;">Message</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctMessage + '</td></tr></tbody></table>',
-            'text': 'TEXT VERSION: ' + $scope.ctForm.ctMessage
+            'body_text': 'TEXT VERSION: ' + $scope.ctForm.ctMessage
         };
         EmailSender.send(mailJSON, $scope.ctForm.ctName);
 

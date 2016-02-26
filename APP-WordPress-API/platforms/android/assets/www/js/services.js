@@ -13,12 +13,15 @@ angular.module('chineselearn.services', [])
     }
 }])
 
-.factory('EmailSender', ["$http", "$log", "AppSettings", "$timeout", function ($http, $log, AppSettings, $timeout) {
+.factory('EmailSender', ["$http", "$log", "AppSettings", "$timeout", "toaster", "$filter", function ($http, $log, AppSettings, $timeout, toaster, $filter) {
     return {
         send: function ($mail, $sendername) {
             $http({
                 method: 'POST',
-                url: AppSettings.get('sdAPIURI'),
+                url: AppSettings.get('eeAPIURI'),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                },
                 transformRequest: function (obj) {
                     var str = [];
                     for (var p in obj) {
@@ -27,7 +30,7 @@ angular.module('chineselearn.services', [])
                     return str.join('&');
                 },
                 data: $mail,
-                timeout: AppSettings.get('sdConnectTimeout')
+                timeout: AppSettings.get('eeConnectTimeout')
             }).then(
             function success() {
                 $timeout(function () {
@@ -100,9 +103,6 @@ angular.module('chineselearn.services', [])
             } else {
                 return savedData.domainURI + savedData.languageURI + savedData.wpAPIURI + $term + '&' + savedData.wpAPIURIsuffix + $limit;
             };
-        },
-        getAuthPhrase: function ($name, $key) {
-            return btoa($name + ':' + $key);
         }
     };
 }]);
