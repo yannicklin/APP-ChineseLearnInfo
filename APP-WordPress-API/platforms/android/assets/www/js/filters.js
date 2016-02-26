@@ -1,44 +1,49 @@
-﻿angular.module('chineselearn.filters', [])
+angular.module('chineselearn.filters', [])
 
-.filter('linkremove', function ($sce, $log) {
-    return function (text) {
+.filter('partRemove', ["$sce", function ($sce) {
+    return function (origin, tag) {
         var htmlObject = document.createElement('div');
-        htmlObject.innerHTML = text;
+        htmlObject.innerHTML = origin;
 
-        var links = htmlObject.getElementsByTagName('a');
-        for (var i = links.length; i > 0 ; i--) {
-            links[i-1].parentNode.removeChild(links[i-1]);
-        }
+        var parts = htmlObject.getElementsByTagName(tag);
+        for (var i = parts.length; i > 0 ; i--) {
+            parts[i - 1].parentNode.removeChild(parts[i - 1]);
+        };
 
         return $sce.trustAsHtml(htmlObject.outerHTML);
     }
-})
+}])
 
-.filter('linkremove_imagelazyload', function ($sce, $log) {
-    return function (text) {
-        var htmlObject = document.createElement('div');
-        htmlObject.innerHTML = text;
-
-        // remove links
-        var links = htmlObject.getElementsByTagName('a');
-        for (var i = links.length; i > 0 ; i--) {
-            links[i-1].parentNode.removeChild(links[i-1]);
-        }
-
-        // change image attributes
-        var imgs = htmlObject.getElementsByTagName('img');
-        for (var i = 0 ; i < imgs.length-1 ; i++) {
-            imgs[i].setAttribute('image-lazy-src', imgs[i].getAttribute('src'));
-            imgs[i].setAttribute('lazy-scroll-resize', true);
-            imgs[i].removeAttribute('src');
-        }
-
-        return $sce.trustAsHtml(htmlObject.outerHTML);
-    }
-})
-
-.filter('unicode', function ($sce) {
+.filter('unicode', ["$sce", function ($sce) {
     return function (x) {
         return $sce.trustAsHtml(x);
     }
+}])
+
+.filter('lengthLimit', function () {
+    return function (origin, limit) {
+        if (String(origin).length <= limit) {
+            return origin;
+        } else {
+            return String(origin).substr(0, limit) + ' ... ';
+        }
+    }
 })
+
+.filter('unescapeHTML', function () {
+    var entityMap = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+    };
+
+    return function (str) {
+        angular.forEach(entityMap, function (value, key) {
+            str = String(str).replace(new RegExp(value, 'gi'), key);
+        });
+        return str;
+    }
+});

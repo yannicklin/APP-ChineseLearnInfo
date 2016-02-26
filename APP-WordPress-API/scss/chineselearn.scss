@@ -1,0 +1,151 @@
+/*===== VARIABLES =====*/
+/* COLORS */
+/*
+$light: #FAFAFA !default;
+$stable: #F5F5F5 !default;
+$positive: #3F51B5 !default;
+$calm: #2196F3 !default;
+$balanced: #4CAF50 !default;
+$energized: #FFC107 !default;
+$assertive: #F44336 !default;
+$royal: #673AB7 !default;
+$dark: #212121 !default;
+*/
+
+/* IONICONS */
+$ionicons-font-path: "../css/fonts" !default;
+
+/* CARDS */
+$card-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !default;
+$card-padding: 10px !default;
+
+/* ITEM & ITEM-THUMBNAIL */
+$item-padding: 10px !default;
+$item-thumbnail-width: 50px !default;
+$item-thumbnail-height: 50px !default;
+$item-thumbnail-margin: 10px !default;
+$item-thumbnail-border-radius: 20% !default;
+
+/* BAR */
+$bar-subheader-height: 40px !default; // 2 lines
+
+
+/*===== MIXIN =====*/
+/* TABS */
+@mixin tab-style($bg-color, $border-color, $color) {
+    border-color: $border-color;
+    background-color: $bg-color;
+    background-image: linear-gradient(0deg, $border-color, $border-color 50%, transparent 50%);
+    color: $color;
+    padding-bottom: 0px;
+}
+
+
+/*===== IMPORT =====*/
+@import "ionic_parts.scss";
+
+
+/* ==== SCSS & CSS OVERWRITE ==== */
+/* FOR NULL RECORD */
+.null {
+    color: white;
+}
+
+/* CARDS */
+.card {
+    margin: 15px 0;
+
+    .item, .item-body {
+        padding: 10px;
+
+    }
+
+    .item-icon-right {
+        padding-right: 34px;
+    }
+
+    form label.item {
+        padding: 0 10px 5px 10px;
+    }
+}
+
+/* LIST ITEM & ITEM-THUMBNAIL */
+.item, .item-content {
+    white-space: normal;
+
+    h1, h2, h3, h4, h5, h6, p {
+        white-space: normal;
+    }
+}
+
+.item-thumbnail-left,
+.item-thumbnail-left .item-content, .item-thumbnail-right,
+.item-thumbnail-right .item-content {
+
+    > img:first-child,
+    .item-image {
+        border-radius: $item-thumbnail-border-radius;
+    }
+}
+
+
+/* BUTTON-BAR (SEC: LANGUAGE) */
+.button-bar.complex-sec {
+    .button {
+        &:first-child, &:last-child {
+            border-radius: $button-border-radius;
+        }
+    }
+
+    a {
+        img {
+            display: block;
+            margin: 10px auto 0 auto;
+        }
+    }
+}
+
+/* FORM */
+form {
+    .ng-dirty.ng-invalid {
+        background-color: $assertive;
+        color: white;
+    }
+
+    .error-container {
+        color: $assertive;
+    }
+
+    textarea{
+        background-color: transparent;
+    }
+}
+
+/* UTIL : NO-PADDING */
+.no-margin {
+    margin: 0px !important;
+}
+
+/* UTIL : CENTER */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* UTIL : RIGHT */
+.right-float {
+    float: right;
+}
+
+/* UTIL : MARGIN */
+.margin-10px {
+    margin: 10px;
+}
+
+/* Change Pop Message (Toaster) Animation Speed */
+:not(.no-enter)#toast-container > div.ng-enter,
+:not(.no-leave)#toast-container > div.ng-leave
+{
+    transition-duration: .3s;
+}

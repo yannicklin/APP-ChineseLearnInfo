@@ -1,0 +1,23 @@
+{
+  "CONFIRM_BEFORE_APP_EXIT": "Pulse de nuevo para salir.",
+  "LOADING_TEXT": "Cargando ... ",
+  "ALERT_MAIL_SENT": "Gracias {{name}}, su mensaje ha sido enviado.",
+  "ALERT_RECORD_NULL": "No hay registros recuperados.",
+
+  "TAB_TITLE_STATUS": "Estado",
+  "TAB_TITLE_POSTS": "Mensajes",
+  "TAB_TITLE_TAGS": "Etiquetas",
+  "TAB_TITLE_CATEGORIES": "Categorías",
+  "TAB_TITLE_ACCOUNT": "Cuenta",
+
+  "SIDE_MENU_TEMPLATE_CONTENT":  "Content",
+  "SIDE_MENU_TEMPLATE_NEW_POST": "New Post",
+  "SIDE_MENU_TEMPLATE_SETTINGS": "Settings",
+
+  "ALL_POSTS":                   "ALL POSTS",
+  "NO_POSTS":                    "No posts :(",
+  "EDIT":                        "EDIT",
+  "MARKDOWN":                    "MARKDOWN",
+  "PREVIEW":                     "PREVIEW",
+  "UPDATE_POST":                 "UPDATE POST"
+}

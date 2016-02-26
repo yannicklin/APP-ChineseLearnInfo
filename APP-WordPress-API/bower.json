@@ -19,39 +19,26 @@
   ],
   "dependencies": {
     "ionic": "^1.2.3",
-    "ionic-toast": "^0.2.0",
     "angular-dynamic-locale": "^0.1.29",
     "angular-translate": "^2.8.1",
     "angular-translate-loader-static-files": "^2.8.1",
     "angular-translate-storage-cookie": "^2.8.1",
     "angular-translate-storage-local": "^2.8.1",
     "angular-messages": "^1.4.8",
-    "normalize-css": "^3.0.3"
+    "normalize-scss": "^3.0.3",
+    "angular-filter": "^0.5.8",
+    "angularjs-toaster": "^0.4.181",
+    "angular-localForage": "^1.2.5"
   },
   "overrides": {
     "ionic": {
-      "main": "**/release/js/ionic.bundle.min.*"
-    },
-    "ionic-toast": {
-      "main": "**/src/*.*"
+      "main": "**/release/*/*.*"
     },
     "angular-dynamic-locale": {
-      "main": "**/src/*.*"
+      "main": "**/dist/*.*"
     },
-    "angular-translate": {
-      "main": "**/*.min.*"
-    },
-    "angular-translate-loader-static-files": {
-      "main": "**/*.min.*"
-    },
-    "angular-translate-storage-cookie": {
-      "main": "**/*.min.*"
-    },
-    "angular-translate-storage-local": {
-      "main": "**/*.min.*"
-    },
-    "angular-messages": {
-      "main": "**/*.min.*"
+    "angular-filter": {
+      "main": "**/dist/*.*"
     }
   },
   "resolutions": {

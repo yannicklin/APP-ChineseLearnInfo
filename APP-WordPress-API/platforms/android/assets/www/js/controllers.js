@@ -1,94 +1,111 @@
 angular.module('chineselearn.controllers', [])
 
-.controller('DashCtrl', function ($scope) {})
+.controller('DashCtrl', function () { })
 
-.controller('PostsCtrl', function ($scope, DataLoader, $stateParams, $timeout, $log, $filter, $ionicLoading, $ionicHistory) {
-    $ionicLoading.show({
-        template: $filter('translate')('LOADING_TEXT')
-    });
+.controller('PostsCtrl', ["$scope", "DataLoader", "$stateParams", "$log", "$filter", "$ionicLoading", "AppSettings", function ($scope, DataLoader, $stateParams, $log, $filter, $ionicLoading, AppSettings) {
+    $scope.posts = null;
     $scope.RSempty = false;
+    var nextPage = 1;
+    $scope.NextPageIndicator = 0;
 
-    // Get all of our posts [under Params constraint]
-    var termQueryString;
+    // Get posts [under Params constraint]
+    var termQueryString = 'posts';
     if ($stateParams.tagSlug) {
-        termQueryString = '?filter[tag]=' + $stateParams.tagSlug;
-        $scope.termQS = { Type: 'TAB_TITLE_TAGS', Term: $stateParams.tagName };
+        termQueryString += '?filter[tag]=' + $stateParams.tagSlug;
+        $scope.termQS = { Type: $filter('translate')('TAB_TITLE_TAGS'), Term: $stateParams.tagName };
     } else if ($stateParams.categorySlug) {
-        termQueryString = '?filter[category_name]=' + $stateParams.categorySlug;
-        $scope.termQS = { Type: 'TAB_TITLE_CATEGORIES', Term: $stateParams.categoryName };
-    } else {
-        //TODO: initial to get all while click original tab of "POSTS"
-        termQueryString = '';
+        termQueryString += '?filter[category_name]=' + $stateParams.categorySlug;
+        $scope.termQS = { Type: $filter('translate')('TAB_TITLE_CATEGORIES'), Term: $stateParams.categoryName };
     }
 
     $scope.loadPosts = function () {
-        DataLoader.get('posts' + termQueryString).then(function (response) {
-            $scope.posts = response.data;
+        $ionicLoading.show({
+            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+        });
+
+        DataLoader.get(termQueryString, 0).then(function (response) {
+            if (response.data.length == 0) {
+                $scope.posts = null;
+                $scope.RSempty = true;
+            } else {
+                $scope.posts = response.data;
+                if (response.data.length == AppSettings.get('wpAPIRSlimit')) {
+                    nextPage++;
+                    $scope.NextPageIndicator = 1;
+                };
+            };
             $ionicLoading.hide();
-        }, function(response) {
+        }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
             $scope.RSempty = true;
         });
     }
-
-    // Load posts on page load
     $scope.loadPosts();
 
-    // Pull to refresh
-    $scope.doRefresh = function() {
-  
-        $timeout( function() {
+    $scope.loadNextPage = function () {
+        $ionicLoading.show({
+            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+        });
+        $scope.NextPageIndicator = 0;
 
-            $ionicLoading.show({
-                template: $filter('translate')('LOADING_TEXT')
-            });
-            $scope.loadPosts();
-
-        }, 1000);
-      
-    };
-    
-})
-
-.controller('PostDetailCtrl', function ($scope, $stateParams, DataLoader, $sce, $timeout, $log, $filter, $ionicLoading) {
-    $ionicLoading.show({
-        template: $filter('translate')('LOADING_TEXT')
-    });
-    $scope.RSempty = false;
-
-    $scope.loadPost = function() {
-        DataLoader.get('posts/' + $stateParams.postId).then(function (response) {
-            $scope.post = response.data;
-            // Don't strip post html
-            $scope.content = $sce.trustAsHtml(response.data.content.rendered);
+        DataLoader.get(termQueryString + '&page=' + nextPage, 0).then(function (response) {
+            if (response.data.length > 0) {
+                $scope.posts = $scope.posts.concat(response.data);
+                if (response.data.length == AppSettings.get('wpAPIRSlimit')) {
+                    nextPage++;
+                    $scope.NextPageIndicator = 1;
+                };
+            };
             $ionicLoading.hide();
-        }, function(response) {
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+        }, function (response) {
+            $log.error('error', response);
+            $ionicLoading.hide();
+            $scope.RSempty = true;
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+        });
+    };
+}])
+
+.controller('PostDetailCtrl', ["$scope", "$stateParams", "DataLoader", "$log", "$filter", "$ionicLoading", "$ionicHistory", function ($scope, $stateParams, DataLoader, $log, $filter, $ionicLoading, $ionicHistory) {
+    $scope.loadPost = function () {
+        $ionicLoading.show({
+            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+        });
+
+        DataLoader.get('posts/' + $stateParams.postId, 0).then(function (response) {
+            $scope.post = response.data;
+            $ionicLoading.hide();
+        }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
         });
     }
-
     $scope.loadPost();
 
-    // Pull to refresh
-    $scope.doRefresh = function() {
-        $timeout( function() {
-            $scope.loadPost();
-        }, 1000);
-    };
-})
+    $scope.closePost = function () {
+        $ionicHistory.goBack();
+    }
+}])
 
 
-.controller('TagsCtrl', function ($scope, DataLoader, $timeout, $log, $filter, $ionicLoading) {
-    $ionicLoading.show({
-        template: $filter('translate')('LOADING_TEXT')
-    });
+.controller('TagsCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", function ($scope, DataLoader, $log, $filter, $ionicLoading) {
+    $scope.tags = null;
     $scope.RSempty = false;
 
     $scope.loadTags = function () {
-        DataLoader.get('tags').then(function (response) {
-            $scope.tags = response.data;
+        $ionicLoading.show({
+            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+        });
+
+        DataLoader.get('tags', 1000).then(function (response) {
+            if (response.data.length == 0) {
+                $scope.tags = null;
+                $scope.RSempty = true;
+            } else {
+                $scope.tags = response.data;
+            };
             $ionicLoading.hide();
         }, function (response) {
             $log.error('error', response);
@@ -96,27 +113,26 @@ angular.module('chineselearn.controllers', [])
             $scope.RSempty = true;
         });
     }
-
     $scope.loadTags();
-
-    // Pull to refresh
-    $scope.doRefresh = function () {
-        $timeout(function () {
-            $scope.loadTags();
-        }, 1000);
-    };
-})
+}])
 
 
-.controller('CategoriesCtrl', function ($scope, DataLoader, $timeout, $log, $filter, $ionicLoading) {
-    $ionicLoading.show({
-        template: $filter('translate')('LOADING_TEXT')
-    });
+.controller('CategoriesCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", function ($scope, DataLoader, $log, $filter, $ionicLoading) {
+    $scope.categories = null;
     $scope.RSempty = false;
 
     $scope.loadCategories = function () {
-        DataLoader.get('categories').then(function (response) {
-            $scope.categories = response.data;
+        $ionicLoading.show({
+            template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+        });
+
+        DataLoader.get('categories', 100).then(function (response) {
+            if (response.data.length == 0) {
+                $scope.categories = null;
+                $scope.RSempty = true;
+            } else {
+                $scope.categories = response.data;
+            };
             $ionicLoading.hide();
         }, function (response) {
             $log.error('error', response);
@@ -124,70 +140,68 @@ angular.module('chineselearn.controllers', [])
             $scope.RSempty = true;
         });
     }
-
     $scope.loadCategories();
-
-    // Pull to refresh
-    $scope.doRefresh = function () {
-        $timeout(function () {
-            $scope.loadCategories();
-        }, 1000);
-    };
-})
+}])
 
 
-.controller('AccountCtrl', function ($scope, $translate, tmhDynamicLocale, AppSettings, $ionicHistory, EmailSender, $filter, $log) {
+.controller('SettingsCtrl', ["$scope", "$translate", "tmhDynamicLocale", "AppSettings", "$ionicHistory", "EmailSender", "$filter", function ($scope, $translate, tmhDynamicLocale, AppSettings, $ionicHistory, EmailSender, $filter) {
     $scope.forms = {};
     $scope.ctForm = {};
     $scope.settings = {
-      enableFriends: true,
-      language: $translate.use()
-  }
+        language: $translate.use()
+    }
 
-  $scope.$watch('settings.language', function () {
-      AppSettings.change('language', $scope.settings.language);
-      $ionicHistory.clearCache();
-      $ionicHistory.clearHistory();
-  });
+    // Change Lanuage and auto redirect to dash tab
+    $scope.$watch('settings.language', function () {
+        if ($scope.settings.language != AppSettings.get('language')) {
+            AppSettings.change('language', $scope.settings.language);
+            $ionicHistory.clearCache();
+            $ionicHistory.clearHistory();
+        };
+    });
 
     // contact form submitting
-  $scope.formSubmit = function() {
-      var mailJSON = {
-          "key": AppSettings.get('emailserviceKey'),
-          "message": {
-              "html": $scope.ctForm.ctMessage,
-              "text": $scope.ctForm.ctMessage,
-              "subject": "Message sent via Mobile APP - ChineseLearn.info, " + $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm:ss Z'),
-              "from_email": $scope.ctForm.ctEmail,
-              "from_name": $scope.ctForm.ctName,
-              "to": [
-                  {
-                      "email": AppSettings.get('contactForm2Email'),
-                      "name": AppSettings.get('contactForm2User'),
-                      "type": "to"
-                  }
-              ],
-              "important": false,
-              "track_opens": null,
-              "track_clicks": null,
-              "auto_text": null,
-              "auto_html": null,
-              "inline_css": null,
-              "url_strip_qs": null,
-              "preserve_recipients": null,
-              "view_content_link": null,
-              "tracking_domain": null,
-              "signing_domain": null,
-              "return_path_domain": null
-          },
-          "async": false,
-          "ip_pool": "Main Pool"
-      };
-      EmailSender.send(mailJSON);
-      alert($filter('translate')('ALERT_MAIL_SENT', { name: $scope.ctForm.ctName }));
+    $scope.formSubmit = function () {
+        var mailJSON = {
+            "key": AppSettings.get('mdServiceKey'),
+            "message": {
+                "html": '<table style="border: 1px dashed black; border-collapse: collapse;">' + '<caption>' + AppSettings.get('appName') + '</caption>' +
+                  '<tfoot style="color: red;"><tr><td style="border: 1px dashed black; padding: 5px;">Time</td><td style="border: 1px dashed black; padding: 5px;">' + $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z') + '</td></tr>' +
+                  '<tr><td style="border: 1px dashed black; padding: 5px;">SPEC</td><td style="border: 1px dashed black; padding: 5px;">Platform: ' + device.platform + ', Version: ' + device.version + ', Manufacturer: ' + device.manufacturer + ', Model: ' + device.model + ', UUID: ' + device.uuid + '</td></tr></tfoot>' +
+                  '<tbody><tr><td style="border: 1px dashed black; padding: 5px;">Name</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctName + '</td></tr>' +
+                  '<tr><td style="border: 1px dashed black; padding: 5px;">Email</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctEmail + '</td></tr>' +
+                  '<tr><td style="border: 1px dashed black; padding: 5px;">Message</td>' + '<td style="border: 1px dashed black; padding: 5px;">' + $scope.ctForm.ctMessage + '</td></tr></tbody></table>',
+                "text": 'TEXT VERSION: ' + $scope.ctForm.ctMessage,
+                "subject": 'Message sent via Mobile APP - ' + AppSettings.get('appName') + ', ' + $filter('date')(Date.now(), 'yyyy-MM-dd HH:mm Z'),
+                "from_email": $scope.ctForm.ctEmail,
+                "from_name": $scope.ctForm.ctName,
+                "to": [
+                    {
+                        "email": AppSettings.get('contactForm2Email'),
+                        "name": AppSettings.get('contactForm2User'),
+                        "type": "to"
+                    }
+                ],
+                "important": false,
+                "track_opens": null,
+                "track_clicks": null,
+                "auto_text": null,
+                "auto_html": null,
+                "inline_css": null,
+                "url_strip_qs": null,
+                "preserve_recipients": null,
+                "view_content_link": null,
+                "tracking_domain": null,
+                "signing_domain": null,
+                "return_path_domain": null
+            },
+            "async": false,
+            "ip_pool": "Main Pool"
+        };
+        EmailSender.send(mailJSON, $scope.ctForm.ctName);
 
-      //reset Form
-      $scope.ctForm = {};
-      $scope.forms.contactForm.$setPristine();
-  };
-});
+        //reset Form
+        $scope.ctForm = {};
+        $scope.forms.contactForm.$setPristine();
+    };
+}]);

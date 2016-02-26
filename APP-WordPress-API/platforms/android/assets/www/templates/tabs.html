@@ -1,14 +1,8 @@
-<!--
-Create tabs with an icon and label, using the tabs-stable style.
-Each tab's child <ion-nav-view> directive will have its own
-navigation history that also transitions its views in and out.
--->
-<ion-tabs class="tabs-icon-top tabs-stable">
-
-  <!-- Dashboard Tab -->
-  <ion-tab title="{{'TAB_TITLE_STATUS' | translate }}" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
-  </ion-tab>
+<ion-tabs class="tabs-icon-top tabs-stable" keyboard-hide4tabs>
+    <!-- Dashboard Tab -->
+    <ion-tab title="{{'TAB_TITLE_DASH' | translate }}" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+        <ion-nav-view name="tab-dash"></ion-nav-view>
+    </ion-tab>
     <!-- Posts Tab -->
     <ion-tab title="{{'TAB_TITLE_POSTS' | translate }}" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/posts">
         <ion-nav-view name="tab-posts"></ion-nav-view>
@@ -21,10 +15,8 @@ navigation history that also transitions its views in and out.
     <ion-tab title="{{'TAB_TITLE_CATEGORIES' | translate }}" icon-off="ion-ios-albums-outline" icon-on="ion-ios-albums" href="#/tab/categories">
         <ion-nav-view name="tab-categories"></ion-nav-view>
     </ion-tab>
-  <!-- Account Tab -->
-  <ion-tab title="{{'TAB_TITLE_ACCOUNT' | translate }}" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
-  </ion-tab>
-
-
+    <!-- Settings Tab -->
+    <ion-tab title="{{'TAB_TITLE_SETTINGS' | translate }}" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/settings">
+        <ion-nav-view name="tab-settings"></ion-nav-view>
+    </ion-tab>
 </ion-tabs>

@@ -1,0 +1,23 @@
+{
+  "CONFIRM_BEFORE_APP_EXIT": "Appuyez à nouveau pour quitter.",
+  "LOADING_TEXT": "Chargement ... ",
+  "ALERT_MAIL_SENT": "Merci {{name}}, votre message a été envoyé.",
+  "ALERT_RECORD_NULL": "Pas de résultats de recherche.",
+
+  "TAB_TITLE_STATUS": "statut",
+  "TAB_TITLE_POSTS": "Des postes",
+  "TAB_TITLE_TAGS": "Mots clés",
+  "TAB_TITLE_CATEGORIES": "Catégories",
+  "TAB_TITLE_ACCOUNT": "Compte",
+
+  "SIDE_MENU_TEMPLATE_CONTENT":  "Content",
+  "SIDE_MENU_TEMPLATE_NEW_POST": "New Post",
+  "SIDE_MENU_TEMPLATE_SETTINGS": "Settings",
+
+  "ALL_POSTS":                   "ALL POSTS",
+  "NO_POSTS":                    "No posts :(",
+  "EDIT":                        "EDIT",
+  "MARKDOWN":                    "MARKDOWN",
+  "PREVIEW":                     "PREVIEW",
+  "UPDATE_POST":                 "UPDATE POST"
+}
