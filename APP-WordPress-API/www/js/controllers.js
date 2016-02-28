@@ -2,7 +2,7 @@ angular.module('chineselearn.controllers', [])
 
 .controller('DashCtrl', function () { })
 
-.controller('PostsCtrl', ["$scope", "DataLoader", "$stateParams", "$log", "$filter", "$ionicLoading", "AppSettings", function ($scope, DataLoader, $stateParams, $log, $filter, $ionicLoading, AppSettings) {
+.controller('PostsCtrl', ["$scope", "DataLoader", "$stateParams", "$log", "$filter", "$ionicLoading", "AppSettings", "$timeout", function ($scope, DataLoader, $stateParams, $log, $filter, $ionicLoading, AppSettings, $timeout) {
     $scope.posts = null;
     $scope.RSempty = false;
     var nextPage = 1;
@@ -34,7 +34,10 @@ angular.module('chineselearn.controllers', [])
                     $scope.NextPageIndicator = 1;
                 };
             };
-            $ionicLoading.hide();
+
+            $timeout(function () {
+                $ionicLoading.hide();
+            }, 500);
         }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
@@ -57,7 +60,10 @@ angular.module('chineselearn.controllers', [])
                     $scope.NextPageIndicator = 1;
                 };
             };
-            $ionicLoading.hide();
+
+            $timeout(function () {
+                $ionicLoading.hide();
+            }, 500);
             $scope.$broadcast('scroll.infiniteScrollComplete');
         }, function (response) {
             $log.error('error', response);
@@ -66,9 +72,18 @@ angular.module('chineselearn.controllers', [])
             $scope.$broadcast('scroll.infiniteScrollComplete');
         });
     };
+
+    $scope.reload = function () {
+        $scope.posts = null;
+        $scope.RSempty = false;
+        var nextPage = 1;
+        $scope.NextPageIndicator = 0;
+
+        $scope.loadPosts();
+    }
 }])
 
-.controller('PostDetailCtrl', ["$scope", "$stateParams", "DataLoader", "$log", "$filter", "$ionicLoading", "$ionicHistory", function ($scope, $stateParams, DataLoader, $log, $filter, $ionicLoading, $ionicHistory) {
+.controller('PostDetailCtrl', ["$scope", "$stateParams", "DataLoader", "$log", "$filter", "$ionicLoading", "$ionicHistory", "$timeout", function ($scope, $stateParams, DataLoader, $log, $filter, $ionicLoading, $ionicHistory, $timeout) {
     $scope.loadPost = function () {
         $ionicLoading.show({
             template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
@@ -76,7 +91,10 @@ angular.module('chineselearn.controllers', [])
 
         DataLoader.get('posts/' + $stateParams.postId, 0).then(function (response) {
             $scope.post = response.data;
-            $ionicLoading.hide();
+            
+            $timeout(function () {
+                $ionicLoading.hide();
+            }, 500);
         }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
@@ -90,7 +108,7 @@ angular.module('chineselearn.controllers', [])
 }])
 
 
-.controller('TagsCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", function ($scope, DataLoader, $log, $filter, $ionicLoading) {
+.controller('TagsCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", function ($scope, DataLoader, $log, $filter, $ionicLoading, $timeout) {
     $scope.tags = null;
     $scope.RSempty = false;
 
@@ -106,7 +124,10 @@ angular.module('chineselearn.controllers', [])
             } else {
                 $scope.tags = response.data;
             };
-            $ionicLoading.hide();
+            
+            $timeout(function () {
+                $ionicLoading.hide();
+            }, 500);
         }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
@@ -114,10 +135,19 @@ angular.module('chineselearn.controllers', [])
         });
     }
     $scope.loadTags();
+
+    $scope.reload = function () {
+        $scope.tags = null;
+        $scope.RSempty = false;
+        var nextPage = 1;
+        $scope.NextPageIndicator = 0;
+
+        $scope.loadTags();
+    }
 }])
 
 
-.controller('CategoriesCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", function ($scope, DataLoader, $log, $filter, $ionicLoading) {
+.controller('CategoriesCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", function ($scope, DataLoader, $log, $filter, $ionicLoading, $timeout) {
     $scope.categories = null;
     $scope.RSempty = false;
 
@@ -133,7 +163,10 @@ angular.module('chineselearn.controllers', [])
             } else {
                 $scope.categories = response.data;
             };
-            $ionicLoading.hide();
+            
+            $timeout(function () {
+                $ionicLoading.hide();
+            }, 500);
         }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
@@ -141,6 +174,15 @@ angular.module('chineselearn.controllers', [])
         });
     }
     $scope.loadCategories();
+
+    $scope.reload = function () {
+        $scope.categories = null;
+        $scope.RSempty = false;
+        var nextPage = 1;
+        $scope.NextPageIndicator = 0;
+
+        $scope.loadCategories();
+    }
 }])
 
 

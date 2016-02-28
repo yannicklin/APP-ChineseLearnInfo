@@ -1,6 +1,6 @@
 <ion-view view-title="{{('TAB_TITLE_SETTINGS' | translate)}}">
     <ion-content class="has-header padding">
-        <div ng-show="narrowformat" class="card" keyboard-hide>
+        <card ng-show="narrowformat" class="card" keyboard-hide>
             <div class="item item-divider" translate>{{'TAB_SETTINGS_SECTION_TITLE_LANGUAGE'}}</div>
             <div class="item item-body">
                 <div class="button-bar">
@@ -23,9 +23,9 @@
                     <a gp-radio="'zh'" ng-model="settings.language"><img src="img/flags/tw.png" />{{'\u4e2d\u6587' | unicode }}</a>
                 </div>
             </div>
-        </div>
+        </card>
 
-        <div ng-hide="narrowformat" class="card" keyboard-hide>
+        <card ng-hide="narrowformat" class="card" keyboard-hide>
             <div class="item item-divider" translate>{{'TAB_SETTINGS_SECTION_TITLE_LANGUAGE'}}</div>
             <div class="item item-body">
                 <div class="button-bar">
@@ -44,9 +44,9 @@
                     <a gp-radio="'zh'" ng-model="settings.language"><img src="img/flags/tw.png" />{{'\u4e2d\u6587' | unicode }}</a>
                 </div>
             </div>
-        </div>
+        </card>
 
-        <div class="card">
+        <card class="card">
             <div class="item item-divider" translate>{{'TAB_SETTINGS_SECTION_TITLE_CONTACTUS'}}</div>
             <form class="item item-body" name="forms.contactForm" novalidate="" ng-submit="formSubmit()">
                 <div class="list">
@@ -78,6 +78,6 @@
                 </div>
                 <button class="button button-full button-calm" ng-disabled="forms.contactForm.$pristine || forms.contactForm.$invalid" type="submit" translate>{{'FORM_BUTTON_SEND'}}</button>
             </form>
-        </div>
+        </card>
     </ion-content>
 </ion-view>

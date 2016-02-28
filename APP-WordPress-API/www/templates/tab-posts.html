@@ -9,7 +9,10 @@
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
         </ion-list>
-        <h3 ng-hide="posts" ng-class="{null: !RSempty}">{{'ALERT_RECORD_NULL' | translate}}</h3>
+        <div ng-hide="posts">
+            <h3 ng-class="{null: !RSempty}">{{'ALERT_RECORD_NULL' | translate}}</h3>
+            <button ng-class="{null: !RSempty}" class="button button-calm" ng-click="reload()" translate>{{'REQUEST_RELOAD'}}</button>
+        </div>
         <ion-infinite-scroll ng-if="NextPageIndicator"
                              on-infinite="loadNextPage()"
                              distance="5%"
