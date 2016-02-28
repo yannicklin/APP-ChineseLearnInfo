@@ -60,8 +60,8 @@ gulp.task("minPackage", ['annoAPPJSs'], function () {
     return gulp.src('www/index-gulp.html')
         .pipe(plugins.rename("index.html"))
         .pipe(plugins.useref({}))
-        //.pipe(plugins.if('*.js', plugins.uglify()))
-        //.pipe(plugins.if('*.css', plugins.minifyCss({ keepSpecialComments: 0 })))
+        .pipe(plugins.if('*.js', plugins.uglify()))
+        .pipe(plugins.if('*.css', plugins.minifyCss({ keepSpecialComments: 0 })))
         .pipe(gulp.dest('www'));
 });
 

@@ -11,6 +11,7 @@ platforms/
 *.sln
 config.*
 www/*/*.min.*
+build.*
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

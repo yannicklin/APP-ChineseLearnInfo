@@ -20,15 +20,25 @@ angular.module('chineselearn.filters', [])
     }
 }])
 
-.filter('lengthLimit', function () {
+.filter('lengthLimit', ["AppSettings", function (AppSettings) {
     return function (origin, limit) {
+        if (angular.isUndefined(limit) || limit === null || limit === '') {
+            switch (AppSettings.get('language')) {
+                case 'ja':
+                case 'zh':
+                    limit = 50;
+                    break;
+                default:
+                    limit = 100;
+            }
+        }
         if (String(origin).length <= limit) {
             return origin;
         } else {
             return String(origin).substr(0, limit) + ' ... ';
         }
     }
-})
+}])
 
 .filter('unescapeHTML', function () {
     var entityMap = {

@@ -144,12 +144,29 @@ angular.module('chineselearn.controllers', [])
 }])
 
 
-.controller('SettingsCtrl', ["$scope", "$translate", "tmhDynamicLocale", "AppSettings", "$ionicHistory", "EmailSender", "$filter", function ($scope, $translate, tmhDynamicLocale, AppSettings, $ionicHistory, EmailSender, $filter) {
+.controller('SettingsCtrl', ["$scope", "$translate", "tmhDynamicLocale", "AppSettings", "$ionicHistory", "EmailSender", "$filter", "$window", function ($scope, $translate, tmhDynamicLocale, AppSettings, $ionicHistory, EmailSender, $filter, $window) {
     $scope.forms = {};
     $scope.ctForm = {};
     $scope.settings = {
         language: $translate.use()
     }
+
+    //Decide device current width
+    $scope.narrowformat = 1;
+
+    $scope.recalDimensions = function (gesture) {
+        if ($window.innerWidth > $window.innerHeight || $window.innerWidth < 721) {
+            $scope.narrowformat = 1;
+        } else {
+            $scope.narrowformat = 0;
+        }
+    }
+    angular.element($window).bind('resize', function () {
+        $scope.$apply(function () {
+            $scope.recalDimensions();
+        })
+    });
+    $scope.recalDimensions();
 
     // Change Lanuage and auto redirect to dash tab
     $scope.$watch('settings.language', function () {
@@ -163,7 +180,7 @@ angular.module('chineselearn.controllers', [])
     // contact form submitting
     $scope.formSubmit = function () {
         var mailJSON = {
-            'username' : AppSettings.get('eeAPIName'),
+            'username': AppSettings.get('eeAPIName'),
             'api_key': AppSettings.get('eeServiceKey'),
             'from': $scope.ctForm.ctEmail,
             'from_name': $scope.ctForm.ctName,

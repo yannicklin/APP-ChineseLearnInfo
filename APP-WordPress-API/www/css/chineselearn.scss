@@ -12,6 +12,17 @@ $royal: #673AB7 !default;
 $dark: #212121 !default;
 */
 
+/* FONTS */
+$font-family-sans-serif: "CabinSketchRegular", '-apple-system', "Helvetica Neue", "Roboto", "Segoe UI", sans-serif !default;
+
+@font-face {
+    font-family: 'CabinSketchRegular';
+    src: url('../css/fonts/CabinSketchRegular.eot');
+    src: url('../css/fonts/CabinSketchRegular.eot') format('embedded-opentype'), url('../css/fonts/CabinSketchRegular.woff') format('woff'), url('../css/fonts/CabinSketchRegular.ttf') format('truetype'), url('../css/fonts/CabinSketchRegular.svg#CabinSketchRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* IONICONS */
 $ionicons-font-path: "../css/fonts" !default;
 
@@ -57,7 +68,6 @@ $bar-subheader-height: 40px !default; // 2 lines
 
     .item, .item-body {
         padding: 10px;
-
     }
 
     .item-icon-right {
@@ -116,7 +126,7 @@ form {
         color: $assertive;
     }
 
-    textarea{
+    textarea {
         background-color: transparent;
     }
 }
@@ -143,9 +153,18 @@ form {
     margin: 5px;
 }
 
-/* Change Pop Message (Toaster) Animation Speed */
+/* LOADING SPINNER */
+.loading-container .loading {
+    padding: 10px;
+
+    .spinner {
+        vertical-align: middle;
+        vertical-align: -webkit-baseline-middle;
+    }
+}
+
+/* TOASTER ANIMATION SPEED */
 :not(.no-enter)#toast-container > div.ng-enter,
-:not(.no-leave)#toast-container > div.ng-leave
-{
+:not(.no-leave)#toast-container > div.ng-leave {
     transition-duration: .3s;
 }
