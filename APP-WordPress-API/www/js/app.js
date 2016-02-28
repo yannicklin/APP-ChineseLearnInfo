@@ -85,7 +85,6 @@ angular.module('chineselearn', [
       })
       .preferredLanguage('en')
       .determinePreferredLanguage()
-      .fallbackLanguage(['en', 'zh', 'es', 'de'])
       .useSanitizeValueStrategy('escapeParameters')
       .useLocalStorage();
 
