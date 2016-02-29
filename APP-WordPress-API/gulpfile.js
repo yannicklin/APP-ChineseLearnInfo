@@ -66,5 +66,5 @@ gulp.task("minPackage", ['annoAPPJSs'], function () {
 });
 
 gulp.task('beforeBuild', ['minPackage'], function () {
-    return plugins.del(['www/js/lib', 'www/css/lib']);
+    return plugins.del(['www/js/lib', 'www/css/lib', 'scss']);
 });
