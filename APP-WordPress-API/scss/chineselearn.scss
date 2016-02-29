@@ -27,7 +27,7 @@ $font-family-sans-serif: "CabinSketchRegular", '-apple-system', "Helvetica Neue"
 $ionicons-font-path: "../css/fonts" !default;
 
 /* TABS */
-$tabs-height: 55px !default;
+$tabs-height: 52px !default;
 
 /* CARDS */
 $card-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !default;
@@ -63,7 +63,8 @@ $bar-subheader-height: 50px !default; // 2 lines
 
 /* FOR NULL RECORD */
 .null {
-    color: white;
+    display: none;
+    background-color:black;
 }
 
 /* TABS */
@@ -74,25 +75,29 @@ $bar-subheader-height: 50px !default; // 2 lines
 }
 
 /* CARDS */
-.card {
-    margin: 15px 0;
+ion-content {
+    .card {
+        margin: 15px 0;
 
-    .item, .item-body {
-        padding: 10px;
+        .item, .item-body {
+            padding: 10px;
+        }
+
+        .item-icon-right {
+            padding-right: 34px;
+        }
+
+        form label.item {
+            padding: 0 10px 5px 10px;
+        }
     }
 
-    .item-icon-right {
-        padding-right: 34px;
-    }
-
-    form label.item {
-        padding: 0 10px 5px 10px;
+    .card:first-child {
+        margin-top: 5px;
     }
 }
 
-card:first-of-type {
-    margin-top: 5px;
-}
+
 
 /* BUTTON (OUTLINE USED IN TAGS AND CATEGORIES) */
 .button-outline {

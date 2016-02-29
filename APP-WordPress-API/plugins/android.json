@@ -10,9 +10,6 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
-        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
@@ -20,6 +17,9 @@
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
         "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
+        },
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         }
     },

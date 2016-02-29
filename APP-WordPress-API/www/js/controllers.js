@@ -195,20 +195,14 @@ angular.module('chineselearn.controllers', [])
 
     //Decide device current width
     $scope.narrowformat = 1;
-
-    $scope.recalDimensions = function (gesture) {
-        if ($window.innerWidth > $window.innerHeight || $window.innerWidth < 721) {
+    $scope.recalDimensions = function () {
+        if ($window.innerWidth < $window.innerHeight || $window.innerWidth < 721) {
             $scope.narrowformat = 1;
         } else {
             $scope.narrowformat = 0;
         }
     }
-    angular.element($window).bind('resize', function () {
-        $scope.$apply(function () {
-            $scope.recalDimensions();
-        })
-    });
-    $scope.recalDimensions();
+    window.addEventListener('orientationchange', $scope.recalDimensions(), false);
 
     // Change Lanuage and auto redirect to dash tab
     $scope.$watch('settings.language', function () {

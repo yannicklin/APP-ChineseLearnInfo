@@ -1,6 +1,6 @@
 <ion-view view-title="{{('TAB_TITLE_SETTINGS' | translate)}}">
     <ion-content class="has-header padding">
-        <card ng-show="narrowformat" class="card" keyboard-hide>
+        <div ng-show="narrowformat" class="card" keyboard-hide>
             <div class="item item-divider" translate>{{'TAB_SETTINGS_SECTION_TITLE_LANGUAGE'}}</div>
             <div class="item item-body">
                 <div class="button-bar">
@@ -23,9 +23,9 @@
                     <a gp-radio="'zh'" ng-model="settings.language"><img src="img/flags/tw.png" />{{'\u4e2d\u6587' | unicode }}</a>
                 </div>
             </div>
-        </card>
+        </div>
 
-        <card ng-hide="narrowformat" class="card" keyboard-hide>
+        <div ng-hide="narrowformat" class="card" keyboard-hide>
             <div class="item item-divider" translate>{{'TAB_SETTINGS_SECTION_TITLE_LANGUAGE'}}</div>
             <div class="item item-body">
                 <div class="button-bar">
@@ -44,7 +44,7 @@
                     <a gp-radio="'zh'" ng-model="settings.language"><img src="img/flags/tw.png" />{{'\u4e2d\u6587' | unicode }}</a>
                 </div>
             </div>
-        </card>
+        </div>
 
         <card class="card">
             <div class="item item-divider" translate>{{'TAB_SETTINGS_SECTION_TITLE_CONTACTUS'}}</div>
