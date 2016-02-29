@@ -1,7 +1,7 @@
 <ion-view view-title="{{'TAB_TITLE_CATEGORIES' | translate }}">
     <ion-content>
         <a ng-show="categories" class="button button-outline button-positive margin-5px" ng-repeat="category in categories" ng-if="category.count" href="#/tab/categoryposts/{{category.slug}}/{{category.name}}">{{category.name}}</a>
-        <div ng-hide="categories" ng-class="[padding, {null: !RSempty}]">
+        <div ng-hide="categories" class="padding" ng-class="{null: !RSempty}">
             <h3>{{'ALERT_RECORD_NULL' | translate}}</h3>
             <button class="button button-calm" ng-click="reload()" translate>{{'REQUEST_RELOAD'}}</button>
         </div>

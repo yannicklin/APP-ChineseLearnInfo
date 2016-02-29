@@ -9,7 +9,7 @@
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
         </ion-list>
-        <div ng-hide="posts" ng-class="[padding, {null: !RSempty}]">
+        <div ng-hide="posts" class="padding" ng-class="{null: !RSempty}">
             <h3>{{'ALERT_RECORD_NULL' | translate}}</h3>
             <button class="button button-calm" ng-click="reload()" translate>{{'REQUEST_RELOAD'}}</button>
         </div>

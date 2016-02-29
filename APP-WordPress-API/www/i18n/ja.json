@@ -27,5 +27,12 @@
   "FORM_PLACEHODER_MESSAGE": "あなたが言いたい何を ...？",
   "FORM_ALERT_MESSAGE_REQUIRED": "あなたは、任意のメッセージをキー入力しませんでした。",
   "FORM_ALERT_MESSAGE_LENGTH": "あなたのメッセージは10〜1000文字の間でなければなりません。",
-  "FORM_BUTTON_SEND": "センド"
+  "FORM_BUTTON_SEND": "センド",
+
+  "DASH_NEWS_TITLE_20160227": "APP更新のリビジョン！ - 2016年2月27日",
+  "DASH_NEWS_CONTENT_20160227": "我々は、APP、APP-使用し、同じ製品カテゴリの開発プラットフォームの利点を再構築します。",
+  "DASH_NEWS_TITLE_20160228": "終了APP法 - 2016年2月28日",
+  "DASH_NEWS_CONTENT_20160228": "APPを終了するには、5秒以内に2回 / EXITを[戻る]をクリックします。",
+  "DASH_NEWS_TITLE_20160229": "Google Playで既に利用可能 - 2016年2月29日",
+  "DASH_NEWS_CONTENT_20160229": "今日は一度だけ2月29日の4年間であるためだけでなく、特別な日ですが、GoogleでこのAPPの棚には、最初の日にストアを再生します。万歳！"
 }

@@ -28,5 +28,12 @@
   "FORM_PLACEHODER_MESSAGE": "Qué quieres decir ... ",
   "FORM_ALERT_MESSAGE_REQUIRED": "No has redactado ningún mensaje.",
   "FORM_ALERT_MESSAGE_LENGTH": "Tu mensaje debe tener entre 10 y 1000 letras.",
-  "FORM_BUTTON_SEND": "ENVIAR"
+  "FORM_BUTTON_SEND": "ENVIAR",
+
+  "DASH_NEWS_TITLE_20160227": "APP re-anunció !! - 2016-FEB-27 de",
+  "DASH_NEWS_CONTENT_20160227": "Reconstruimos esta aplicación con la plataforma probada que se utiliza en FIMEX Categoría de producto.",
+  "DASH_NEWS_TITLE_20160228": "Método para salir de la aplicación - 2016-FEB-28 de",
+  "DASH_NEWS_CONTENT_20160228": "Haz doble clic en ATRÁS / SALIR en 5 segundos para salir de esta aplicación.",
+  "DASH_NEWS_TITLE_20160229": "Disponible en Google Play - 2016-FEB-29 de",
+  "DASH_NEWS_CONTENT_20160229": "Hoy es un día especial, no sólo el 29 de febrero, también es el día en que nos ponemos esta aplicación en Google Play Store. Yahoo !!"
 }

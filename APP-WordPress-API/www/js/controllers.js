@@ -202,7 +202,12 @@ angular.module('chineselearn.controllers', [])
             $scope.narrowformat = 0;
         }
     }
-    window.addEventListener('orientationchange', $scope.recalDimensions(), false);
+    $scope.recalDimensions();
+    angular.element($window).bind('resize', function () {
+        $scope.$apply(function () {
+            $scope.recalDimensions();
+        })
+    });
 
     // Change Lanuage and auto redirect to dash tab
     $scope.$watch('settings.language', function () {

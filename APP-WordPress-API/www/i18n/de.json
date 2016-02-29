@@ -28,5 +28,12 @@
   "FORM_PLACEHODER_MESSAGE": "Was Sie sagen möchten ... ",
   "FORM_ALERT_MESSAGE_REQUIRED": "Sie haben keine Nachricht eingegeben.",
   "FORM_ALERT_MESSAGE_LENGTH": "Ihre Nachricht sollte 10 bis 1000 Zeichen haben.",
-  "FORM_BUTTON_SEND": "SENDEN"
+  "FORM_BUTTON_SEND": "SENDEN",
+
+  "DASH_NEWS_TITLE_20160227": "APP Wieder angekündigt !! - 2016 27. Februar",
+  "DASH_NEWS_CONTENT_20160227": "Wir umgebaut diese APP mit dem in FIMEX Produktkategorie verwendet bewährte Plattform.",
+  "DASH_NEWS_TITLE_20160228": "Methode zum Beenden der APP - 2016 28. Februar",
+  "DASH_NEWS_CONTENT_20160228": "Bitte klicken Sie innerhalb von 5 Sekunden doppelt auf ZURÜCK / BEENDEN, um diese App zu beenden.",
+  "DASH_NEWS_TITLE_20160229": "Verfügbar auf Google Play - 2016 29. Februar",
+  "DASH_NEWS_CONTENT_20160229": "Heute ist ein besonderer Tag, nicht nur der 29. Februar ist es auch der Tag, wir setzen diese App auf Google Play Store. Yahoo !!"
 }
