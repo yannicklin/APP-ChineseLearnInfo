@@ -196,7 +196,7 @@ angular.module('chineselearn.controllers', [])
     //Decide device current width
     $scope.narrowformat = 1;
     $scope.recalDimensions = function () {
-        if ($window.innerWidth < $window.innerHeight || $window.innerWidth < 721) {
+        if ($window.innerWidth < $window.innerHeight || $window.innerWidth < 479) {
             $scope.narrowformat = 1;
         } else {
             $scope.narrowformat = 0;

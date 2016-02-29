@@ -5,6 +5,7 @@
   "LOADING_MORE_TEXT": "後續資料載入中 ... ",
   "ALERT_MAIL_SENT": "{{name}}，多謝！您的訊息已經送出。",
   "ALERT_RECORD_NULL": "查無資料。",
+  "BUTTON_REQUEST_RELOAD": "再次嘗試",
 
   "TAB_TITLE_DASH": "首頁",
   "TAB_TITLE_POSTS": "文章",

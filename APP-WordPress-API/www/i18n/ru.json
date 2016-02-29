@@ -5,6 +5,7 @@
   "LOADING_MORE_TEXT": "Загрузка более ... ",
   "ALERT_MAIL_SENT": "Спасибо {{name}}, сообщение отправлено.",
   "ALERT_RECORD_NULL": "Нет полученных записей.",
+  "BUTTON_REQUEST_RELOAD": "перезагружать",
 
   "TAB_TITLE_DASH": "В НАЧАЛО",
   "TAB_TITLE_POSTS": "Записи",

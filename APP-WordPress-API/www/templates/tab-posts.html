@@ -1,5 +1,5 @@
 <ion-view view-title="{{'TAB_TITLE_POSTS' | translate }}">>
-    <ion-header-bar ng-if="termQS" class="bar-subheader bar-calm" ng-bind-html="'TAB_POSTS_SUBTITLE' | translate:({Type: termQS.Type, Term: termQS.Term })"></ion-header-bar>
+    <ion-header-bar ng-if="termQS" class="bar-subheader bar-positive" ng-bind-html="'TAB_POSTS_SUBTITLE' | translate:({Type: termQS.Type, Term: termQS.Term })"></ion-header-bar>
 
     <ion-content ng-class="{'has-subheader' : termQS}">
         <ion-list ng-show="posts">
@@ -11,7 +11,7 @@
         </ion-list>
         <div ng-hide="posts" class="padding" ng-class="{null: !RSempty}">
             <h3>{{'ALERT_RECORD_NULL' | translate}}</h3>
-            <button class="button button-calm" ng-click="reload()" translate>{{'REQUEST_RELOAD'}}</button>
+            <button class="button button-positive" ng-click="reload()" translate>{{'BUTTON_REQUEST_RELOAD'}}</button>
         </div>
         <ion-infinite-scroll ng-if="NextPageIndicator"
                              on-infinite="loadNextPage()"

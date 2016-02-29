@@ -5,6 +5,7 @@
   "LOADING_MORE_TEXT": "Loading more ... ",
   "ALERT_MAIL_SENT": "Thanks {{name}}, your message has been sent.",
   "ALERT_RECORD_NULL": "No records retrieved.",
+  "BUTTON_REQUEST_RELOAD": "Reload",
 
   "TAB_TITLE_DASH": "HOME",
   "TAB_TITLE_POSTS": "POSTS",

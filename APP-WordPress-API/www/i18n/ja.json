@@ -4,6 +4,7 @@
   "LOADING_MORE_TEXT": "より多くのロード ... ",
   "ALERT_MAIL_SENT": "おかげで{{name}}、あなたのメッセージが送信されました。",
   "ALERT_RECORD_NULL": "レコードが検索されません。",
+  "BUTTON_REQUEST_RELOAD": "再試行します",
 
   "TAB_TITLE_DASH": "ホーム",
   "TAB_TITLE_POSTS": "記事",

@@ -3,7 +3,7 @@
         <a ng-show="tags" class="button button-outline button-positive margin-5px" ng-repeat="tag in tags" ng-if="tag.count" href="#/tab/tagposts/{{tag.slug}}/{{tag.name}}">{{tag.name}}</a>
         <div ng-hide="tags" class="padding" ng-class="{null: !RSempty}">
             <h3>{{'ALERT_RECORD_NULL' | translate}}</h3>
-            <button class="button button-calm" ng-click="reload()" translate>{{'REQUEST_RELOAD'}}</button>
+            <button class="button button-positive" ng-click="reload()" translate>{{'BUTTON_REQUEST_RELOAD'}}</button>
         </div>
     </ion-content>
 </ion-view>

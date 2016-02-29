@@ -5,6 +5,7 @@
   "LOADING_MORE_TEXT": " Lade mehr ... ",
   "ALERT_MAIL_SENT": "Danke {{name}}, Ihre Nachricht wurde gesendet.",
   "ALERT_RECORD_NULL": "Keine Daten erhalten.",
+  "BUTTON_REQUEST_RELOAD": "Neu laden",
 
   "TAB_TITLE_DASH": "STARTSEITE",
   "TAB_TITLE_POSTS": "POSTEN",

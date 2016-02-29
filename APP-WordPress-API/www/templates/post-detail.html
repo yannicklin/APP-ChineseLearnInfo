@@ -6,7 +6,7 @@
         <div class="card">
             <div class="item item-divider" ng-bind-html="post.title.rendered"></div>
             <div class="item item-body" ng-if="post.content.rendered" ng-bind-html="post.content.rendered | partRemove:'a'"></div>
-            <button class="button button-full button-calm no-margin" ng-click="closePost()" translate>{{'POSTDETAIL_BUTTON_CLOSE'}}</button>
+            <button class="button button-full button-positive no-margin" ng-click="closePost()" translate>{{'POSTDETAIL_BUTTON_CLOSE'}}</button>
         </div>
     </ion-content>
 </ion-view>

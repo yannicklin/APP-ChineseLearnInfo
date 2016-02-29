@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <card class="card">
+        <div class="card">
             <div class="item item-divider" translate>{{'TAB_SETTINGS_SECTION_TITLE_CONTACTUS'}}</div>
             <form class="item item-body" name="forms.contactForm" novalidate="" ng-submit="formSubmit()">
                 <div class="list">
@@ -72,8 +72,8 @@
                         <div ng-message="minlength, maxlength">{{'FORM_ALERT_MESSAGE_LENGTH' | translate }}</div>
                     </div>
                 </div>
-                <button class="button button-full button-calm" ng-disabled="forms.contactForm.$pristine || forms.contactForm.$invalid" type="submit" translate>{{'FORM_BUTTON_SEND'}}</button>
+                <button class="button button-full button-positive" ng-disabled="forms.contactForm.$pristine || forms.contactForm.$invalid" type="submit" translate>{{'FORM_BUTTON_SEND'}}</button>
             </form>
-        </card>
+        </div>
     </ion-content>
 </ion-view>

@@ -5,6 +5,7 @@
   "LOADING_MORE_TEXT": "Cargando más ... ",
   "ALERT_MAIL_SENT": "Gracias {{name}}, se ha enviado tu mensaje.",
   "ALERT_RECORD_NULL": "Ningún registro recuperado.",
+  "BUTTON_REQUEST_RELOAD": "Recargar",
 
   "TAB_TITLE_DASH": "INICIO",
   "TAB_TITLE_POSTS": "POSTES",
