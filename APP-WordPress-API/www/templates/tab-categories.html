@@ -1,4 +1,7 @@
-<ion-view view-title="{{'TAB_TITLE_CATEGORIES' | translate }}">
+<ion-view>
+    <ion-nav-title>
+        <img src="img/MOBILE-ICON-50.png" /> {{ 'TAB_TITLE_CATEGORIES' | translate }}
+    </ion-nav-title>
     <ion-content>
         <a ng-show="categories" class="button button-outline button-positive margin-5px" ng-repeat="category in categories" ng-if="category.count" href="#/tab/categoryposts/{{category.slug}}/{{category.name}}">{{category.name}}</a>
         <div ng-hide="categories" class="padding" ng-class="{null: !RSempty}">

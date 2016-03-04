@@ -7,19 +7,22 @@
         "files": {}
     },
     "installed_plugins": {
-        "ionic-plugin-keyboard": {
+        "cordova-plugin-google-analytics": {
+            "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
+        },
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
         "org.apache.cordova.network-information": {
-            "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
-        },
-        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         }
     },

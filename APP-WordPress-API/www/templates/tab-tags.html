@@ -1,4 +1,7 @@
-<ion-view view-title="{{'TAB_TITLE_TAGS' | translate }}">
+<ion-view>
+    <ion-nav-title>
+        <img src="img/MOBILE-ICON-50.png" /> {{ 'TAB_TITLE_TAGS' | translate }}
+    </ion-nav-title>
     <ion-content>
         <a ng-show="tags" class="button button-outline button-positive margin-5px" ng-repeat="tag in tags" ng-if="tag.count" href="#/tab/tagposts/{{tag.slug}}/{{tag.name}}">{{tag.name}}</a>
         <div ng-hide="tags" class="padding" ng-class="{null: !RSempty}">

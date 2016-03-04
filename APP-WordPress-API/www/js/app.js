@@ -10,25 +10,36 @@ angular.module('chineselearn', [
     'chineselearn.controllers', 'chineselearn.config', 'chineselearn.directives', 'chineselearn.filters', 'chineselearn.services' //customs
 ])
 
-.run(["$ionicPlatform", "$filter", "$timeout", "toaster", function ($ionicPlatform, $filter, $timeout, toaster) {
+.run(["$ionicPlatform", "$filter", "$timeout", "toaster", "$rootScope", "$interval", function ($ionicPlatform, $filter, $timeout, toaster, $rootScope, $interval) {
     $ionicPlatform.ready(function () {
         cordova.plugins.Keyboard.disableScroll(true);
         if (window.StatusBar && !ionic.Platform.isAndroid()) {
             StatusBar.styleLightContent();
         };
-
-        /* TODO: Response with Network Unaccessable ? */
-        function alert4Offline() {
-            $timeout(function () {
-                toaster.pop({
-                    type: 'error',
-                    body: $filter('translate')('INTERNET_CONNECTION_NONE'),
-                    toasterId: 1
-                });
-            }, 0);
-        };
-        document.addEventListener("offline", alert4Offline, false);
+        
+        if (typeof analytics !== undefined) {
+            analytics.startTrackerWithId("UA-46856632-5");
+            analytics.setUserId(device.uuid);
+        } else {
+            console.log("Google Analytics Unavailable");
+            $rootscope.connectionFails++;
+        }
     });
+
+    // Calculate Error Times for Network Disability
+    $rootScope.connectionFails = 0;
+    $interval(function () {
+        if ($rootScope.connectionFails > 1) {
+            $ionicLoading.show({
+                template: '<ion-spinner icon="lines" class="spinner-energized"></ion-spinner>' + $filter('translate')('INTERNET_CONNECTION_NONE')
+            });
+
+            $timeout(function () {
+                $ionicLoading.hide();
+                $rootScope.connectionFails = 0;
+            }, 5000);
+        }
+    }, 10000);
 
     // Exit App; only for Android System
     if (ionic.Platform.isAndroid()) {

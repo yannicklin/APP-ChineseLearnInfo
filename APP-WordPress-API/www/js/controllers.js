@@ -1,26 +1,34 @@
 angular.module('chineselearn.controllers', [])
 
-.controller('DashCtrl', function () { })
+.controller('DashCtrl', function () {
+    if (typeof analytics !== undefined) { analytics.trackView("Dashboard"); }
+})
 
-.controller('PostsCtrl', ["$scope", "DataLoader", "$stateParams", "$log", "$filter", "$ionicLoading", "AppSettings", "$timeout", function ($scope, DataLoader, $stateParams, $log, $filter, $ionicLoading, AppSettings, $timeout) {
+.controller('PostsCtrl', ["$scope", "DataLoader", "$stateParams", "$log", "$filter", "$ionicLoading", "AppSettings", "$timeout", "$rootScope", function ($scope, DataLoader, $stateParams, $log, $filter, $ionicLoading, AppSettings, $timeout, $rootScope) {
     $scope.posts = null;
     $scope.RSempty = false;
     var nextPage = 1;
     $scope.NextPageIndicator = 0;
+
+    if (typeof analytics !== undefined) { analytics.trackView("Posts List"); }
 
     // Get posts [under Params constraint]
     var termQueryString = 'posts';
     if ($stateParams.tagSlug) {
         termQueryString += '?filter[tag]=' + $stateParams.tagSlug;
         $scope.termQS = { Type: $filter('translate')('TAB_TITLE_TAGS'), Term: $stateParams.tagName };
+
+        if (typeof analytics !== undefined) { analytics.trackEvent('Post List Condition', 'Tag', $stateParams.tagName); }
     } else if ($stateParams.categorySlug) {
         termQueryString += '?filter[category_name]=' + $stateParams.categorySlug;
         $scope.termQS = { Type: $filter('translate')('TAB_TITLE_CATEGORIES'), Term: $stateParams.categoryName };
+
+        if (typeof analytics !== undefined) { analytics.trackEvent('Post List Condition', 'Category', $stateParams.categoryName); }
     }
 
     $scope.loadPosts = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-light"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
         DataLoader.get(termQueryString, 0).then(function (response) {
@@ -42,13 +50,14 @@ angular.module('chineselearn.controllers', [])
             $log.error('error', response);
             $ionicLoading.hide();
             $scope.RSempty = true;
+            $rootScope.connectionFails++;
         });
     }
     $scope.loadPosts();
 
     $scope.loadNextPage = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-light"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
         $scope.NextPageIndicator = 0;
 
@@ -69,7 +78,7 @@ angular.module('chineselearn.controllers', [])
             $log.error('error', response);
             $ionicLoading.hide();
             $scope.RSempty = true;
-            $scope.$broadcast('scroll.infiniteScrollComplete');
+            $rootScope.connectionFails++;
         });
     };
 
@@ -83,10 +92,12 @@ angular.module('chineselearn.controllers', [])
     }
 }])
 
-.controller('PostDetailCtrl', ["$scope", "$stateParams", "DataLoader", "$log", "$filter", "$ionicLoading", "$ionicHistory", "$timeout", function ($scope, $stateParams, DataLoader, $log, $filter, $ionicLoading, $ionicHistory, $timeout) {
+.controller('PostDetailCtrl', ["$scope", "$stateParams", "DataLoader", "$log", "$filter", "$ionicLoading", "$ionicHistory", "$timeout", "$rootScope", function ($scope, $stateParams, DataLoader, $log, $filter, $ionicLoading, $ionicHistory, $timeout, $rootScope) {
+    if (typeof analytics !== undefined) { analytics.trackView("Single Post"); }
+
     $scope.loadPost = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-light"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
         DataLoader.get('posts/' + $stateParams.postId, 0).then(function (response) {
@@ -98,6 +109,7 @@ angular.module('chineselearn.controllers', [])
         }, function (response) {
             $log.error('error', response);
             $ionicLoading.hide();
+            $rootScope.connectionFails++;
         });
     }
     $scope.loadPost();
@@ -108,13 +120,15 @@ angular.module('chineselearn.controllers', [])
 }])
 
 
-.controller('TagsCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", function ($scope, DataLoader, $log, $filter, $ionicLoading, $timeout) {
+.controller('TagsCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", "$rootScope", function ($scope, DataLoader, $log, $filter, $ionicLoading, $timeout, $rootScope) {
     $scope.tags = null;
     $scope.RSempty = false;
 
+    if (typeof analytics !== undefined) { analytics.trackView("Tags List"); }
+
     $scope.loadTags = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-light"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
         DataLoader.get('tags', 1000).then(function (response) {
@@ -132,6 +146,7 @@ angular.module('chineselearn.controllers', [])
             $log.error('error', response);
             $ionicLoading.hide();
             $scope.RSempty = true;
+            $rootScope.connectionFails++;
         });
     }
     $scope.loadTags();
@@ -147,13 +162,15 @@ angular.module('chineselearn.controllers', [])
 }])
 
 
-.controller('CategoriesCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", function ($scope, DataLoader, $log, $filter, $ionicLoading, $timeout) {
+.controller('CategoriesCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", "$rootScope", function ($scope, DataLoader, $log, $filter, $ionicLoading, $timeout, $rootScope) {
     $scope.categories = null;
     $scope.RSempty = false;
 
+    if (typeof analytics !== undefined) { analytics.trackView("Categories List"); }
+
     $scope.loadCategories = function () {
         $ionicLoading.show({
-            template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+            template: '<ion-spinner icon="ripple" class="spinner-light"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
         DataLoader.get('categories', 100).then(function (response) {
@@ -171,6 +188,7 @@ angular.module('chineselearn.controllers', [])
             $log.error('error', response);
             $ionicLoading.hide();
             $scope.RSempty = true;
+            $rootScope.connectionFails++;
         });
     }
     $scope.loadCategories();
@@ -193,6 +211,8 @@ angular.module('chineselearn.controllers', [])
         language: $translate.use()
     }
 
+    if (typeof analytics !== undefined) { analytics.trackView("Settings"); }
+
     //Decide device current width
     $scope.narrowformat = 1;
     $scope.recalDimensions = function () {
@@ -201,6 +221,8 @@ angular.module('chineselearn.controllers', [])
         } else {
             $scope.narrowformat = 0;
         }
+
+        if (typeof analytics !== undefined) { analytics.trackEvent('Device', 'Orientation', 'toPortrait', $scope.narrowformat); }
     }
     $scope.recalDimensions();
     angular.element($window).bind('resize', function () {
@@ -216,6 +238,8 @@ angular.module('chineselearn.controllers', [])
             $ionicHistory.clearCache();
             $ionicHistory.clearHistory();
         };
+
+        if (typeof analytics !== undefined) { analytics.trackEvent('Interface', 'Language', $scope.settings.language); }
     });
 
     // contact form submitting
@@ -240,5 +264,7 @@ angular.module('chineselearn.controllers', [])
         //reset Form
         $scope.ctForm = {};
         $scope.forms.contactForm.$setPristine();
+
+        if (typeof analytics !== undefined) { analytics.trackEvent('Email', 'ContactUs'); }
     };
 }]);

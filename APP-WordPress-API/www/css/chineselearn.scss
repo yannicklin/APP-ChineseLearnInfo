@@ -65,10 +65,18 @@ $bar-subheader-height: 50px !default; // 2 lines
 
 /* ==== SCSS & CSS OVERWRITE ==== */
 
+/* NAV-BAR LOGO */
+ion-header-bar .nav-bar-title {
+    img {
+        max-height: 55%%;
+        vertical-align: middle;
+    }
+}
+
 /* FOR NULL RECORD */
 .null {
     display: none;
-    background-color:black;
+    background-color: black;
 }
 
 /* TABS */
@@ -125,7 +133,6 @@ ion-content {
         border-radius: $item-thumbnail-border-radius;
     }
 }
-
 
 /* BUTTON-BAR (SEC: LANGUAGE) */
 .button-bar.complex-sec {
