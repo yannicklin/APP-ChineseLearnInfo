@@ -68,7 +68,7 @@ $bar-subheader-height: 50px !default; // 2 lines
 /* NAV-BAR LOGO */
 ion-header-bar .nav-bar-title {
     img {
-        max-height: 55%%;
+        max-height: 55%;
         vertical-align: middle;
     }
 }
@@ -76,7 +76,6 @@ ion-header-bar .nav-bar-title {
 /* FOR NULL RECORD */
 .null {
     display: none;
-    background-color: black;
 }
 
 /* TABS */

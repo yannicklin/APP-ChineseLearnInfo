@@ -16,7 +16,7 @@ angular.module('chineselearn', [
         if (window.StatusBar && !ionic.Platform.isAndroid()) {
             StatusBar.styleLightContent();
         };
-        
+
         if (typeof analytics !== undefined) {
             analytics.startTrackerWithId("UA-46856632-5");
             analytics.setUserId(device.uuid);
@@ -180,6 +180,16 @@ angular.module('chineselearn', [
               }
           }
       })
+      .state('tab.areas', {
+           url: '/areas',
+           cache: false,
+           views: {
+               'tab-areas': {
+                   templateUrl: 'templates/tab-areas.html',
+                   controller: 'AreasCtrl'
+               }
+           }
+       })
       .state('tab.settings', {
           url: '/settings',
           views: {

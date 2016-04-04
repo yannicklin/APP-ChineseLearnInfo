@@ -102,7 +102,7 @@ angular.module('chineselearn.controllers', [])
 
         DataLoader.get('posts/' + $stateParams.postId, 0).then(function (response) {
             $scope.post = response.data;
-            
+
             $timeout(function () {
                 $ionicLoading.hide();
             }, 500);
@@ -138,7 +138,7 @@ angular.module('chineselearn.controllers', [])
             } else {
                 $scope.tags = response.data;
             };
-            
+
             $timeout(function () {
                 $ionicLoading.hide();
             }, 500);
@@ -161,7 +161,6 @@ angular.module('chineselearn.controllers', [])
     }
 }])
 
-
 .controller('CategoriesCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", "$rootScope", function ($scope, DataLoader, $log, $filter, $ionicLoading, $timeout, $rootScope) {
     $scope.categories = null;
     $scope.RSempty = false;
@@ -180,7 +179,7 @@ angular.module('chineselearn.controllers', [])
             } else {
                 $scope.categories = response.data;
             };
-            
+
             $timeout(function () {
                 $ionicLoading.hide();
             }, 500);
@@ -203,6 +202,30 @@ angular.module('chineselearn.controllers', [])
     }
 }])
 
+    .controller('AreasCtrl', ["$scope", "DataLoader", "$log", "$filter", function ($scope, DataLoader, $log, $filter) {
+        // use d3 in controller
+
+        d3.json("../json/twCounty2010.topo.json", function (error, data) {
+
+            var features = topojson.feature(data, data.objects["county"]).features;
+
+            //topo = topojson.feature(data, data.objects.layer1);
+
+            var path = d3.geo.path().projection(
+                d3.geo.mercator().center([125, 23]).scale(5000)
+                );
+
+            d3.select("svg").selectAll("path").data(features)
+                .enter().append("path")
+                .attr({
+                    stroke: "red",
+                strokeWidth: "2",
+            d: path
+        });
+
+            //locks = d3.select("svg#map").selectAll("path").data(topo.features).enter().append("path").attr("d", path);
+        });
+    }])
 
 .controller('SettingsCtrl', ["$scope", "$translate", "tmhDynamicLocale", "AppSettings", "$ionicHistory", "EmailSender", "$filter", "$window", function ($scope, $translate, tmhDynamicLocale, AppSettings, $ionicHistory, EmailSender, $filter, $window) {
     $scope.forms = {};
@@ -237,9 +260,9 @@ angular.module('chineselearn.controllers', [])
             AppSettings.change('language', $scope.settings.language);
             $ionicHistory.clearCache();
             $ionicHistory.clearHistory();
-        };
 
-        if (typeof analytics !== undefined) { analytics.trackEvent('Interface', 'Language', $scope.settings.language); }
+            if (typeof analytics !== undefined) { analytics.trackEvent('Interface', 'Language', $scope.settings.language); }
+        };
     });
 
     // contact form submitting
