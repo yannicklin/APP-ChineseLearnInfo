@@ -189,7 +189,16 @@ angular.module('chineselearn', [
                    controller: 'AreasCtrl'
                }
            }
-       })
+      })
+        .state('tab.areas-posts', {
+            url: '/areaposts/:areaSlug/:areaName',
+            views: {
+                'tab-posts': {
+                    templateUrl: 'templates/tab-posts.html',
+                    controller: 'PostsCtrl'
+                }
+            }
+        })
       .state('tab.settings', {
           url: '/settings',
           views: {
