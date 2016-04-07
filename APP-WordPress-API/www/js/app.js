@@ -21,7 +21,7 @@ angular.module('chineselearn', [
             analytics.startTrackerWithId("UA-46856632-5");
             analytics.setUserId(device.uuid);
         } else {
-            console.log("Google Analytics Unavailable");
+            console.log("Google Analytics Unavailable.");
             $rootscope.connectionFails++;
         }
     });

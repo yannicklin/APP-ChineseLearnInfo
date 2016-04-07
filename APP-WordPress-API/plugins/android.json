@@ -18,13 +18,14 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
-        },
+        }
+    },
+    "dependent_plugins": {
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
         "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         }
-    },
-    "dependent_plugins": {}
+    }
 }
