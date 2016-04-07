@@ -13,6 +13,15 @@
   "TAB_TITLE_CATEGORIES": "カテゴリー",
   "TAB_TITLE_TAGS": "タグ",
 
+  "TAB_TITLE_AREAS": "地域",
+  "TAB_AREAS_SUBTITLE": "サブ記事の章6台湾の首都圏の数",
+  "AREAS-taipei-xinbei-keelung": "台北・新北・基隆",
+  "AREAS-taoyuan-hsinchu-miaoli": "桃園・新竹・苗栗",
+  "AREAS-taichung-changhua-nantou": "台中・彰化・南投",
+  "AREAS-yunlin-chiayi-tainan": "雲林・嘉義・台南",
+  "AREAS-kaohsiung-pingtung": "高雄・屏東",
+  "AREAS-ilan-hualien-taitung": "宜蘭・花蓮・台東",
+
   "TAB_TITLE_SETTINGS": "セットアップ",
   "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "言語",
   "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "お問い合わせ",

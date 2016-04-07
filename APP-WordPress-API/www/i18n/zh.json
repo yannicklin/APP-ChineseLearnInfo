@@ -14,6 +14,15 @@
   "TAB_TITLE_CATEGORIES": "分類",
   "TAB_TITLE_TAGS": "標籤",
 
+  "TAB_TITLE_AREAS": "區域",
+  "TAB_AREAS_SUBTITLE": "分屬台灣六大都會區的文章篇數",
+  "AREAS-taipei-xinbei-keelung": "北北基",
+  "AREAS-taoyuan-hsinchu-miaoli": "桃竹苗",
+  "AREAS-taichung-changhua-nantou": "中彰投",
+  "AREAS-yunlin-chiayi-tainan": "雲嘉南",
+  "AREAS-kaohsiung-pingtung": "高高屏",
+  "AREAS-ilan-hualien-taitung": "宜花東",
+
   "TAB_TITLE_SETTINGS": "設置",
   "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "語言",
   "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "聯繫我們",

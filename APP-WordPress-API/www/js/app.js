@@ -10,7 +10,7 @@ angular.module('chineselearn', [
     'chineselearn.controllers', 'chineselearn.config', 'chineselearn.directives', 'chineselearn.filters', 'chineselearn.services' //customs
 ])
 
-.run(["$ionicPlatform", "$filter", "$timeout", "toaster", "$rootScope", "$interval", function ($ionicPlatform, $filter, $timeout, toaster, $rootScope, $interval) {
+.run(["$ionicPlatform", "$filter", "$timeout", "toaster", "$rootScope", "$interval", "$ionicLoading", function ($ionicPlatform, $filter, $timeout, toaster, $rootScope, $interval, $ionicLoading) {
     $ionicPlatform.ready(function () {
         cordova.plugins.Keyboard.disableScroll(true);
         if (window.StatusBar && !ionic.Platform.isAndroid()) {

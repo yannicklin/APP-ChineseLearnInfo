@@ -14,6 +14,15 @@
   "TAB_TITLE_CATEGORIES": "CATEGORÍAS",
   "TAB_TITLE_TAGS": "ETIQUETAS",
 
+  "TAB_TITLE_AREAS": "ÁREAS",
+  "TAB_AREAS_SUBTITLE": "los puestos entre las seis regiones de Taiwán",
+  "AREAS-taipei-xinbei-keelung": "Taipei, Xinbei, Keelung",
+  "AREAS-taoyuan-hsinchu-miaoli": "Taoyuan, Hsinchu, Miaoli",
+  "AREAS-taichung-changhua-nantou": "Taichung, Changhua, Nantou",
+  "AREAS-yunlin-chiayi-tainan": "Yunlin, Chiayi, Tainan",
+  "AREAS-kaohsiung-pingtung": "Kaohsiung, Pingtung",
+  "AREAS-ilan-hualien-taitung": "Ilan, Hualien, Taitung",
+
   "TAB_TITLE_SETTINGS": "CONFIGURACIÓN",
   "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "IDIOMA",
   "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "CONTACTA CON NOSOTROS",

@@ -4,7 +4,7 @@ angular.module('chineselearn.controllers', [])
     if (typeof analytics !== undefined) { analytics.trackView("Dashboard"); }
 })
 
-.controller('PostsCtrl', ["$scope", "DataLoader", "$stateParams", "$log", "$filter", "$ionicLoading", "AppSettings", "$timeout", "$rootScope", function ($scope, DataLoader, $stateParams, $log, $filter, $ionicLoading, AppSettings, $timeout, $rootScope) {
+.controller('PostsCtrl', ["$scope", "DataLoader", "$stateParams", "$log", "$filter", "$ionicLoading", "AppSettings", "$timeout", "$rootScope", "$state", "$ionicHistory", function ($scope, DataLoader, $stateParams, $log, $filter, $ionicLoading, AppSettings, $timeout, $rootScope, $state, $ionicHistory) {
     $scope.posts = null;
     $scope.RSempty = false;
     var nextPage = 1;
@@ -26,7 +26,7 @@ angular.module('chineselearn.controllers', [])
         if (typeof analytics !== undefined) { analytics.trackEvent('Post List Condition', 'Category', $stateParams.categoryName); }
     } else if ($stateParams.areaSlug) {
         termQueryString += '?filter[tag]=' + $stateParams.areaSlug;
-        $scope.termQS = { Type: $filter('translate')('TAB_TITLE_AREAS'), Term: $stateParams.areaName };
+        $scope.termQS = { Type: $filter('translate')('TAB_TITLE_AREAS'), Term: $filter('translate')('AREAS-'+$stateParams.areaName) };
 
         if (typeof analytics !== undefined) { analytics.trackEvent('Post List Condition', 'AREA', $stateParams.areaName); }
     }
@@ -66,7 +66,7 @@ angular.module('chineselearn.controllers', [])
         });
         $scope.NextPageIndicator = 0;
 
-        DataLoader.get(termQueryString + '&page=' + nextPage, 0).then(function (response) {
+        DataLoader.get(termQueryString + '?page=' + nextPage, 0).then(function (response) {
             if (response.data.length > 0) {
                 $scope.posts = $scope.posts.concat(response.data);
                 if (response.data.length == AppSettings.get('wpAPIRSlimit')) {
@@ -94,6 +94,13 @@ angular.module('chineselearn.controllers', [])
         $scope.NextPageIndicator = 0;
 
         $scope.loadPosts();
+    }
+
+    $scope.cleanCondition = function () {
+        $ionicHistory.nextViewOptions({
+            disableBack: true
+        });
+        $state.go('tab.posts');
     }
 }])
 
@@ -125,9 +132,10 @@ angular.module('chineselearn.controllers', [])
 }])
 
 
-.controller('TagsCtrl', ["$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", "$rootScope", function ($scope, DataLoader, $log, $filter, $ionicLoading, $timeout, $rootScope) {
+.controller('TagsCtrl', ["AppSettings", "$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", "$rootScope", function (AppSettings, $scope, DataLoader, $log, $filter, $ionicLoading, $timeout, $rootScope) {
     $scope.tags = null;
     $scope.RSempty = false;
+    var removeList = AppSettings.get('areaList');
 
     if (typeof analytics !== undefined) { analytics.trackView("Tags List"); }
 
@@ -136,13 +144,25 @@ angular.module('chineselearn.controllers', [])
             template: '<ion-spinner icon="ripple" class="spinner-light"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
         });
 
-        DataLoader.get('tags', 1000).then(function (response) {
+        DataLoader.get('tags', 100).then(function (response) {
             if (response.data.length == 0) {
                 $scope.tags = null;
                 $scope.RSempty = true;
             } else {
                 $scope.tags = response.data;
-            };
+
+                // Remove Tags belongs to Area
+                angular.forEach(removeList, function (value1, key1) {
+                    angular.forEach($scope.tags, function (value2, key2) {
+                        var strTag2Remove = ((AppSettings.get('languageURI').length > 0) ? (value1 + "-" + AppSettings.get('languageURI').replace('/', '')) : (value1));
+                        if (strTag2Remove === value2.slug) { $scope.tags.splice(key2, 1); }
+                    });
+                });
+
+                if ($scope.tags.length == 0) {
+                    $scope.RSempty = true;
+                }
+            }
 
             $timeout(function () {
                 $ionicLoading.hide();
@@ -207,60 +227,89 @@ angular.module('chineselearn.controllers', [])
     }
 }])
 
-    .controller('AreasCtrl', ["$scope", "DataLoader", "$log", "$filter", function ($scope, DataLoader, $log, $filter) {
-        // use d3 in controller
-        var width = window.screen.width, height = window.screen.height;
-        //var width = window.screen.width * window.devicePixelRatio, height = window.screen.height * window.devicePixelRatio;
-        var vis = d3.select("#map").append("svg").attr("width", width).attr("height", height);
+.controller('AreasCtrl', ["AppSettings", "$state", "$scope", "DataLoader", "$log", "$filter", "$ionicLoading", "$timeout", "$rootScope", function (AppSettings, $state, $scope, DataLoader, $log, $filter, $ionicLoading, $timeout, $rootScope) {
+    var arrPostCont = {}, areaList = AppSettings.get('areaList');
 
-        d3.json("../geo/twCounty2016.topo.json", function (error, data) {
+    if (typeof analytics !== undefined) { analytics.trackView("Area Map"); }
 
-            var twCounty = topojson.feature(data, data.objects["county"]);
+    $ionicLoading.show({
+        template: '<ion-spinner icon="ripple" class="spinner-light"></ion-spinner>' + $filter('translate')('LOADING_TEXT')
+    });
 
-            var density = { "taipei": 10, "ilan": 2, "hsinchu": 1 };
+    DataLoader.get('tags', 100).then(function (response) {
+        if (response.data.length > 0) {
+            // Remove Tags belongs to Area
+            angular.forEach(areaList, function (value1, key1) {
+                var strTag2Append = ((AppSettings.get('languageURI').length > 0) ? (value1 + "-" + AppSettings.get('languageURI').replace('/', '')) : (value1));
+                angular.forEach(response.data, function (value2, key2) {
+                    if (strTag2Append == value2.slug) { arrPostCont[value1] = value2.count; }
+                });
+            });
+        }
 
-            for (idx = twCounty.features.length - 1; idx >= 0; idx--) {
-                twCounty.features[idx].properties.postCount = ((density[twCounty.features[idx].properties.Name] > 0) ? (density[twCounty.features[idx].properties.Name]) : (0));
-            }
-
-            // Create a unit projection.
-            var projection = d3.geo.mercator()
-                .scale(1)
-                .translate([0, 0]);
-
-            // Create a path generator.
-            var path = d3.geo.path()
-                .projection(projection);
-
-            var b = path.bounds(twCounty), s = .90 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height), t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+        $timeout(function () {
             
-            $log.debug("s is " + s + ",t is " + t + ",center is [" + (b[0][0] + b[1][0]) / 2 + "," + (b[0][1] + b[1][1]) / 2 + "]");
+            var width = window.screen.width * 0.8, height = window.screen.height * 0.8;
+            //var width = window.screen.width * 0.8 * window.devicePixelRatio, height = window.screen.height * 0.8 * window.devicePixelRatio;
+            var vis = d3.select("#map").append("svg").attr("width", width).attr("height", height);
 
-            projection
-                .scale(s)
-                .translate(t);
+            d3.json("./geo/twMetropolitanArea2016.topo.json", function (error, data) {
 
-            vis.selectAll("path").data(twCounty.features)
-                .enter().append("path")
-                .attr("d", path)
-                .attr("id", function (d) { return d.properties.County_ID; })
-                .style("fill", "darkgrey")
-                .style("stroke-width", "2")
-                .style("stroke", "white")
-                .on("click", click)
-                .append("text")
-                .attr("dy", ".35em")
-                .text(function (d) { return d.properties.postCount; })
-                .attr("text-anchor", "middle")
-                .attr('fill', 'white');
-        });
+                var twArea = topojson.feature(data, data.objects["MACollection"]);
+                // Set the post count per Area
+                for (idx = twArea.features.length - 1; idx >= 0; idx--) {
+                    twArea.features[idx].properties.postCount = ((arrPostCont[("tw-" + twArea.features[idx].properties.Name)] > 0) ? (arrPostCont[("tw-" + twArea.features[idx].properties.Name)]) : (0));
+                }
 
-        function click(d) {
-            alert("Click on " + d.properties.County_ID + ", post is " + d.properties.postCount);
-        };
+                // Create a unit projection and the path generator
+                var projection = d3.geo.mercator()
+                    .scale(1)
+                    .translate([0, 0]);
+                var path = d3.geo.path()
+                    .projection(projection);
 
+                // Calcualte and resize the path to fit the screen
+                var b = path.bounds(twArea),
+                    s = 0.95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
+                    t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+                projection
+                    .scale(s)
+                    .translate(t);
 
-    }])
+                // Draw Map with Post Counts
+                vis.selectAll("path").data(twArea.features)
+                    .enter().append("path")
+                    .attr("d", path)
+                    .attr("id", function (d) { return d.properties.County_ID; })
+                    .style("fill", "darkgrey")
+                    .style("stroke-width", "2")
+                    .style("stroke", "white")
+                    .on("click", ClickonArea);
+
+                vis.selectAll("label").data(twArea.features)
+                    .enter().append("text")
+                    .attr("transform", function (d) { return "translate(" + path.centroid(d) + ")"; })
+                    .attr("text-anchor", "middle")
+                    .attr("dy", "0.35em")
+                    .attr("font-size", "2em")
+                    .attr("fill", "red")
+                    .text(function (d) { return d.properties.postCount; })
+                    .on("click", ClickonArea);
+
+                function ClickonArea(data) {
+                    var areaSlug = "tw-" + data.properties.Name + ((AppSettings.get('languageURI').length > 0) ? ("-" + AppSettings.get('languageURI').replace('/', '')) : (""));
+                    $state.go('tab.areas-posts', { "areaSlug": areaSlug, "areaName": data.properties.Name });
+                };
+            });
+
+            $ionicLoading.hide();
+        }, 500);
+    }, function (response) {
+        $log.error('error', response);
+        $ionicLoading.hide();
+        $rootScope.connectionFails++;
+    });
+}])
 
 .controller('SettingsCtrl', ["$scope", "$translate", "tmhDynamicLocale", "AppSettings", "$ionicHistory", "EmailSender", "$filter", "$window", function ($scope, $translate, tmhDynamicLocale, AppSettings, $ionicHistory, EmailSender, $filter, $window) {
     $scope.forms = {};

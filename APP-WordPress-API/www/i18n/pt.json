@@ -14,6 +14,15 @@
   "TAB_TITLE_CATEGORIES": "categorias",
   "TAB_TITLE_TAGS": "tags",
 
+  "TAB_TITLE_AREAS": "zonas",
+  "TAB_AREAS_SUBTITLE": "Mensagens entre seis áreas metropolitanas de Taiwan",
+  "AREAS-taipei-xinbei-keelung": "Taipei, Xinbei, Keelung",
+  "AREAS-taoyuan-hsinchu-miaoli": "Taoyuan, Hsinchu, Miaoli",
+  "AREAS-taichung-changhua-nantou": "Taichung, Changhua, Nantou",
+  "AREAS-yunlin-chiayi-tainan": "Yunlin, Chiayi, Tainan",
+  "AREAS-kaohsiung-pingtung": "Kaohsiung, Pingtung",
+  "AREAS-ilan-hualien-taitung": "Ilan, Hualien, Taitung",
+
   "TAB_TITLE_SETTINGS": "Configuração",
   "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "IDIOMA",
   "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "Fale Conosco",

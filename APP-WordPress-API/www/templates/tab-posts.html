@@ -2,7 +2,10 @@
     <ion-nav-title>
         <img src="img/MOBILE-ICON-50.png" /> {{'TAB_TITLE_POSTS' | translate }}
     </ion-nav-title>
-    <ion-header-bar ng-if="termQS" class="bar-subheader bar-positive" ng-bind-html="'TAB_POSTS_SUBTITLE' | translate:({Type: termQS.Type, Term: termQS.Term })"></ion-header-bar>
+    <ion-header-bar ng-if="termQS" class="bar-subheader bar-positive">
+        {{'TAB_POSTS_SUBTITLE' | translate:({Type: termQS.Type, Term: termQS.Term })}}
+        <i class="icon assertive ion-close-round icon-accessory padding-right right-float" ng-click="cleanCondition()"></i>
+    </ion-header-bar>
 
     <ion-content ng-class="{'has-subheader' : termQS}">
         <ion-list ng-show="posts">

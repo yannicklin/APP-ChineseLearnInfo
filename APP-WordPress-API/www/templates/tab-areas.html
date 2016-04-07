@@ -2,7 +2,11 @@
     <ion-nav-title>
         <img src="img/MOBILE-ICON-50.png" /> {{ 'TAB_TITLE_AREAS' | translate }}
     </ion-nav-title>
-    <ion-content>
+    <ion-header-bar class="bar-subheader bar-positive">
+        {{ 'TAB_AREAS_SUBTITLE' | translate }}
+    </ion-header-bar>
+
+    <ion-content ng-class="has-subheader">
         <!-- 3d tags for circles -->
         <div id="map"></div>
     </ion-content>
