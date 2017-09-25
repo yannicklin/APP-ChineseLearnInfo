@@ -1,0 +1,64 @@
+{
+  "ALERT_TITLE_APP": "Centro de información",
+  "CONFIRM_BEFORE_APP_EXIT": "Vuelve a pulsar para salir.",
+  "INTERNET_CONNECTION_NONE": "Internet no funciona",
+  "ALERT_RECORD_NULL": "Ningún registro recuperado.",
+  "BUTTON_REQUEST_RELOAD": "Recargar",
+  "BUTTON_CONTACT_US": "DIME !",
+
+  "TAB_TITLE_DASH": "INICIO",
+  "TAB_TITLE_CATEGORIES": "CATEGORÍAS",
+  "TAB_TITLE_TAGS": "ETIQUETAS",
+
+  "TAB_TITLE_AREAS": "ÁREAS",
+  "TAB_AREAS_SUBTITLE": "los puestos entre las seis regiones de Taiwán",
+  "AREAS-taipei-xinbei-keelung": "Taipei, Xinbei, Keelung",
+  "AREAS-taoyuan-hsinchu-miaoli": "Taoyuan, Hsinchu, Miaoli",
+  "AREAS-taichung-changhua-nantou": "Taichung, Changhua, Nantou",
+  "AREAS-yunlin-chiayi-tainan": "Yunlin, Chiayi, Tainan",
+  "AREAS-kaohsiung-pingtung": "Kaohsiung, Pingtung",
+  "AREAS-ilan-hualien-taitung": "Ilan, Hualien, Taitung",
+
+  "TAB_TITLE_SETTINGS": "CONFIGURACIÓN",
+  "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "IDIOMA",
+  "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "CONTACTA CON NOSOTROS",
+  "CONTACT_FORM_LABEL_NAME": "NOMBRE",
+  "CONTACT_FORM_PLACEHOLDER_NAME": "Tu nombre es... ",
+  "CONTACT_FORM_LABEL_EMAIL": "CORREO ELECTRÓNICO",
+  "CONTACT_FORM_PLACEHOLDER_EMAIL": "Tu correo electrónico es... ",
+  "CONTACT_FORM_LABEL_MESSAGE": "MENSAJE",
+  "CONTACT_FORM_PLACEHOLDER_MESSAGE": "Qué quieres decir ... ",
+  "CONTACT_FORM_BUTTON_SEND": "ENVIAR",
+  "CONTACT_FORM_BUTTON_DISCARD": "DESCARTE",
+
+  "CONTACT_FORM_TITLE": "ENVÍENOS SU IDEA",
+  "CONTACT_FORM_LABEL_PHONE": "TELÉFONO",
+  "CONTACT_FORM_PLACEHOLDER_PHONE": "(Opcional) Su número de teléfono es ... ",
+  "CONTACT_FORM_ERROR_FOR_EXAMPLE": "Por ejemplo, %{example} ",
+  "CONTACT_FORM_ALERT_ERROR": "Hay algo mal. Compruébelo por favor.",
+  "CONTACT_FORM_ALERT_SUCCESS": "Gracias %{name}, se ha enviado tu mensaje.",
+
+  "VIEW_TITLE_POSTS_LIST": "POSTS bajo %{type} : %{term}",
+  "VIEW_TITLE_POSTS_SINGLE": "Título - %{title}",
+  "VIEW_BUTTON_CLOSE": "CERCA",
+
+  "DASH_NEWS_TITLE_20160227": "APP re-anunció !! - 2016 el 27 de Febrero",
+  "DASH_NEWS_CONTENT_20160227": "Reconstruimos esta aplicación con la plataforma probada que se utiliza en FIMEX Categoría de producto.",
+
+  "DASH_NEWS_TITLE_20160228": "Método para salir de la aplicación - 2016 el 28 de Febrero",
+  "DASH_NEWS_CONTENT_20160228": "Haz doble clic en ATRÁS / SALIR en 5 segundos para salir de esta aplicación.",
+
+  "DASH_NEWS_TITLE_20160229": "Disponible en Google Play - 2016 el 29 de Febrero",
+  "DASH_NEWS_CONTENT_20160229": "Hoy es un día especial, no sólo el 29 de febrero, también es el día en que nos ponemos esta aplicación en Google Play Store. Yahoo !!",
+
+  "DASH_NEWS_TITLE_20160304": "Mensajes de idiomas - 2016 el 04 de marzo",
+  "DASH_NEWS_CONTENT_20160304": "Aunque hay ocho opciones de idioma, sólo hay dos idiomas de los mensajes, Inglés y chino tradicional. Nos gustaría intentar traducir los artículos con los recursos esenciales garantizados tan pronto. Lo siento por los inconvenientes ocasionados.",
+
+  "DASH_NEWS_TITLE_20170718": "Cambiar con el cambio del backend del Web site - 2017 el 18 de julio",
+  "DASH_NEWS_CONTENT_20170718": "Con las modificaciones de WP4.7, muchos códigos de consulta de datos se han visto obligados a modificar. La parte más crítica es la falta de soporte de filtro, lo que indica que cada URI de consulta tiene que volver a definir el estilo de código correcto.",
+
+  "DASH_NEWS_TITLE_20170816": "Recodificado en la composición de Framework7 + Vue + Webpack - 2017 16 de agosto",
+  "DASH_NEWS_CONTENT_20170816": "AngularJS y IonicV1 fue una buena opción para el desarrollo básico de APP de Cordorva en 2015. Ese fue el momento en que esta aplicación se inició. Pero ahora es 2017, bueno, no hace mucho tiempo, pero el avance de TI nunca se detiene. Incluso la estrella caliente en 2015, 'Gulp', alguien ya lo consideraba demasiado malo y anticuado para el desarrollo de interfaz. No hay tiempo para que yo tome un broche rápido.",
+
+  "_": "_"
+}

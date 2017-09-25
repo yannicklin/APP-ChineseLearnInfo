@@ -1,0 +1,64 @@
+{
+  "ALERT_TITLE_APP": "情報放送ネットワーク",
+  "CONFIRM_BEFORE_APP_EXIT": "もう一度押すと終了します。",
+  "INTERNET_CONNECTION_NONE": "利用可能なネットワークがありません",
+  "ALERT_RECORD_NULL": "レコードが検索されません。",
+  "BUTTON_REQUEST_RELOAD": "再試行します",
+  "BUTTON_CONTACT_US": "教えてください ！",
+
+  "TAB_TITLE_DASH": "ホーム",
+  "TAB_TITLE_CATEGORIES": "カテゴリー",
+  "TAB_TITLE_TAGS": "タグ",
+
+  "TAB_TITLE_AREAS": "地域",
+  "TAB_AREAS_SUBTITLE": "サブ記事の章6台湾の首都圏の数",
+  "AREAS-taipei-xinbei-keelung": "台北・新北・基隆",
+  "AREAS-taoyuan-hsinchu-miaoli": "桃園・新竹・苗栗",
+  "AREAS-taichung-changhua-nantou": "台中・彰化・南投",
+  "AREAS-yunlin-chiayi-tainan": "雲林・嘉義・台南",
+  "AREAS-kaohsiung-pingtung": "高雄・屏東",
+  "AREAS-ilan-hualien-taitung": "宜蘭・花蓮・台東",
+
+  "TAB_TITLE_SETTINGS": "セットアップ",
+  "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "言語",
+  "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "お問い合わせ",
+  "CONTACT_FORM_LABEL_NAME": "名前",
+  "CONTACT_FORM_PLACEHOLDER_NAME": "あなたの名前は ... ",
+  "CONTACT_FORM_LABEL_EMAIL": "メールアドレス",
+  "CONTACT_FORM_PLACEHOLDER_EMAIL": "あなたのメールは ... ",
+  "CONTACT_FORM_LABEL_MESSAGE": "メッセージ",
+  "CONTACT_FORM_PLACEHOLDER_MESSAGE": "あなたが言いたい何を ...？",
+  "CONTACT_FORM_BUTTON_SEND": "センド",
+  "CONTACT_FORM_BUTTON_DISCARD": "破棄",
+
+  "CONTACT_FORM_TITLE": "あなたのアイデアを送ってください",
+  "CONTACT_FORM_LABEL_PHONE": "電話",
+  "CONTACT_FORM_PLACEHOLDER_PHONE": "（オプション）あなたの電話番号は ... ",
+  "CONTACT_FORM_ERROR_FOR_EXAMPLE": "例えば, %{example} ",
+  "CONTACT_FORM_ALERT_ERROR": "何かがおかしい。 これをチェックしてください。",
+  "CONTACT_FORM_ALERT_SUCCESS": "おかげで %{name}、あなたのメッセージが送信されました。",
+
+  "VIEW_TITLE_POSTS_LIST": "%{type} : %{term} 下の投稿",
+  "VIEW_TITLE_POSTS_SINGLE": "記事 - %{title}",
+  "VIEW_BUTTON_CLOSE": "クローズ",
+
+  "DASH_NEWS_TITLE_20160227": "APP更新のリビジョン！ - 2016年2月27日",
+  "DASH_NEWS_CONTENT_20160227": "我々は、APP、APP-使用し、同じ製品カテゴリの開発プラットフォームの利点を再構築します。",
+
+  "DASH_NEWS_TITLE_20160228": "終了APP法 - 2016年2月28日",
+  "DASH_NEWS_CONTENT_20160228": "APPを終了するには、5秒以内に2回 / EXITを[戻る]をクリックします。",
+
+  "DASH_NEWS_TITLE_20160229": "Google Playで既に利用可能 - 2016年2月29日",
+  "DASH_NEWS_CONTENT_20160229": "今日は一度だけ2月29日の4年間であるためだけでなく、特別な日ですが、GoogleでこのAPPの棚には、最初の日にストアを再生します。万歳！",
+
+  "DASH_NEWS_TITLE_20160304": "記事言語オプション翻訳 - 2016年3月4日",
+  "DASH_NEWS_CONTENT_20160304": "この言語の設定インターフェイスの選択が、しかしため、英語と中国語（繁体字）の記事で、我々は唯一の利用可能なことができ、この段階での人材と資源の不足、の。私たちは、できるだけ早く解決策を見つけるでしょう。不便も私と一緒にご負担下さい。",
+
+  "DASH_NEWS_TITLE_20170718": "ウェブサイトのバックエンド変更による変更 - 2017年7月18日",
+  "DASH_NEWS_CONTENT_20170718": "WP4.7の変更により、多くのデータ照会コードが変更されてしまいました。 最も重要な部分は、フィルタサポートがないことです。これは、すべてのクエリURIが適切なコードスタイルを再検討しなければならないことを示します。",
+
+  "DASH_NEWS_TITLE_20170816": "Framework7 + Vue + Webpackの構成で録音された - 2017年8月16日",
+  "DASH_NEWS_CONTENT_20170816": "AngularJSとIonicV1は、2015年のCordorva APPの基本的な開発に適していました。このアプリが開始されたのはそのときでした。 しかし、今は2017年ですが、それほどずっと前ですが、ITの進歩は決して止まらないのです。 2015年のホットスター、「Gulp」でさえ、フロントエンドの開発にはあまりにもお粗末で昔ながらのものだと誰かがすでに思っていました。 短い時間をとる時間がない。",
+
+  "_": "_"
+}

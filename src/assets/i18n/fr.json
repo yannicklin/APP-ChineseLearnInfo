@@ -1,0 +1,64 @@
+﻿{
+  "ALERT_TITLE_APP": "Centre d'information",
+  "CONFIRM_BEFORE_APP_EXIT": "Appuyez à nouveau pour quitter.",
+  "INTERNET_CONNECTION_NONE": "Internet ne fonctionne pas",
+  "ALERT_RECORD_NULL": "Pas de résultats de recherche.",
+  "BUTTON_REQUEST_RELOAD": "Recharger",
+  "BUTTON_CONTACT_US": "DÎTES-MOI !",
+
+  "TAB_TITLE_DASH": "DOMICILE",
+  "TAB_TITLE_CATEGORIES": "CATÉGORIES",
+  "TAB_TITLE_TAGS": "MOTS CLÉS",
+
+  "TAB_TITLE_AREAS": "ZONES",
+  "TAB_AREAS_SUBTITLE": "Messages entre six régions métropolitaines de Taiwan",
+  "AREAS-taipei-xinbei-keelung": "Taipei, Xinbei, Keelung",
+  "AREAS-taoyuan-hsinchu-miaoli": "Taoyuan, Hsinchu, Miaoli",
+  "AREAS-taichung-changhua-nantou": "Taichung, Changhua, Nantou",
+  "AREAS-yunlin-chiayi-tainan": "Yunlin, Chiayi, Tainan",
+  "AREAS-kaohsiung-pingtung": "Kaohsiung, Pingtung",
+  "AREAS-ilan-hualien-taitung": "Ilan, Hualien, Taitung",
+
+  "TAB_TITLE_SETTINGS": "PARAMÈTRES",
+  "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "LA LANGUE",
+  "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "NOUS CONTACTER",
+  "CONTACT_FORM_LABEL_NAME": "NAME",
+  "CONTACT_FORM_PLACEHOLDER_NAME": "votre nom est ...",
+  "CONTACT_FORM_LABEL_EMAIL": "eMAIL",
+  "CONTACT_FORM_PLACEHOLDER_EMAIL": "votre email est ...",
+  "CONTACT_FORM_LABEL_MESSAGE": "MESSAGE",
+  "CONTACT_FORM_PLACEHOLDER_MESSAGE": "Qu'est-ce que vous voulez dire ...",
+  "CONTACT_FORM_BUTTON_SEND": "ENVOYER",
+  "CONTACT_FORM_BUTTON_DISCARD": "JETER",
+
+  "CONTACT_FORM_TITLE": "ENVOYEZ-NOUS VOTRE IDÉE",
+  "CONTACT_FORM_LABEL_PHONE": "TÉLÉPHONE",
+  "CONTACT_FORM_PLACEHOLDER_PHONE": "(Facultatif) Votre numéro de téléphone est ... ",
+  "CONTACT_FORM_ERROR_FOR_EXAMPLE": "Par exemple, %{example} ",
+  "CONTACT_FORM_ALERT_ERROR": "Il y a quelque chose qui ne va pas. S'il te plaît vérifie le.",
+  "CONTACT_FORM_ALERT_SUCCESS": "Merci %{name}, votre message a été envoyé.",
+
+  "VIEW_TITLE_POSTS_LIST": "messages sous le %{type} : %{term}",
+  "VIEW_TITLE_POSTS_SINGLE": "POSTES - %{title}",
+  "VIEW_BUTTON_CLOSE": "FERMER",
+
+  "DASH_NEWS_TITLE_20160227": "APP ré-annoncé !! - 2016 27 février",
+  "DASH_NEWS_CONTENT_20160227": "Nous avons reconstruit cette APP avec la plate-forme éprouvée utilisée dans la catégorie FIMEX produit.",
+
+  "DASH_NEWS_TITLE_20160228": "Way pour quitter APP - 2016 28 février",
+  "DASH_NEWS_CONTENT_20160228": "S'il vous plaît double-cliquez sur BACK / EXIT dans les 5 secondes pour quitter cette application.",
+
+  "DASH_NEWS_TITLE_20160229": "Disponible sur Google Play - 2016 29 février",
+  "DASH_NEWS_CONTENT_20160229":"Aujourd'hui est un jour spécial, non seulement le 29 Février, il est aussi le jour où nous mettons cette application sur Google Play Store Yahoo !! ",
+
+  "DASH_NEWS_TITLE_20160304": "Langues de messages - 2016 4 mars",
+  "DASH_NEWS_CONTENT_20160304": "Bien qu'il y ait huit choix de langue, il n'y a que deux langues de messages, l'anglais et le chinois traditionnel. Nous tentions de traduire les articles avec des ressources essentielles garantis dès. Désolé pour le désagrément.",
+
+  "DASH_NEWS_TITLE_20170718": "Changer avec le changement de backend du site Web - 2017 18 juillet",
+  "DASH_NEWS_CONTENT_20170718": "Avec les modifications de WP4.7, beaucoup de codes de requêtes de données ont été forcés de modifier. La partie la plus critique est le manque de support de filtrage, ce qui indique que chaque requête URI doit refléter le bon style de code.",
+
+  "DASH_NEWS_TITLE_20170816": "Recodé dans la composition de Framework7 + Vue + Webpack - 2017 16 août",
+  "DASH_NEWS_CONTENT_20170816": "AngularJS et IonicV1 ont été un bon choix pour le développement de base de l'APP de Cordorva en 2015. C'est l'heure de l'introduction de cette application. Mais maintenant, c'est 2017, bien, pas trop longtemps, mais l'avancement de l'informatique ne s'arrête jamais. Même l'étoile chaude en 2015, 'Gulp', quelqu'un l'a déjà considéré comme trop moche et démodé pour le développement de l'interface. Pas de temps pour moi de prendre un court instant.",
+
+  "_": "_"
+}

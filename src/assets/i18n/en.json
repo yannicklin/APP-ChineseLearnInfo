@@ -1,0 +1,64 @@
+{
+  "ALERT_TITLE_APP": "InfoCentre",
+  "CONFIRM_BEFORE_APP_EXIT": "Press again to exit.",
+  "INTERNET_CONNECTION_NONE": "Internet is not working",
+  "ALERT_RECORD_NULL": "No records retrieved.",
+  "BUTTON_REQUEST_RELOAD": "Reload",
+  "BUTTON_CONTACT_US": "TELL ME !",
+
+  "TAB_TITLE_DASH": "HOME",
+  "TAB_TITLE_TAGS": "TAGS",
+  "TAB_TITLE_CATEGORIES": "CATEGORIES",
+
+  "TAB_TITLE_AREAS": "AREAS",
+  "TAB_AREAS_SUBTITLE": "Posts among six metropolican areas of Taiwan",
+  "AREAS-taipei-xinbei-keelung": "Taipei, Xinbei, Keelung",
+  "AREAS-taoyuan-hsinchu-miaoli": "Taoyuan, Hsinchu, Miaoli",
+  "AREAS-taichung-changhua-nantou": "Taichung, Changhua, Nantou",
+  "AREAS-yunlin-chiayi-tainan": "Yunlin, Chiayi, Tainan",
+  "AREAS-kaohsiung-pingtung": "Kaohsiung, Pingtung",
+  "AREAS-ilan-hualien-taitung": "Ilan, Hualien, Taitung",
+
+  "TAB_TITLE_SETTINGS": "SETTING",
+  "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "CHANGE LANGUAGE",
+  "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "OR SEND US YOUR THOUGHT",
+  "CONTACT_FORM_LABEL_NAME": "NAME",
+  "CONTACT_FORM_PLACEHOLDER_NAME": "Your name is ... ",
+  "CONTACT_FORM_LABEL_EMAIL": "EMAIL",
+  "CONTACT_FORM_PLACEHOLDER_EMAIL": "Your email is ... ",
+  "CONTACT_FORM_LABEL_MESSAGE": "MESSAGE",
+  "CONTACT_FORM_PLACEHOLDER_MESSAGE": "What you want to say ... ",
+  "CONTACT_FORM_BUTTON_SEND": "Send Out",
+  "CONTACT_FORM_BUTTON_DISCARD": "Discard",
+
+  "CONTACT_FORM_TITLE": "SEND US YOUR IDEA",
+  "CONTACT_FORM_LABEL_PHONE": "PHONE",
+  "CONTACT_FORM_PLACEHOLDER_PHONE": "(Optional) Your phone number is ... ",
+  "CONTACT_FORM_ERROR_FOR_EXAMPLE": "For example, %{example} ",
+  "CONTACT_FORM_ALERT_ERROR": "There is something wrong. Please check it.",
+  "CONTACT_FORM_ALERT_SUCCESS": "Thanks %{name}, your message has been sent.",
+
+  "VIEW_TITLE_POSTS_LIST": "POSTS under %{type} : %{term}",
+  "VIEW_TITLE_POSTS_SINGLE": "POST - %{title}",
+  "VIEW_BUTTON_CLOSE": "CLOSE",
+
+  "DASH_NEWS_TITLE_20160227": "APP re-announced!! - 2016 FEB 27",
+  "DASH_NEWS_CONTENT_20160227": "We rebuilt this APP with the proven platform used in FIMEX Product Category.",
+
+  "DASH_NEWS_TITLE_20160228": "Way to exit APP - 2016 FEB 28",
+  "DASH_NEWS_CONTENT_20160228": "Please double click on BACK/EXIT within 5 seconds to exit this app.",
+
+  "DASH_NEWS_TITLE_20160229": "Available on Google Play - 2016 FEB 29",
+  "DASH_NEWS_CONTENT_20160229": "Today is a special day, not only the 29th of Febrary, also it is the day we put this APP on Google Play Store. Yahoo!!",
+
+  "DASH_NEWS_TITLE_20160304": "Languages of Posts - 2016 MAR 4",
+  "DASH_NEWS_CONTENT_20160304": "Though there are eight language choices, there are only two languages of posts, English and Traditional Chinese. We would attempt to translate the articles with essential resources secured as soon. Sorry for the inconvience.",
+
+  "DASH_NEWS_TITLE_20170718": "Change with Website Backend Change - 2017 JUL 18",
+  "DASH_NEWS_CONTENT_20170718": "With the modifications of WP4.7, lots of data query codes have been forced to modify. The most criticial part is the lack of filter support, which indicates every query URI has to refingure out the proper code style.",
+
+  "DASH_NEWS_TITLE_20170816": "Recoded in the composition of Framework7 + Vue + Webpack - 2017 AUG 16",
+  "DASH_NEWS_CONTENT_20170816": "AngularJS and IonicV1 was a good choice for basic Cordorva APP development in 2015. That was the time this app initiated. But now is 2017, well, not too long ago, but the advancement of IT never stops. Even the hot star in 2015, 'Gulp', somebody already regarded it too lousy and old-fashioned for frontend development. No time for me to take short snap.",
+
+  "_": "_"
+}

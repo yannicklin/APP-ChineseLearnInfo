@@ -1,0 +1,64 @@
+{
+  "ALERT_TITLE_APP": "資訊廣播網",
+  "CONFIRM_BEFORE_APP_EXIT": "再次按下退出。",
+  "INTERNET_CONNECTION_NONE": "沒有可用的網路",
+  "ALERT_RECORD_NULL": "查無資料。",
+  "BUTTON_REQUEST_RELOAD": "再次嘗試",
+  "BUTTON_CONTACT_US": "告訴我 ！",
+
+  "TAB_TITLE_DASH": "首頁",
+  "TAB_TITLE_CATEGORIES": "分類",
+  "TAB_TITLE_TAGS": "標籤",
+
+  "TAB_TITLE_AREAS": "區域",
+  "TAB_AREAS_SUBTITLE": "分屬台灣六大都會區的文章篇數",
+  "AREAS-taipei-xinbei-keelung": "北北基",
+  "AREAS-taoyuan-hsinchu-miaoli": "桃竹苗",
+  "AREAS-taichung-changhua-nantou": "中彰投",
+  "AREAS-yunlin-chiayi-tainan": "雲嘉南",
+  "AREAS-kaohsiung-pingtung": "高高屏",
+  "AREAS-ilan-hualien-taitung": "宜花東",
+
+  "TAB_TITLE_SETTINGS": "設置",
+  "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "語言",
+  "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "聯繫我們",
+  "CONTACT_FORM_LABEL_NAME": "名字",
+  "CONTACT_FORM_PLACEHOLDER_NAME": "你的名字是 ... ",
+  "CONTACT_FORM_LABEL_EMAIL": "電子郵件",
+  "CONTACT_FORM_PLACEHOLDER_EMAIL": "你的電子郵件是 ... ",
+  "CONTACT_FORM_LABEL_MESSAGE": "留言",
+  "CONTACT_FORM_PLACEHOLDER_MESSAGE": "你想說什麼？",
+  "CONTACT_FORM_BUTTON_SEND": "送出",
+  "CONTACT_FORM_BUTTON_DISCARD": "廢棄",
+
+  "CONTACT_FORM_TITLE": "給我們您的想法",
+  "CONTACT_FORM_LABEL_PHONE": "電話",
+  "CONTACT_FORM_PLACEHOLDER_PHONE": "（可選）您的電話號碼是 ... ",
+  "CONTACT_FORM_ERROR_FOR_EXAMPLE": "例如, %{example} ",
+  "CONTACT_FORM_ALERT_ERROR": "有一些是錯誤的。 請檢查一下。",
+  "CONTACT_FORM_ALERT_SUCCESS": "%{name}，多謝！您的訊息已經送出。",
+
+  "VIEW_TITLE_POSTS_LIST": "%{type} 為 %{term} 的文章",
+  "VIEW_TITLE_POSTS_SINGLE": "文章 - %{title}",
+  "VIEW_BUTTON_CLOSE": "關閉",
+  
+  "DASH_NEWS_TITLE_20160227": "APP更新改版！ - 2016年2月27日",
+  "DASH_NEWS_CONTENT_20160227": "我們重建這個APP， 利用與APP-聯意產品類別中相同的開發平台。",
+
+  "DASH_NEWS_TITLE_20160228": "退出APP的方法 - 2016年2月28日",
+  "DASH_NEWS_CONTENT_20160228": "請在5秒內點擊BACK / EXIT兩次來退出這個APP。",
+
+  "DASH_NEWS_TITLE_20160229": "已在Google Play上架 - 2016年2月29日",
+  "DASH_NEWS_CONTENT_20160229": "今天是個特殊的日子，不僅僅是因為四年才有一次的2月29日，而是這個APP在Google Play Store的上架第一天。萬歲！",
+
+  "DASH_NEWS_TITLE_20160304": "文章語言翻譯的選項 - 2016年3月4日",
+  "DASH_NEWS_CONTENT_20160304": "雖然設定介面上有八種語言選擇，但是因為人力與資源的不足，現階段我們只能提供英文與繁體中文的文章。我們會盡快地尋求解決之道。造成不便尚祈多多包涵。",
+
+  "DASH_NEWS_TITLE_20170718": "網站後端變更 - 2017年7月18日",
+  "DASH_NEWS_CONTENT_20170718": "隨著WP4.7的修改，大量的數據查詢代碼被迫修改。 最關鍵的部分是缺少過濾器支持，這表明每個查詢URI都必須提供適當的代碼樣式。",
+
+  "DASH_NEWS_TITLE_20170816": "重新組合在Framework7 + Vue + Webpack - 2017年8月16日",
+  "DASH_NEWS_CONTENT_20170816": "AngularJS和IonicV1是2015年基本的Cordorva APP開發的不錯選擇。這是該應用啟動的時間。 但現在是2017年，而不是很久以前，但IT的進步永遠不會停止。 即使是2015年的熱門明星，'Gulp'，有人已經認為它太糟糕了，老式的前鋒發展。 沒有時間短暫地抓住我。",
+
+  "_": "_"
+}
