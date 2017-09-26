@@ -1,33 +1,34 @@
-Ionic App Base
+Framework7 App Base
 ==============
 
-A starting project for Ionic that optionally supports using custom SCSS.
+We rebase this application from original Ionic+AngularJS to Framework7 Vue combination, which benefits power and simplicity of great Vue.js framework with flexibility and UI of Framework7 mobile framework to build mobile apps in even more easy and quick way.
 
-## Using this project
+## Not the official base
 
-We recommend using the [Ionic CLI](https://github.com/ionic-team/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+However we did not use the official [Github](https://github.com/framework7io/Framework7-Vue-Webpack-Template) but 
+[Centrual](https://github.com/centrual/cordova-template-framework7-vue-webpack) for the additional combinations of Webpack Dev Server and Hot Module Replacement.
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+## Template Composited of
+<ul>
+    <li>Framework7</li>
+    <li>Vue Js 2</li>
+    <li>Webpack 2</li>
+</ul>
 
-```bash
-$ npm install -g ionic cordova
-```
+### Min. Requirements
+<ul>
+    <li>Cordova: 6.0.0</li>
+    <li>Node.js: 6.5.0</li>
+</ul>
 
-Then run:
+### Usage
+    
+You can use every cordova | phonegap commands. You just have one more command option: -- --lr. It starts live reload.
 
-```bash
-$ ionic start myProject tabs --type=ionic1
-```
+Example usage:
 
-More info on this can be found on the Ionic [Getting Started](https://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/ionic-team/ionic-cli) repo.
+`cordova run android -- --lr
+ cordova run browser -- --live-reload
+ phonegap run ios -- --lr`
 
-## Issues
-
-Issues have been disabled on this repo. If you do find an issue or have a question, consider posting it on the [Ionic Forum](https://forum.ionicframework.com/). If there is truly an error, follow our guidelines for [submitting an issue](https://ionicframework.com/submit-issue/) to the main Ionic repository.
-
-## Updates
-
-### 2017-08-21
-1. Remove the depedency of Microsoft Visual Studio; using pure Cordova + NPM directly
-2. Platform from ionic(v1) + AngularJS + Gulp => Framework7 + Vue2 + Webpack
-3. Upgrade D3 from v3.x to v4.x
+![ChineseLearn InfoCentre](MOBILE-ICON-512.png)
