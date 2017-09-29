@@ -41,6 +41,9 @@
   "VIEW_TITLE_POSTS_LIST": "%{type} 為 %{term} 的文章",
   "VIEW_TITLE_POSTS_SINGLE": "文章 - %{title}",
   "VIEW_BUTTON_CLOSE": "關閉",
+  "VIEW_BUTTON_POSTS_SINGLE_SHARE": "分享",
+  "VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE": "分享這篇文章",
+  "VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE": "選擇分享途徑",
   
   "DASH_NEWS_TITLE_20160227": "APP更新改版！ - 2016年2月27日",
   "DASH_NEWS_CONTENT_20160227": "我們重建這個APP， 利用與APP-聯意產品類別中相同的開發平台。",

@@ -41,6 +41,9 @@
   "VIEW_TITLE_POSTS_LIST": "POSTS bajo %{type} : %{term}",
   "VIEW_TITLE_POSTS_SINGLE": "Título - %{title}",
   "VIEW_BUTTON_CLOSE": "CERCA",
+  "VIEW_BUTTON_POSTS_SINGLE_SHARE": "COMPARTIR",
+  "VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE": "COMPARTILHE ESTE POSTE",
+  "VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE": "ELIGE LA APLICACIÓN",
 
   "DASH_NEWS_TITLE_20160227": "APP re-anunció !! - 2016 el 27 de Febrero",
   "DASH_NEWS_CONTENT_20160227": "Reconstruimos esta aplicación con la plataforma probada que se utiliza en FIMEX Categoría de producto.",

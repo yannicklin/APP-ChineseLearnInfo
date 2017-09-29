@@ -16,9 +16,6 @@ import i18n from './assets/i18n';
 // Import axios
 import axios from 'axios';
 
-// Import social sharing
-import SocialSharing from 'vue-social-sharing';
-
 // Import Floating Label
 import VueFloatLabel from 'vue-float-label';
 
@@ -65,9 +62,6 @@ Vue.use(Framework7Vue);
 
 // Init Vue-Cordova Plugin
 Vue.use(VueCordova);
-
-// Init Vue Social Sharing Plugin
-Vue.use(SocialSharing);
 
 // Init Vue Floating Label Plugin
 Vue.use(VueFloatLabel);
@@ -209,12 +203,9 @@ var vueAPP = new Vue({
 });
 
 
-
-// Cordova
+// Check Device Network Status
 Vue.cordova.on('deviceready', () => {
-  //console.log(Vue.cordova);
-  if (Vue.cordova.networks.offline){
-  alert(Vue.$i18n.t('INTERNET_CONNECTION_NONE'));
-};
+  Vue.cordova.on('offline', () => {
+    vueAPP.$f7.alert(vueAPP.$i18n.t('INTERNET_CONNECTION_NONE'), vueAPP.$i18n.t('ALERT_TITLE_APP'));
+  });
 });
-

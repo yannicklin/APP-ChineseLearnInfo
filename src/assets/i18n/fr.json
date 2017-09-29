@@ -41,6 +41,9 @@
   "VIEW_TITLE_POSTS_LIST": "messages sous le %{type} : %{term}",
   "VIEW_TITLE_POSTS_SINGLE": "POSTES - %{title}",
   "VIEW_BUTTON_CLOSE": "FERMER",
+  "VIEW_BUTTON_POSTS_SINGLE_SHARE": "PARTAGER",
+  "VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE": "PARTAGER CETTE PUBLICATION",
+  "VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE": "CHOISIS L'APPAREIL",
 
   "DASH_NEWS_TITLE_20160227": "APP ré-annoncé !! - 2016 27 février",
   "DASH_NEWS_CONTENT_20160227": "Nous avons reconstruit cette APP avec la plate-forme éprouvée utilisée dans la catégorie FIMEX produit.",

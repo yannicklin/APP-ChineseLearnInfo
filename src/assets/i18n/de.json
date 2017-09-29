@@ -41,6 +41,9 @@
   "VIEW_TITLE_POSTS_LIST": "Beiträge unter %{type} : %{term}",
   "VIEW_TITLE_POSTS_SINGLE": "POSTEN - %{title}",
   "VIEW_BUTTON_CLOSE": "SCHLIESSEN",
+  "VIEW_BUTTON_POSTS_SINGLE_SHARE": "AKTIE",
+  "VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE": "TEILE DIESEN BEITRAG",
+  "VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE": "WÄHLEN SIE DIE APP",
 
   "DASH_NEWS_TITLE_20160227": "APP Wieder angekündigt !! - 2016 27. Februar",
   "DASH_NEWS_CONTENT_20160227": "Wir umgebaut diese APP mit dem in FIMEX Produktkategorie verwendet bewährte Plattform.",

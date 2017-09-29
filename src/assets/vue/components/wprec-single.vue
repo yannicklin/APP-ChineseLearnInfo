@@ -18,23 +18,17 @@
 				<article v-html="removeLINK_IMG(post.content.rendered)" />
 			</f7-block>
 
-			<social-sharing :url="post.link" inline-template>
-				<div class="buttons-row">
-					<network network="facebook" class="button">
-						<f7-icon fa="facebook-official" /> Facebook
-					</network>
-					<network network="googleplus" class="button">
-						<f7-icon fa="google-plus-official" /> Google +
-					</network>
-					<network network="twitter" class="button">
-						<f7-icon fa="twitter" /> Twitter
-					</network>
-					<network network="weibo" class="button">
-						<f7-icon fa="weibo" /> Weibo
-					</network>
-				</div>
+			<f7-grid>
+				<f7-col width="20" tablet-width="30"></f7-col>
+				<f7-col width="60" tablet-width="40">
+					<f7-button round big raised color="blue" @click="sharewithSocialMedia(post.title.rendered, post.link)">
+								<f7-icon fa="facebook-official" /><f7-icon fa="google-plus-official" /><f7-icon fa="twitter" /><f7-icon fa="weibo" />
+							{{ $t('VIEW_BUTTON_POSTS_SINGLE_SHARE') }}
 
-			</social-sharing>
+					</f7-button>
+				</f7-col>
+				<f7-col width="20" tablet-width="30"></f7-col>
+			</f7-grid>
 		</div>
 	</f7-page>
 </template>
@@ -84,7 +78,27 @@
                 var langcount = ('zh' == this.$i18n.locale)? '20' : '30';
                 var screenweight = 0.6 + Math.trunc(Math.min(window.innerWidth || Infinity, screen.width)/361) * 0.5 ;
                 return this.$options.filters.truncate(text, Math.floor(langcount * screenweight));
-            }
+            },
+			sharewithSocialMedia(subject, url){
+                // this is the complete list of currently supported params you can pass to the plugin (all optional)
+                var options = {
+                    message: this.$i18n.t('VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE'), // not supported on some apps (Facebook, Instagram)
+                    subject: subject, // fi. for email
+                    url: url,
+                    chooserTitle: this.$i18n.t('VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE') // Android only, you can override the default share sheet title
+                }
+
+                var onSuccess = function(result) {
+                    console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+                    console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+                }
+
+                var onError = function(msg) {
+                    console.log("Sharing failed with message: " + msg);
+                }
+
+                window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+			}
         },
         // Fetches posts when the component is created.
         created: function() {
@@ -96,8 +110,11 @@
     }
 </script>
 <style>
-.buttons-row {
-	margin: 10px auto;
-	max-width: 90%;
-}
+	a.button {
+		font-size: 1.5rem;
+	}
+	a.button > i.icon.fa {
+		margin: 0 5px;
+		padding: 0px;
+	}
 </style>
