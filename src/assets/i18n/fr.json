@@ -39,6 +39,7 @@
   "CONTACT_FORM_ALERT_SUCCESS": "Merci %{name}, votre message a été envoyé.",
 
   "VIEW_TITLE_POSTS_LIST": "messages sous le %{type} : %{term}",
+  "VIEW_SEARCH_PLACEHOLDER": "Rechercher dans les titres de publication",
   "VIEW_TITLE_POSTS_SINGLE": "POSTES - %{title}",
   "VIEW_BUTTON_CLOSE": "FERMER",
   "VIEW_BUTTON_POSTS_SINGLE_SHARE": "PARTAGER",

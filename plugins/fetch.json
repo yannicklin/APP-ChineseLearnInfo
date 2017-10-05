@@ -1,12 +1,4 @@
 {
-    "cordova-plugin-console": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-console"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-device": {
         "source": {
             "type": "registry",
@@ -53,6 +45,14 @@
             "id": "es6-promise-plugin@4.1.0"
         },
         "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-custom-config": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-custom-config"
+        },
+        "is_top_level": true,
         "variables": {}
     }
 }

@@ -39,6 +39,7 @@
   "CONTACT_FORM_ALERT_SUCCESS": "Gracias %{name}, se ha enviado tu mensaje.",
 
   "VIEW_TITLE_POSTS_LIST": "POSTS bajo %{type} : %{term}",
+  "VIEW_SEARCH_PLACEHOLDER": "Buscar en títulos de post",
   "VIEW_TITLE_POSTS_SINGLE": "Título - %{title}",
   "VIEW_BUTTON_CLOSE": "CERCA",
   "VIEW_BUTTON_POSTS_SINGLE_SHARE": "COMPARTIR",

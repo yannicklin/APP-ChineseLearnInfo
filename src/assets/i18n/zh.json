@@ -39,6 +39,7 @@
   "CONTACT_FORM_ALERT_SUCCESS": "%{name}，多謝！您的訊息已經送出。",
 
   "VIEW_TITLE_POSTS_LIST": "%{type} 為 %{term} 的文章",
+  "VIEW_SEARCH_PLACEHOLDER": "搜索文章標題",
   "VIEW_TITLE_POSTS_SINGLE": "文章 - %{title}",
   "VIEW_BUTTON_CLOSE": "關閉",
   "VIEW_BUTTON_POSTS_SINGLE_SHARE": "分享",

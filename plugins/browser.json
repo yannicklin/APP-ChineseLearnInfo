@@ -7,9 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
@@ -23,6 +20,9 @@
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         },
         "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
+        },
+        "cordova-custom-config": {
             "PACKAGE_NAME": "com.twoudia.ChineseLearnInfo"
         }
     },

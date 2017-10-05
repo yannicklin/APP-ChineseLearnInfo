@@ -41,6 +41,17 @@ input {
 		margin: 0 auto;
 		padding: 0 5%;
 	}
+
+	a.icon-only {
+		min-width: 40px;
+	}
+
+	.left {
+		margin-right: 5px;
+	}
+	.right {
+		margin-left: 5px;
+	}
 }
 .subnavbar {
 	top: 30px !important;

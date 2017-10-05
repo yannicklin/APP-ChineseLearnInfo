@@ -39,6 +39,7 @@
   "CONTACT_FORM_ALERT_SUCCESS": "おかげで %{name}、あなたのメッセージが送信されました。",
 
   "VIEW_TITLE_POSTS_LIST": "%{type} : %{term} 下の投稿",
+  "VIEW_SEARCH_PLACEHOLDER": "検索文章標題",
   "VIEW_TITLE_POSTS_SINGLE": "記事 - %{title}",
   "VIEW_BUTTON_CLOSE": "クローズ",
   "VIEW_BUTTON_POSTS_SINGLE_SHARE": "シェア",

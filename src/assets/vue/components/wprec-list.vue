@@ -1,7 +1,7 @@
 <template>
 	<f7-pages>
 		<f7-page>
-			<f7-navbar :title="$t('VIEW_TITLE_POSTS_LIST', {type: targetobject, term: displayname})">
+			<f7-navbar :title="$t('VIEW_TITLE_POSTS_LIST', {type: targetobject_i18n , term: displayname})">
 				<f7-nav-right>
 					<f7-link :close-popup="true">{{ $t('VIEW_BUTTON_CLOSE') }}</f7-link>
 				</f7-nav-right>
@@ -12,10 +12,10 @@
 			</f7-block>
 
 			<f7-block v-else-if="posts && posts.length" ref="querylist-wrap" class="querylist-wrap">
-				<f7-searchbar v-if="endofdata" :init="true" cancel-link="Cancel" placeholder="Search in titles" :clear-button="true" :searchList="'#postslist-' + uniqueid" searchIn=".item-title" />
+				<f7-searchbar v-if="endofdata" :init="true" cancel-link="Cancel" :placeholder="$t('VIEW_SEARCH_PLACEHOLDER')" :clear-button="true" :searchList="'#postslist-' + uniqueid" searchIn=".item-title" />
 
 				<f7-list media-list :id="'postslist-' + uniqueid">
-					<f7-list-item v-for="post of posts" :key="post.id" :title="post.title.rendered" :subtitle="post.date" :text="removeLINK(post.excerpt.rendered) | truncate(truncateWordCount())" :link="'/rec-single/' + post.id" />
+					<f7-list-item v-for="post of posts" :key="post.id" :title="post.title.rendered" :subtitle="post.date.split('T').shift()" :text="removeLINK(post.excerpt.rendered) | truncate(truncateWordCount())" :link="'/rec-single/' + post.id" />
 				</f7-list>
 			</f7-block>
 		</f7-page>
@@ -29,6 +29,7 @@
             posts: [],
             httperrors: [],
 			targetobject: 'posts',
+			targetobject_i18n: '',
 			queryslug: '',
 			displayname: '',
 			recperpage: 20,
@@ -81,6 +82,7 @@
 
             self.uniqueid = (Math.floor(Date.now() / 1000)).toString();
             this.targetobject = (this.$props.objectType) ? this.$props.objectType : 'posts';
+            this.targetobject_i18n = this.$i18n.t('TAB_TITLE_' + this.targetobject.toUpperCase());
             this.queryslug = (this.$props.queryTerm) ? this.$props.queryTerm : '';
             this.displayname = (this.$props.displayName) ? this.$props.displayName : '';
 

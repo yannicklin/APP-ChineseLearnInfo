@@ -9,9 +9,6 @@
   "TAB_TITLE_DASH": "В НАЧАЛО",
   "TAB_TITLE_CATEGORIES": "КАТЕГОРИИ",
   "TAB_TITLE_TAGS": "ТЕГИ",
-  "VIEW_BUTTON_POSTS_SINGLE_SHARE": "ДОЛЯ",
-  "VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE": "ПОДЕЛИТЬСЯ ЭТОЙ ЗАПИСЬЮ",
-  "VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE": "ВЫБЕРИТЕ ПРИЛОЖЕНИЕ",
 
   "TAB_TITLE_AREAS": "УЧАСТКИ",
   "TAB_AREAS_SUBTITLE": "Сообщения из шести городских районах Тайваня",
@@ -42,8 +39,12 @@
   "CONTACT_FORM_ALERT_SUCCESS": "Спасибо %{name}, сообщение отправлено.",
 
   "VIEW_TITLE_POSTS_LIST": "Сообщения в соответствии с лицензией %{type} : %{term}",
+  "VIEW_SEARCH_PLACEHOLDER": "Поиск в заголовках сообщений",
   "VIEW_TITLE_POSTS_SINGLE": "Записи - %{title}",
   "VIEW_BUTTON_CLOSE": "ЗАКРЫТЬ",
+  "VIEW_BUTTON_POSTS_SINGLE_SHARE": "ДОЛЯ",
+  "VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE": "ПОДЕЛИТЬСЯ ЭТОЙ ЗАПИСЬЮ",
+  "VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE": "ВЫБЕРИТЕ ПРИЛОЖЕНИЕ",
 
   "DASH_NEWS_TITLE_20160227": "APP повторно объявил !! - 27 февраля 2016",
   "DASH_NEWS_CONTENT_20160227": "Мы перестроили это приложение с помощью проверенной платформы, используемой в Fimex категории продуктов.",

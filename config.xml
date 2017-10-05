@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.twoudia.ChineseLearnInfo" version="2.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.twoudia.ChineseLearnInfo" version="2.1.3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <hook src="hooks/hookers.js" type="before_prepare" />
     <hook src="hooks/beforedep.js" type="before_deploy" />
     <name>Chinese Learn InfoCenter</name>
@@ -15,6 +15,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
@@ -35,6 +36,14 @@
         <splash density="port-xhdpi" src="res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="res/screen/android/drawable-port-xxxhdpi-screen.png" />
+        <preference name="android-minSdkVersion" value="19" />
+        <preference name="android-maxSdkVersion" value="26" />
+        <preference name="android-targetSdkVersion" value="23" />
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        </config-file>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -68,14 +77,19 @@
     <platform name="browser">
         <preference name="SplashScreen" value="res/screen/browser/splashscreen.png" />
         <preference name="SplashScreenBackgroundColor" value="black" />
+        <preference name="ShowSplashScreen" value="false" />
     </platform>
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
-    <allow-navigation href="*" />
-    <engine name="android" spec="^6.2.3" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value="750" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="SplashShowOnlyFirstTime" value="true" />
+    <engine name="android" spec="^6.3.0" />
     <engine name="browser" spec="^4.1.0" />
-    <engine name="ios" spec="^4.4.0" />
-    <plugin name="cordova-plugin-console" spec="^1.1.0" />
+    <engine name="ios" spec="^4.5.1" />
+    <plugin name="cordova-custom-config" spec="^4.0.2" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-network-information" spec="^1.3.3" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />

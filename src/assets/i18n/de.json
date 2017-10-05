@@ -39,6 +39,7 @@
   "CONTACT_FORM_ALERT_SUCCESS": "Danke %{name}, Ihre Nachricht wurde gesendet.",
 
   "VIEW_TITLE_POSTS_LIST": "Beiträge unter %{type} : %{term}",
+  "VIEW_SEARCH_PLACEHOLDER": "Suche in Post-Titeln",
   "VIEW_TITLE_POSTS_SINGLE": "POSTEN - %{title}",
   "VIEW_BUTTON_CLOSE": "SCHLIESSEN",
   "VIEW_BUTTON_POSTS_SINGLE_SHARE": "AKTIE",
