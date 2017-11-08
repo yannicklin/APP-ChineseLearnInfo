@@ -64,5 +64,8 @@
   "DASH_NEWS_TITLE_20170816": "Recodificado en la composición de Framework7 + Vue + Webpack - 2017 16 de agosto",
   "DASH_NEWS_CONTENT_20170816": "AngularJS y IonicV1 fue una buena opción para el desarrollo básico de APP de Cordorva en 2015. Ese fue el momento en que esta aplicación se inició. Pero ahora es 2017, bueno, no hace mucho tiempo, pero el avance de TI nunca se detiene. Incluso la estrella caliente en 2015, 'Gulp', alguien ya lo consideraba demasiado malo y anticuado para el desarrollo de interfaz. No hay tiempo para que yo tome un broche rápido.",
 
+  "DASH_NEWS_TITLE_20171108": "Recuperación de TOPO JSON dañado - 2017 8 de noviembre",
+  "DASH_NEWS_CONTENT_20171108": "El archivo corrupto de TOPO JSON hizo que los usuarios no pudieran encontrar nada mientras navegaban por la pestaña de 'AREA'. Somos conscientes de este grave problema recientemente y comenzamos el proceso de depuración. Ahora podría funcionar normalmente como la instalación esperada. Lo siento por los inconvenientes ocasionados.",
+
   "_": "_"
 }

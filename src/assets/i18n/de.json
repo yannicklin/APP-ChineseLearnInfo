@@ -64,5 +64,8 @@
   "DASH_NEWS_TITLE_20170816": "Umgestaltet in die Komposition von Framework7 + Vue + Webpack - 2017 16. August",
   "DASH_NEWS_CONTENT_20170816": "AngularJS und IonicV1 war eine gute Wahl für die grundlegende Cordorva APP Entwicklung im Jahr 2015. Das war die Zeit dieser App initiiert. Aber jetzt ist 2017, gut, vor nicht allzu langer Zeit, aber die Weiterentwicklung der IT hört nie auf. Sogar der heiße Stern im Jahr 2015, 'Gulp', jemand hielt es schon zu mies und altmodisch für Frontend-Entwicklung. Keine Zeit für mich, kurz zu fangen.",
 
+  "DASH_NEWS_TITLE_20171108": "Wiederaufnahme des beschädigten TOPO JSON - 2017 8. November",
+  "DASH_NEWS_CONTENT_20171108": "Die beschädigte Datei von TOPO JSON führte dazu, dass Benutzer beim Navigieren auf der Registerkarte 'AREA' nichts finden konnten. Wir sind uns dieses ernste Problem vor kurzem bewusst und haben den Debug-Prozess gestartet. Jetzt könnte es normal als die erwartete Einrichtung arbeiten. Entschuldigen Sie die Unannehmlichkeiten.",
+
   "_": "_"
 }

@@ -29,6 +29,6 @@ Example usage:
 
 `cordova run android -- --lr
  cordova run browser -- --live-reload
- phonegap run ios -- --lr`
+ cordova run ios -- --lr`
 
 ![ChineseLearn InfoCentre](MOBILE-ICON-512.png)

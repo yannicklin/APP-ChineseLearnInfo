@@ -1,6 +1,6 @@
 {
     "name": "com.twoudia.chineselearninfo",
-    "version": "2.1.3",
+    "version": "2.1.6",
     "description": "Mobile APP for users to navigate the latest news of Leaning Chinese.",
     "scripts": {
         "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1"

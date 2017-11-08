@@ -7,6 +7,7 @@
 		</f7-navbar>
 
 		<f7-block inner>
+			<f7-card :title="$t('DASH_NEWS_TITLE_20171108')" :content="$t('DASH_NEWS_CONTENT_20171108')" footer="" />
 			<f7-card :title="$t('DASH_NEWS_TITLE_20170816')" :content="$t('DASH_NEWS_CONTENT_20170816')" footer="" />
 			<f7-card :title="$t('DASH_NEWS_TITLE_20170718')" :content="$t('DASH_NEWS_CONTENT_20170718')" footer="" />
 			<f7-card :title="$t('DASH_NEWS_TITLE_20160304')" :content="$t('DASH_NEWS_CONTENT_20160304')" footer="" />

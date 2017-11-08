@@ -6,6 +6,7 @@
     // Import D3 and topojson
     const d3 = require('d3');
     const topojson = require('topojson');
+	import TW_TOPO_JSON from 'assets/json/twMetropolitanArea2016.topo';
 
     export default {
         data: () => ({
@@ -96,7 +97,7 @@
                 //var width = window.screen.width * 0.8 * window.devicePixelRatio, height = window.screen.height * 0.8 * window.devicePixelRatio;
                 svg.attr("width", width).attr("height", height);
 
-                d3.json('static/twMetropolitanArea2016.topo.json', function(error, data) {
+                d3.json(TW_TOPO_JSON, function(error, data) {
                     var twArea = topojson.feature(data, data.objects["MACollection"]);
 
                     // Set the post count per Area

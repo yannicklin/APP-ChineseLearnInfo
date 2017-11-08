@@ -23,7 +23,6 @@ let config = function (env) {
         'src': path.resolve(__dirname, 'src/'),
         'assets': path.resolve(__dirname, 'src/assets/'),
         'pages': path.resolve(__dirname, 'src/assets/vue/pages/'),
-        'tabs': path.resolve(__dirname, 'src/assets/vue/tabs/'),
         'components': path.resolve(__dirname, 'src/assets/vue/components/')
       }
     },
@@ -40,6 +39,7 @@ let config = function (env) {
       rules: [
         {test: /\.(png|jpe?g|gif)$/, loader: 'file-loader', options: {name: '[name].[ext]?[hash]'}},
         {test: /\.(woff2?|eot|ttf|otf|mp3|wav)(\?.*)?$/, loader: 'file-loader', options: {name: '[name].[ext]?[hash]'}},
+        {test: /\.(topo)(\?.*)?$/, loader: 'file-loader', options: {name: '[name].[ext]?[hash]'}},
         {test: /\.svg$/, loader: 'url-loader'},
         {test: /\.scss$/, loader: [ 'vue-style-loader', 'css-loader', 'sass-loader']},
         {test: /\.sass$/, loader: [ 'vue-style-loader', 'css-loader', 'sass-loader?indentedSyntax']},
