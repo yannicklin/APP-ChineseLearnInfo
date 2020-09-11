@@ -1,0 +1,68 @@
+{
+  "ALERT_TITLE_APP": "Информационный центр",
+  "CONFIRM_BEFORE_APP_EXIT": "Чтобы выйти, нажмите еще раз.",
+  "INTERNET_CONNECTION_NONE": "Нет доступа к интернету.",
+  "ALERT_RECORD_NULL": "Нет полученных записей.",
+  "BUTTON_REQUEST_RELOAD": "перезагружать",
+  "BUTTON_CONTACT_US": "РАССКАЖИ МНЕ !",
+
+  "TAB_TITLE_DASH": "В НАЧАЛО",
+  "TAB_TITLE_CATEGORIES": "КАТЕГОРИИ",
+  "TAB_TITLE_TAGS": "ТЕГИ",
+
+  "TAB_TITLE_AREAS": "УЧАСТКИ",
+  "TAB_AREAS_SUBTITLE": "Сообщения из шести городских районах Тайваня",
+  "AREAS-taipei-xinbei-keelung": "Taipei, Xinbei, Keelung",
+  "AREAS-taoyuan-hsinchu-miaoli": "Taoyuan, Hsinchu, Miaoli",
+  "AREAS-taichung-changhua-nantou": "Taichung, Changhua, Nantou",
+  "AREAS-yunlin-chiayi-tainan": "Yunlin, Chiayi, Tainan",
+  "AREAS-kaohsiung-pingtung": "Kaohsiung, Pingtung",
+  "AREAS-ilan-hualien-taitung": "Ilan, Hualien, Taitung",
+
+  "TAB_TITLE_SETTINGS": "НАСТРОЙКА",
+  "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "ЯЗЫК",
+  "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "СВЯЖИТЕСЬ С НАМИ",
+  "CONTACT_FORM_LABEL_NAME": "ИМЯ",
+  "CONTACT_FORM_PLACEHOLDER_NAME": "Ваше имя ... ",
+  "CONTACT_FORM_LABEL_EMAIL": "ЭЛ. АДРЕС",
+  "CONTACT_FORM_PLACEHOLDER_EMAIL": "Ваш адрес эл. почты ... ",
+  "CONTACT_FORM_LABEL_MESSAGE": "СООБЩЕНИЕ",
+  "CONTACT_FORM_PLACEHOLDER_MESSAGE": "Ваше сообщение ... ",
+  "CONTACT_FORM_BUTTON_SEND": "ОТПРАВИТЬ",
+  "CONTACT_FORM_BUTTON_DISCARD": "ОТМЕНИТЬ",
+
+  "CONTACT_FORM_TITLE": "SEND США ВАШЕЙ ИДЕИ",
+  "CONTACT_FORM_LABEL_PHONE": "ТЕЛЕФОН",
+  "CONTACT_FORM_PLACEHOLDER_PHONE": "(Дополнительно) Ваш номер телефона ... ",
+  "CONTACT_FORM_ERROR_FOR_EXAMPLE": "Например, %{example} ",
+  "CONTACT_FORM_ALERT_ERROR": "Здесь что-то не так. Пожалуйста, проверь это.",
+  "CONTACT_FORM_ALERT_SUCCESS": "Спасибо %{name}, сообщение отправлено.",
+
+  "VIEW_TITLE_POSTS_LIST": "Сообщения в соответствии с лицензией %{type} : %{term}",
+  "VIEW_SEARCH_PLACEHOLDER": "Поиск в заголовках сообщений",
+  "VIEW_TITLE_POSTS_SINGLE": "Записи - %{title}",
+  "VIEW_BUTTON_CLOSE": "ЗАКРЫТЬ",
+  "VIEW_BUTTON_POSTS_SINGLE_SHARE": "ДОЛЯ",
+  "VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE": "ПОДЕЛИТЬСЯ ЭТОЙ ЗАПИСЬЮ",
+  "VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE": "ВЫБЕРИТЕ ПРИЛОЖЕНИЕ",
+
+  "DASH_NEWS_TITLE_20160227": "APP повторно объявил !! - 27 февраля 2016",
+  "DASH_NEWS_CONTENT_20160227": "Мы перестроили это приложение с помощью проверенной платформы, используемой в Fimex категории продуктов.",
+
+  "DASH_NEWS_TITLE_20160228": "Выход из приложения - 28 февраля 2016",
+  "DASH_NEWS_CONTENT_20160228": "Для выхода из приложения дважды коснитесь НАЗАД / ВЫХОД в течение 5 секунд.",
+
+  "DASH_NEWS_TITLE_20160229": "Доступно на Google Play - 29 февраля 2016",
+  "DASH_NEWS_CONTENT_20160229": "Сегодня особый день, а не только 29 февраля, также это день мы ставим это приложение на Google Play Store. Yahoo !!",
+
+  "DASH_NEWS_TITLE_20160304": "Языки сообщений на форуме - 2016 МАРТ 4",
+  "DASH_NEWS_CONTENT_20160304": "Хотя есть восемь вариантов языка, есть только два языка сообщений, английский и традиционный китайский. Мы попытались бы перевести статьи с важнейшими ресурсами обеспеченных, как в ближайшее время. Приносим извинения за неудобства.",
+
+  "DASH_NEWS_TITLE_20170718": "Изменение с изменениями веб-сайта - 2017 июля 18",
+  "DASH_NEWS_CONTENT_20170718": "С модификациями WP4.7 большое количество кодов запросов данных было изменено. Самой важной частью является отсутствие поддержки фильтра, которая указывает, что каждый запрос URI должен перекомпоновать правильный стиль кода.",
+
+  "DASH_NEWS_TITLE_20170816": "Перекодировано в составе Framework7 + Vue + Webpack - 2017 августа 16",
+  "DASH_NEWS_CONTENT_20170816": "AngularJS и IonicV1 были хорошим выбором для базовой разработки APP Cordorva в 2015 году. Это было время, когда это приложение было начато. Но сейчас 2017 год, ну, не так давно, но продвижение ИТ никогда не прекращается. Даже горячая звезда в 2015 году, «Gulp», кто-то уже считал ее слишком отвратительной и старомодной для развития интерфейса. Нет времени, чтобы я коротко щелкнул.",
+
+  "_": "_"
+}

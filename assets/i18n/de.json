@@ -1,0 +1,68 @@
+{
+  "ALERT_TITLE_APP": "Info-Center",
+  "CONFIRM_BEFORE_APP_EXIT": "Nochmal drücken zum Beenden.",
+  "INTERNET_CONNECTION_NONE": "Internet funktioniert nicht",
+  "ALERT_RECORD_NULL": "Keine Daten erhalten.",
+  "BUTTON_REQUEST_RELOAD": "Neu laden",
+  "BUTTON_CONTACT_US": "SAG MIR !",
+
+  "TAB_TITLE_DASH": "STARTSEITE",
+  "TAB_TITLE_CATEGORIES": "KATEGORIEN",
+  "TAB_TITLE_TAGS": "STICHWORTE",
+
+  "TAB_TITLE_AREAS": "BEREICH",
+  "TAB_AREAS_SUBTITLE": "Unterartikel Kapitel sechs die Zahl der Taiwan Großraum",
+  "AREAS-taipei-xinbei-keelung": "Taipei, Xinbei, Keelung",
+  "AREAS-taoyuan-hsinchu-miaoli": "Taoyuan, Hsinchu, Miaoli",
+  "AREAS-taichung-changhua-nantou": "Taichung, Changhua, Nantou",
+  "AREAS-yunlin-chiayi-tainan": "Yunlin, Chiayi, Tainan",
+  "AREAS-kaohsiung-pingtung": "Kaohsiung, Pingtung",
+  "AREAS-ilan-hualien-taitung": "Ilan, Hualien, Taitung",
+
+  "TAB_TITLE_SETTINGS": "EINSTELLUNGEN",
+  "TAB_SETTINGS_SECTION_TITLE_LANGUAGE": "SPRACHE",
+  "TAB_SETTINGS_SECTION_TITLE_CONTACTUS": "UNS KONTAKTIEREN",
+  "CONTACT_FORM_LABEL_NAME": "NAME",
+  "CONTACT_FORM_PLACEHOLDER_NAME": "Ihr Name ist ... ",
+  "CONTACT_FORM_LABEL_EMAIL": "E-MAIL",
+  "CONTACT_FORM_PLACEHOLDER_EMAIL": "Ihre E-Mail-Adresse ist ... ",
+  "CONTACT_FORM_LABEL_MESSAGE": "NACHRICHT",
+  "CONTACT_FORM_PLACEHOLDER_MESSAGE": "Was Sie sagen möchten ... ",
+  "CONTACT_FORM_BUTTON_SEND": "SENDEN",
+  "CONTACT_FORM_BUTTON_DISCARD": "VERWERFEN",
+
+  "CONTACT_FORM_TITLE": "SENDEN SIE IHRE IDEE",
+  "CONTACT_FORM_LABEL_PHONE": "TELEFON",
+  "CONTACT_FORM_PLACEHOLDER_PHONE": "(Optional) Ihre Telefonnummer ist ... ",
+  "CONTACT_FORM_ERROR_FOR_EXAMPLE": "Beispielsweise, %{example} ",
+  "CONTACT_FORM_ALERT_ERROR": "Da stimmt etwas nicht. Überprüfen Sie bitte das.",
+  "CONTACT_FORM_ALERT_SUCCESS": "Danke %{name}, Ihre Nachricht wurde gesendet.",
+
+  "VIEW_TITLE_POSTS_LIST": "Beiträge unter %{type} : %{term}",
+  "VIEW_SEARCH_PLACEHOLDER": "Suche in Post-Titeln",
+  "VIEW_TITLE_POSTS_SINGLE": "POSTEN - %{title}",
+  "VIEW_BUTTON_CLOSE": "SCHLIESSEN",
+  "VIEW_BUTTON_POSTS_SINGLE_SHARE": "AKTIE",
+  "VIEW_ACTIONSHEET_TITLE_POSTS_SINGLE_SHARE": "TEILE DIESEN BEITRAG",
+  "VIEW_ACTIONSHEET_WORDS_POSTS_SINGLE_SHARE": "WÄHLEN SIE DIE APP",
+
+  "DASH_NEWS_TITLE_20160227": "APP Wieder angekündigt !! - 2016 27. Februar",
+  "DASH_NEWS_CONTENT_20160227": "Wir umgebaut diese APP mit dem in FIMEX Produktkategorie verwendet bewährte Plattform.",
+
+  "DASH_NEWS_TITLE_20160228": "Methode zum Beenden der APP - 2016 28. Februar",
+  "DASH_NEWS_CONTENT_20160228": "Bitte klicken Sie innerhalb von 5 Sekunden doppelt auf ZURÜCK / BEENDEN, um diese App zu beenden.",
+
+  "DASH_NEWS_TITLE_20160229": "Verfügbar auf Google Play - 2016 29. Februar",
+  "DASH_NEWS_CONTENT_20160229": "Heute ist ein besonderer Tag, nicht nur der 29. Februar ist es auch der Tag, wir setzen diese App auf Google Play Store. Yahoo !!",
+
+  "DASH_NEWS_TITLE_20160304": "Sprachen der Beiträge - 2016 4. März",
+  "DASH_NEWS_CONTENT_20160304": "Zwar gibt es acht Sprachen zur Auswahl stehen, gibt es nur zwei Sprachen der Beiträge, Englisch und traditionelles Chinesisch. Wir würden versuchen, die Artikel mit allen notwendigen Ressourcen so schnell gesichert zu übersetzen. Entschuldigen Sie die Unannehmlichkeiten.",
+
+  "DASH_NEWS_TITLE_20170718": "Änderung mit der Website Backend Change - 2017 18. Juli",
+  "DASH_NEWS_CONTENT_20170718": "Mit den Modifikationen von WP4.7 wurden viele Datenabfragecodes gezwungen, zu ändern. Der kritischste Teil ist der Mangel an Filterunterstützung, der jede Abfrage anzeigt. URI muss den richtigen Codestil ausfüllen.",
+
+  "DASH_NEWS_TITLE_20170816": "Umgestaltet in die Komposition von Framework7 + Vue + Webpack - 2017 16. August",
+  "DASH_NEWS_CONTENT_20170816": "AngularJS und IonicV1 war eine gute Wahl für die grundlegende Cordorva APP Entwicklung im Jahr 2015. Das war die Zeit dieser App initiiert. Aber jetzt ist 2017, gut, vor nicht allzu langer Zeit, aber die Weiterentwicklung der IT hört nie auf. Sogar der heiße Stern im Jahr 2015, 'Gulp', jemand hielt es schon zu mies und altmodisch für Frontend-Entwicklung. Keine Zeit für mich, kurz zu fangen.",
+
+  "_": "_"
+}

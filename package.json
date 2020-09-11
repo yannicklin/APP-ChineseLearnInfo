@@ -1,6 +1,7 @@
 {
-  "name": "reactnative",
-  "version": "0.0.1",
+  "name": "com.twoudia.chineselearninfo",
+  "version": "3.0.0",
+  "description": "Mobile APP for users to navigate the latest news of Leaning Chinese.",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -9,9 +10,22 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
+  "keywords": [
+    "ecosystem:react-native"
+  ],
+  "license": "GNU AGPLv3",
   "dependencies": {
+    "d3": "^6.1.1",
+    "i18next": "^19.7.0",
     "react": "16.13.1",
-    "react-native": "0.63.2"
+    "react-i18next": "^11.7.2",
+    "react-native": "0.63.2",
+    "react-native-eject": "^0.1.2",
+    "react-native-elements": "^2.3.2",
+    "react-native-localize": "^1.4.1",
+    "react-native-svg": "^12.1.0",
+    "react-native-vector-icons": "^7.1.0",
+    "topojson-client": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
