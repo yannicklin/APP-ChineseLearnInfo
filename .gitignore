@@ -61,3 +61,6 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# REST Client
+request.http
