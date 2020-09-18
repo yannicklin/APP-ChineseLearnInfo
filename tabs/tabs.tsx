@@ -1,27 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {Button} from 'react-native-elements';
 import {Icon} from 'react-native-elements';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import TabDash from './tabDash';
-
-function HomeScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Home!</Text>
-      <Button title="Hey!" />
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
+import TabCategories from './tabCategories';
+import TabTags from './tabTags';
+import TabAreas from './tabAreas';
+import TabSettings from './tabSettings';
 
 const Tab = createBottomTabNavigator();
 
@@ -38,11 +23,38 @@ export default function Tabs() {
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="Category"
+        component={TabCategories}
         options={{
           tabBarIcon: ({color, size}) => (
-            <Icon type="ionicon" name="home" color={color} size={size} />
+            <Icon type="ionicon" name="folder-open" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Tag"
+        component={TabTags}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon type="ionicon" name="pricetags" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Area"
+        component={TabAreas}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon type="ionicon" name="earth" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Setting"
+        component={TabSettings}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon type="ionicon" name="hammer" color={color} size={size} />
           ),
         }}
       />

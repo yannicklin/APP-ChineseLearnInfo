@@ -28,7 +28,7 @@ export const setI18nConfig = () => {
     fallback;
 
   // clear translation cache
-  translate.cache.clear();
+  i18nT.cache.clear();
   // update layout direction
   I18nManager.forceRTL(isRTL);
 

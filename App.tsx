@@ -7,7 +7,7 @@ import * as RNLocalize from 'react-native-localize';
 import {setI18nConfig} from './i18n';
 
 import {NavigationContainer} from '@react-navigation/native';
-import Tabs from './tabs/tabDash';
+import Tabs from './tabs/tabs';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,11 +24,8 @@ class App extends React.Component {
   }
 
   handleLocalizationChange = () => {
-    setI18nConfig()
-      .then(() => this.forceUpdate())
-      .catch((error) => {
-        console.error(error);
-      });
+    setI18nConfig();
+    this.forceUpdate();
   };
 
   render() {
