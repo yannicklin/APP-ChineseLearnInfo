@@ -3,7 +3,7 @@ import {Text, View, ScrollView, StyleSheet, SafeAreaView} from 'react-native';
 import {Header, Card} from 'react-native-elements';
 import {i18nT} from '../i18n';
 
-export default function TabDash() {
+export default function TabSettings() {
   return (
     <SafeAreaView>
       <Header

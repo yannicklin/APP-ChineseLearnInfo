@@ -14,7 +14,7 @@ import Svg, {G, Path, Circle} from 'react-native-svg';
 import * as d3 from 'd3';
 import {feature} from 'topojson-client';
 
-export default function TabDash() {
+export default function TabAreas() {
   return (
     <SafeAreaView>
       <Header
