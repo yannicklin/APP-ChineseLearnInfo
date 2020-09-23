@@ -3,6 +3,8 @@ import React from 'react';
 import {StatusBar} from 'react-native';
 import {ThemeProvider} from 'react-native-elements';
 
+import RNBootSplash from 'react-native-bootsplash';
+
 import * as RNLocalize from 'react-native-localize';
 import {setI18nConfig} from './i18n';
 
@@ -16,6 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    RNBootSplash.hide({duration: 250});
     RNLocalize.addEventListener('change', this.handleLocalizationChange);
   }
 

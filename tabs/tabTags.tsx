@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, ScrollView, StyleSheet, SafeAreaView} from 'react-native';
 import {Header, Card} from 'react-native-elements';
-import {i18nT} from '../i18n';
+import * as RNLocalize from 'react-native-localize';
 
 import axios from 'axios';
 import Config from 'react-native-config';
@@ -27,7 +27,7 @@ class TabTags extends React.Component {
       method: 'get',
       url:
         Config.baseURI +
-        ('zh' === i18nT.locale ? 'zh-hant/' : '') +
+        ('zh' === RNLocalize.getCountry() ? 'zh-hant/' : '') +
         'aaa/' +
         '?page=' +
         this.pageno +
